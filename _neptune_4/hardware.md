@@ -186,7 +186,7 @@ Because of this, using the Copperhead heat break may work, but there could be a 
 | **Drivers** | [TMC2209](https://www.trinamic.com/products/integrated-circuits/details/tmc2209-la/) |
 | **Serial Adapter** | [CH340C](https://wch-ic.com/products/CH340.html) |
 
-\* The STM32F402RCT6 seems to be identical to the STM32F401RCT6, according to their respective datasheets and other available English-language information.
+\* The STM32F402RCT6 seems to be identical to the STM32F401RCT6, according to their respective datasheets ([STM32F401RC](/assets/documents/STM32F401RC.pdf), [STM32F402RCT6](/assets/documents/STM32F402RCT6.pdf)) and other available English-language information.
 
 The Neptune 4 uses a ZNP K1 v1.0 control board. There is not much information on this exact board, aside from a brief overview in the article [Elegoo Neptune 4 3D Printer in Review](https://www.igorslab.de/en/elegoo-neptune-4-3d-drucker-im-test/5/). A comment on the Reddit post [Am I crazy or is the Neptune 4 (Pro) just not a great deal?](https://www.reddit.com/r/ElegooNeptune3/comments/13zni3g/am_i_crazy_or_is_the_neptune_4_pro_just_not_a/), claims it is a clone of the [MKS Skipr](https://github.com/makerbase-mks/MKS-SKIPR). However, there are some significant differences between the two.
 
@@ -258,7 +258,7 @@ The Neptune 4 uses a ZNP K1 v1.0 control board. There is not much information on
 | --------- | ----------------------------------------------------------------------------------------------------------- |
 | Board     | [Tenlog TJC4827X243_011-Z05](https://www.tenlog3dprinter.com/products/tenlog-3d-printer-color-touch-screen) |
 | Panel     | [0430A006-I1E1100](https://www.alibaba.com/product-detail/4-3inch-TFT-LCD-480-272_1600750533754.html)       |
-| Digitizer\*          | [Goodix GT911](https://www.goodix.com/en/product/touch/touch_screen_controller/) ([Datasheet](obsidian://open?vault=Braindump&file=3D%20Printing%2FNeptune%204%2FGT911_v.09.pdf))                                                                                                            |
+| Digitizer\*          | [Goodix GT911](https://www.goodix.com/en/product/touch/touch_screen_controller/) ([Datasheet](/assets/documents/GT911_v.09.pdf))                                                                                                            |
 
 \* This is a guess based on other, similar configurations from the same manufacturer.
 
@@ -273,7 +273,7 @@ It is likely that there are, or will be, many interchangeable variants that will
 | Component             | Detail                                                                                                                                                                                            |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Microcontroller       | Unknown, "AiHMI T7 2246 N8V14604"                                                                                                                                                                 |
-| Flash Memory          | [FM25Q128A](https://eng.fmsh.com/65eecc76-e5cc-265f-bb24-3bed4f4bd25f/) 128MB SPI NOR Flash ([Datasheet](obsidian://open?vault=Braindump&file=3D%20Printing%2FNeptune%204%2FFM25Q128_ds_eng.pdf)) |
+| Flash Memory          | [FM25Q128A](https://eng.fmsh.com/65eecc76-e5cc-265f-bb24-3bed4f4bd25f/) 128MB SPI NOR Flash ([Datasheet](/assets/documents/FM25Q128_ds_eng.pdf)) |
 | EEPROM\*                | 1KB                                                                                                                                                                                               |
 | RAM\*                   | 512KB                                                                                                                                                                                             |
 | Serial Command Buffer\* | 4KB                                                                                                                                                                                                  |
