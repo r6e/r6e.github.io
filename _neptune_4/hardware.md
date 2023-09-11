@@ -7,7 +7,9 @@ category_title: Hardware
 ---
 
 **Note:** This is a work-in-progress. Right now, it mostly describes the control board, screen, and related items.
+
 # Specifications
+
 Mostly taken from the [product description](https://www.elegoo.com/products/elegoo-neptune-4-fdm-3d-printer)on Elegoo's website.
 
 | Feature                 | Description                                                           |
@@ -38,11 +40,17 @@ Mostly taken from the [product description](https://www.elegoo.com/products/eleg
 | Net Weight              | 8.3Kg                                                                      |
 
 \* This is the default value, but configurable in Klipper
+
 <sup>†</sup> Elegoo does not currently sell other sizes/materials. However, they can be found on AliExpress
+
 <sup>‡</sup> Abrasive materials not recommended with the included brass nozzle
+
 <sup>§</sup> This may be misleading, as the extruder feeds a PTFE tube, which feeds the throat-pipe
+
 # Dimensions
+
 Given dimensions should be accurate-enough, but further measurements are a work-in-progress.
+
 ## Board
 
 | Dimension            | Size                           |
@@ -72,6 +80,7 @@ Panel measurements were from specifications in the product listing on AliExpress
 | Width     | 28.5mm  |
 
 ## Wires
+
 **INCORRECT WIRE SIZING IS A FIRE HAZARD!** If you intend to replace any of the wiring, check the sizes on your unit. These are provided for reference only, and some are approximations due to insufficient labeling on some cables.
 
 | Connection         | Size, mm | Size, AWG |
@@ -89,16 +98,19 @@ Panel measurements were from specifications in the product listing on AliExpress
 The axis ribbon cables includes conductors for each axis, and the associated endstop (X, Y only).
 
 The tool ribbon cable includes conductors for:
+
 * Hotend Heater Cartridge: 3x wires, equivalent to 0.72mm (21 AWG)
 * Hotend Thermistor
 * Extruder Stepper Motor
 * Fans (3x)
 * LED
+
 * Proximity Sensor
 
 The heater cartridge runs at 24 V, 50 W (2.08 A). Just one of the conductors should be able to safely carry the current over the given distance, so three provides a good safety margin. However, if you need to replace these, it would be highly-advised to use the same size wire as the heater cartridge leads.
 
 ## Nozzle
+
 The Neptune 4 uses a non-standard nozzle. It is very close to the RepRap style of nozzle, except the threaded length is 2mm longer, the overall length is 5.5mm longer, and the nozzle profile is slightly different.
 
 | Dimension         | Size        |
@@ -124,6 +136,7 @@ The Neptune 4 uses a non-standard nozzle. It is very close to the RepRap style o
 | Retention Screw          | M3x0.5, 4.25mm, 2mm hex round-head |
 
 ## Heat Break
+
 The heat break is nearly identical to Slice Engineering's [Copperhead Heat Break](https://www.sliceengineering.com/collections/heat-breaks/products/copperhead-heat-break), C-E variant. This means heat breaks intended for similarly-equipped Creality printers should also be close.
 
 The main difference is the distance between the shank and the threaded portion (air gap), which is 1mm longer on the Neptune 4. The threaded length on the Neptune 4 is correspondingly 1mm shorter.
@@ -159,7 +172,9 @@ Because of this, using the Copperhead heat break may work, but there could be a 
 | Mount Holes Position | 2.25mm from top, 4.75mm from side                          |
 
 # Details
+
 ## Controller Board
+
 <img src="/assets/images/fullsize/ZNP_K1_V1-0.jpg" alt="Neptune 4 Control Board" />
 
 | Component | Detail |
@@ -174,7 +189,9 @@ Because of this, using the Copperhead heat break may work, but there could be a 
 \* The STM32F402RCT6 seems to be identical to the STM32F401RCT6, according to their respective datasheets and other available English-language information.
 
 The Neptune 4 uses a ZNP K1 v1.0 control board. There is not much information on this exact board, aside from a brief overview in the article [Elegoo Neptune 4 3D Printer in Review](https://www.igorslab.de/en/elegoo-neptune-4-3d-drucker-im-test/5/). A comment on the Reddit post [Am I crazy or is the Neptune 4 (Pro) just not a great deal?](https://www.reddit.com/r/ElegooNeptune3/comments/13zni3g/am_i_crazy_or_is_the_neptune_4_pro_just_not_a/), claims it is a clone of the [MKS Skipr](https://github.com/makerbase-mks/MKS-SKIPR). However, there are some significant differences between the two.
+
 ### Interfaces
+
 <img src="/assets/images/fullsize/ZNP_K1_V1-0_IO.jpg" alt="Neptune 4 Control Board Interfaces" /> 
 
 | ID            | Board Text    | Description                                   |
@@ -234,6 +251,7 @@ The Neptune 4 uses a ZNP K1 v1.0 control board. There is not much information on
 | JMU           | 1/2/5/6       | Mode Select Jumpers, Unused                   |
 
 ## Screen
+
 <img src="/assets/images/fullsize/N4_Screen_Int.jpg" alt="Neptune 4 Screen Internals" />
 
 | Component | Detail                                                                                                      |
@@ -247,7 +265,9 @@ The Neptune 4 uses a ZNP K1 v1.0 control board. There is not much information on
 Variants of this board/screen combination are found for sale are advertised as being for the Tenlog TL-D3 Pro/D3-V2/TL-D5/TL-D6 printers, although some similar screens are used in Creality printers. It is plausible that these are being manufactured by/for Tenlog and whiteboxed for other manufacturers.
 
 It is likely that there are, or will be, many interchangeable variants that will crop up in the Neptune 4 as production continues, so the specific details will change.
+
 ### Board
+
 <img src="/assets/images/fullsize/N4_Screen_Board.jpg" alt="Neptune 4 Screen Board" />
 
 | Component             | Detail                                                                                                                                                                                            |
@@ -263,10 +283,13 @@ It is likely that there are, or will be, many interchangeable variants that will
 This appears to be identical to other TJC4827X243_011-xxx variants, except for the board configuration, so presumably the last 3 characters likely indicate a board revision.
 
 The QR-code on the micro SD card reader contains the following text:
+
 ```
 hxe5hse5xse494e516v1.65
 ```
+
 ### Panel
+
 <img src="/assets/images/fullsize/N4_Screen_Panel.jpg" alt="Neptune 4 Screen Panel" />
 
 These specifications were taken from product listings for this panel and other equivalent ones from the same manufacturer.
@@ -292,7 +315,9 @@ These specifications were taken from product listings for this panel and other e
 | Sleep Current         | 100mA                       |
 
 The module was manufactured by [Shenzhen Hong Xian Wei Ye Technology Limited](https://hxydisplay.en.alibaba.com/), and customized to include a capacitive touch digitizer. The base panel assembly is the  [0430A006-I1E1100](https://www.alibaba.com/product-detail/4-3inch-TFT-LCD-480-272_1600750533754.html). The LCD panel was made by [BOE](https://www.boe.com/en/USA), but the exact model is currently unknown.
+
 ### Digitizer
+
 <img src="/assets/images/fullsize/N4_Screen_Ribbon.jpg" alt="Neptune 4 Screen Ribbon" />
 
 These specifications were taken from the Goodix website.
@@ -310,6 +335,7 @@ These specifications were taken from the Goodix website.
 # Hardware Hacking Notes
 
 ## USB-C Port
+
 <img src="/assets/images/fullsize/ZNP_K1_V1-0_USB-C.jpg" alt="Control Board USB-C Port" />
 
 This is wired directly into a serial adapter, and can not be used as an actual USB port for the host. It will be accessible to the host on `/dev/ttyS2`.
@@ -317,6 +343,7 @@ This is wired directly into a serial adapter, and can not be used as an actual U
 This serial connection can be *extremely* helpful when SSH is not available, such as when needing to access the bootloader or an alternative OS. Connect at `5000000` baud.
 
 ## USB 2.0 Header
+
 <img src="/assets/images/fullsize/ZNP_K1_V1-0_USB_2-0.jpg" alt="USB 2.0 Header" />
 
 The unpopulated USB 2.0 header is connected to the host (not the MCU), and can be used for WiFi, additional storage, etc.
@@ -324,19 +351,27 @@ The unpopulated USB 2.0 header is connected to the host (not the MCU), and can b
 Unlike the USB 3.0 port, the USB 2.0 ports are visible to the uBoot bootloader, and can be used to boot from a USB drive. This can be helpful for trying out newer/different OS versions without wiping out the factory install.
 
 ## ADXL345
+
 <img src="/assets/images/fullsize/ZNP_K1_V1-0_ADXL345.jpg" alt="ADXL345 Header" />
 
 There is a dedicated header for an [ADXL345](https://www.analog.com/en/products/adxl345.html) interface present, and appears to be connected to the host device. If this is the case, some straightforward configuration may be necessary.
+
 ## MicroSD Reader
+
 This only connects to the MCU and is primarily useful for updating the MCU firmware. It is currently unknown what filename scheme it uses to look for an update on the card. Based on other Elegoo models and similar boards, some possibilities include:
 
 * `elegoo.bin`
 * `firmware.bin`
 * Any filename ending in `.bin` different from the previous update.
+
 ## Screen
+
 ### Connecting to Non-Elegoo Klipper
+
 This does not appear to be possible at the moment, without significantly more third-party software support. A number of open-source attempts have been started and abandoned for similar screens over the years. The complication mostly seems to be in the custom firmware these screens use and the unavailability of a helpful serial interface.
+
 ### UART Connector
+
 <img src="/assets/images/fullsize/ZNP_K1_V1-0_UART1.jpg" alt="UART1 Connector" />
 
 This connector is connected to the host (not the MCU), and is used to control the screen, but could be theoretically used to communicate with other UART devices. While it is possible to solder a header on to the board, it is safer to just make an RJ-11 adapter for debugging.
@@ -344,10 +379,13 @@ This connector is connected to the host (not the MCU), and is used to control th
 The header pinout is `+5v` `GND` `TX` `RX`. If wiring up an adapter, keep in mind that the `TX` pin is wired to the `RX` pin on the other device, and vice-versa.
 
 ## MCU
+
 ## Connecting
+
 There does not appear to be any available serial or JTAG interface to connect directly to the MCU, except the microSD card reader. The host device connects to the MCU through an on-board hardware connection, using `/dev/ttyS0`.
 
 ### BOOT0
+
 In order to enter the firmware flashing interface, the MCU must be booted into BOOT0 mode. Once booted into this mode, it will attempt to flash firmware from an inserted microSD card or, if none is available, wait for communication over the serial connection.
 
 There appear to be two ways to enter BOOT0.
@@ -357,7 +395,9 @@ The first, and safest, way is to set one GPIO pin high to signify entering BOOT0
 The second, **highly-unrecommended**, way is to jump the two BOOT0 pads (notated as `BOO` in the diagram above) and press the reset button (see below). Due to close spacing on the board, it can be very easy to make unintentional contact with other components, causing significant damage.
 
 <img src="/assets/images/fullsize/ZNP_K1_V1-0_BOOT0.jpg" alt="BOOT0 Pads" />
+
 ## Firmware
+
 **DO NOT UPGRADE THE MCU FIRMWARE WITH KLIPPER-GENERATED BIN!**
 
 It appears as though Elegoo has done something odd when generating their firmware, and the firmware generated by Klipper won't work. Also note that the firmware generation settings in `printer.cfg` are absolutely incorrect, and were likely due to the config file being copy/pasted from a different printer model.
@@ -414,9 +454,13 @@ Based on the above, the `printer.cfg`, similar boards, and the processor datashe
 | GPIO pins to set at micro-controller startup                              | `[blank]`                           |
 
 However, this does not seem to work. If you *really* want to try, it's highly-recommended to first dump the existing firmware using `stm32flash -r firmware_backup.bin /dev/ttyS0` while in BOOT0.
+
 ## Missing/Unknown Components
+
 This section does not include components detailed above, such as the USB-2.0 block, BOOT0 pads, etc.
+
 ### Jumper Block
+
 <img src="/assets/images/fullsize/ZNP_K1_V1-0_Jumpers.jpg" alt="Unknown Jumper Header" />
 
 This jumper block's purpose is currently unknown. It appears to be connected to the MCU and these unpopulated pads.
@@ -424,7 +468,9 @@ This jumper block's purpose is currently unknown. It appears to be connected to 
 The pads appear to be the right shape, size, and configuration for resistors. This configuration (IC pin → jumper → resistor) is commonly used to configure features/settings on an IC. It may be that this is intended for features the board doesn't currently support, but will be supported on future revisions.
 
 With all the cost-saving measures they have taken with this board, it is curious that they bothered mounting the jumper pins, though. There may be some clues available in the MCU datasheet.
+
 ### Empty Pads
+
 <img src="/assets/images/fullsize/ZNP_K1_V1-0_Pads.jpg" alt="Empty Pads" />
 
 These pads appear to be directly connected to the host SoC and/or the MCU. It could be that these are intended to modify features/settings on one or both ICs.
