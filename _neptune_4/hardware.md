@@ -160,7 +160,7 @@ Because of this, using the Copperhead heat break may work, but there could be a 
 
 # Details
 ## Controller Board
-{% picture ZNP_K1_V1-0.jpg --alt Neptune 4 Control Board %}
+<img src="/assets/images/fullsize/ZNP_K1_V1-0.jpg" alt="Neptune 4 Control Board" />
 
 | Component | Detail |
 | --- | --- |
@@ -175,7 +175,7 @@ Because of this, using the Copperhead heat break may work, but there could be a 
 
 The Neptune 4 uses a ZNP K1 v1.0 control board. There is not much information on this exact board, aside from a brief overview in the article [Elegoo Neptune 4 3D Printer in Review](https://www.igorslab.de/en/elegoo-neptune-4-3d-drucker-im-test/5/). A comment on the Reddit post [Am I crazy or is the Neptune 4 (Pro) just not a great deal?](https://www.reddit.com/r/ElegooNeptune3/comments/13zni3g/am_i_crazy_or_is_the_neptune_4_pro_just_not_a/), claims it is a clone of the [MKS Skipr](https://github.com/makerbase-mks/MKS-SKIPR). However, there are some significant differences between the two.
 ### Interfaces
-{% picture ZNP_K1_V1-0_IO.jpg --alt Neptune 4 Control Board Interfaces %} 
+<img src="/assets/images/fullsize/ZNP_K1_V1-0_IO.jpg" alt="Neptune 4 Control Board Interfaces" /> 
 
 | ID            | Board Text    | Description                                   |
 | ------------- | ------------- | --------------------------------------------- |
@@ -234,7 +234,7 @@ The Neptune 4 uses a ZNP K1 v1.0 control board. There is not much information on
 | JMU           | 1/2/5/6       | Mode Select Jumpers, Unused                   |
 
 ## Screen
-{% picture N4_Screen_Int.jpg --alt Neptune 4 Screen Internals %}
+<img src="/assets/images/fullsize/N4_Screen_Int.jpg" alt="Neptune 4 Screen Internals" />
 
 | Component | Detail                                                                                                      |
 | --------- | ----------------------------------------------------------------------------------------------------------- |
@@ -248,7 +248,7 @@ Variants of this board/screen combination are found for sale are advertised as b
 
 It is likely that there are, or will be, many interchangeable variants that will crop up in the Neptune 4 as production continues, so the specific details will change.
 ### Board
-{% picture N4_Screen_Board.jpg --alt Neptune 4 Screen Board %}
+<img src="/assets/images/fullsize/N4_Screen_Board.jpg" alt="Neptune 4 Screen Board" />
 
 | Component             | Detail                                                                                                                                                                                            |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -267,7 +267,7 @@ The QR-code on the micro SD card reader contains the following text:
 hxe5hse5xse494e516v1.65
 ```
 ### Panel
-{% picture N4_Screen_Panel.jpg --alt Neptune 4 Screen Panel %}
+<img src="/assets/images/fullsize/N4_Screen_Panel.jpg" alt="Neptune 4 Screen Panel" />
 
 These specifications were taken from product listings for this panel and other equivalent ones from the same manufacturer.
 
@@ -293,7 +293,7 @@ These specifications were taken from product listings for this panel and other e
 
 The module was manufactured by [Shenzhen Hong Xian Wei Ye Technology Limited](https://hxydisplay.en.alibaba.com/), and customized to include a capacitive touch digitizer. The base panel assembly is the  [0430A006-I1E1100](https://www.alibaba.com/product-detail/4-3inch-TFT-LCD-480-272_1600750533754.html). The LCD panel was made by [BOE](https://www.boe.com/en/USA), but the exact model is currently unknown.
 ### Digitizer
-{% picture N4_Screen_Ribbon.jpg --alt Neptune 4 Screen Ribbon %}
+<img src="/assets/images/fullsize/N4_Screen_Ribbon.jpg" alt="Neptune 4 Screen Ribbon" />
 
 These specifications were taken from the Goodix website.
 
@@ -310,21 +310,21 @@ These specifications were taken from the Goodix website.
 # Hardware Hacking Notes
 
 ## USB-C Port
-{% picture ZNP_K1_V1-0_USB-C.jpg --alt Control Board USB-C Port %}
+<img src="/assets/images/fullsize/ZNP_K1_V1-0_USB-C.jpg" alt="Control Board USB-C Port" />
 
 This is wired directly into a serial adapter, and can not be used as an actual USB port for the host. It will be accessible to the host on `/dev/ttyS2`.
 
 This serial connection can be *extremely* helpful when SSH is not available, such as when needing to access the bootloader or an alternative OS. Connect at `5000000` baud.
 
 ## USB 2.0 Header
-{% picture ZNP_K1_V1-0_USB_2-0.jpg --alt USB 2.0 Header %}
+<img src="/assets/images/fullsize/ZNP_K1_V1-0_USB_2-0.jpg" alt="USB 2.0 Header" />
 
 The unpopulated USB 2.0 header is connected to the host (not the MCU), and can be used for WiFi, additional storage, etc.
 
 Unlike the USB 3.0 port, the USB 2.0 ports are visible to the uBoot bootloader, and can be used to boot from a USB drive. This can be helpful for trying out newer/different OS versions without wiping out the factory install.
 
 ## ADXL345
-{% picture ZNP_K1_V1-0_ADXL345.jpg --alt ADXL345 Header %}
+<img src="/assets/images/fullsize/ZNP_K1_V1-0_ADXL345.jpg" alt="ADXL345 Header" />
 
 There is a dedicated header for an [ADXL345](https://www.analog.com/en/products/adxl345.html) interface present, and appears to be connected to the host device. If this is the case, some straightforward configuration may be necessary.
 ## MicroSD Reader
@@ -337,7 +337,7 @@ This only connects to the MCU and is primarily useful for updating the MCU firmw
 ### Connecting to Non-Elegoo Klipper
 This does not appear to be possible at the moment, without significantly more third-party software support. A number of open-source attempts have been started and abandoned for similar screens over the years. The complication mostly seems to be in the custom firmware these screens use and the unavailability of a helpful serial interface.
 ### UART Connector
-{% picture ZNP_K1_V1-0_UART1.jpg --alt UART1 Connector %}
+<img src="/assets/images/fullsize/ZNP_K1_V1-0_UART1.jpg" alt="UART1 Connector" />
 
 This connector is connected to the host (not the MCU), and is used to control the screen, but could be theoretically used to communicate with other UART devices. While it is possible to solder a header on to the board, it is safer to just make an RJ-11 adapter for debugging.
 
@@ -356,7 +356,7 @@ The first, and safest, way is to set one GPIO pin high to signify entering BOOT0
 
 The second, **highly-unrecommended**, way is to jump the two BOOT0 pads (notated as `BOO` in the diagram above) and press the reset button (see below). Due to close spacing on the board, it can be very easy to make unintentional contact with other components, causing significant damage.
 
-{% picture ZNP_K1_V1-0_BOOT0.jpg --alt BOOT0 Pads %}
+<img src="/assets/images/fullsize/ZNP_K1_V1-0_BOOT0.jpg" alt="BOOT0 Pads" />
 ## Firmware
 **DO NOT UPGRADE THE MCU FIRMWARE WITH KLIPPER-GENERATED BIN!**
 
@@ -417,7 +417,7 @@ However, this does not seem to work. If you *really* want to try, it's highly-re
 ## Missing/Unknown Components
 This section does not include components detailed above, such as the USB-2.0 block, BOOT0 pads, etc.
 ### Jumper Block
-{% picture ZNP_K1_V1-0_Jumpers.jpg --alt Unknown Jumper Header %}
+<img src="/assets/images/fullsize/ZNP_K1_V1-0_Jumpers.jpg" alt="Unknown Jumper Header" />
 
 This jumper block's purpose is currently unknown. It appears to be connected to the MCU and these unpopulated pads.
 
@@ -425,7 +425,7 @@ The pads appear to be the right shape, size, and configuration for resistors. Th
 
 With all the cost-saving measures they have taken with this board, it is curious that they bothered mounting the jumper pins, though. There may be some clues available in the MCU datasheet.
 ### Empty Pads
-{% picture ZNP_K1_V1-0_Pads.jpg --alt Empty Pads %}
+<img src="/assets/images/fullsize/ZNP_K1_V1-0_Pads.jpg" alt="Empty Pads" />
 
 These pads appear to be directly connected to the host SoC and/or the MCU. It could be that these are intended to modify features/settings on one or both ICs.
 
