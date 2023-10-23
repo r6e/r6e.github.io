@@ -4,3 +4,5 @@
 
 layout: default
 ---
+
+No blog posts yet! See sidebar for links to my current projects.
