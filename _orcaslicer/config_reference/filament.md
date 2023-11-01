@@ -6,7 +6,7 @@ categories: "3D Printing"
 category_title: Filament
 ---
 
-Configuration options for a configuration file with `"type": "filament"`
+Configuration options for a configuration file with `"type": "filament"`.
 
 ## Activate air filtration
 

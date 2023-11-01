@@ -6,7 +6,7 @@ categories: "3D Printing"
 category_title: "Printer"
 ---
 
-Configuration options for a configuration file with `"type": "printer"`
+Configuration options for a configuration file with `"type": "machine"`.
 
 ## Auxiliary part cooling fan
 

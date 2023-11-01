@@ -6,7 +6,7 @@ categories: "3D Printing"
 category_title: "Machine Limits"
 ---
 
-Configuration options used in multiple places, but usually `"type": "printer"`
+Configuration options for a configuration file with `"type": "machine"`.
 
 ## Maximum acceleration for extruding
 

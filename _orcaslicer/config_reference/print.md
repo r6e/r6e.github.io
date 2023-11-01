@@ -6,7 +6,7 @@ categories: "3D Printing"
 category_title: Print
 ---
 
-Configuration options for a configuration file with `"type": "print"`
+Configuration options for a configuration file with `"type": "process"`.
 
 ## Enable accel_to_decel
 

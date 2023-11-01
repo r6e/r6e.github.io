@@ -6,7 +6,7 @@ categories: "3D Printing"
 category_title: "SLA Material"
 ---
 
-Configuration options for a configuration file in the `sla_materials` directory.
+Configuration options for a configuration file in the `sla_materials` directory. There are not currently any built-in profiles for SLA printers.
 
 ## bottle_cost
 
