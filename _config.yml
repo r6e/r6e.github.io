@@ -38,6 +38,8 @@ picture:
   suppress_warnings: true
 
 collections:
+  orcaslicer:
+    output: true
   neptune_4:
     output: true
 

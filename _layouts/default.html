@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" type="text/css">
@@ -65,13 +65,33 @@
           </a>
           
 
+          <h1>OrcaSlicer</h1>
+          {% for os_page in site.orcaslicer %}
+            {% unless os_page.path contains "/config_reference" %}
+              <h3>
+                <a href="{{ os_page.url }}">
+                  &nbsp;&nbsp;&nbsp;&nbsp;{{ os_page.category_title }}
+                </a>
+              </h3>
+            {% endunless %}
+          {% endfor %}
+          <h2>Configuration Reference</h2>
+          {% for os_page in site.orcaslicer %}
+            {% if os_page.path contains "/config_reference" %}
+              <h3>
+                <a href="{{ os_page.url }}">
+                  &nbsp;&nbsp;&nbsp;&nbsp;{{ os_page.category_title }}
+                </a>
+              </h3>
+            {% endif %}
+          {% endfor %}
           <h1>Neptune 4</h1>
           {% for n4 in site.neptune_4 %}
-            <h2>
+            <h3>
               <a href="{{ n4.url }}">
                 &nbsp;&nbsp;&nbsp;&nbsp;{{ n4.category_title }}
               </a>
-            </h2>
+            </h3>
           {% endfor %}
         </aside>
       </div>
