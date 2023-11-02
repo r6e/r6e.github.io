@@ -67,7 +67,7 @@
 
           <h1>OrcaSlicer</h1>
           {% for os_page in site.orcaslicer %}
-            {% unless os_page.path contains "/config_reference" %}
+            {% unless os_page.path contains "/config_reference/" %}
               <h3>
                 <a href="{{ os_page.url }}">
                   &nbsp;&nbsp;&nbsp;&nbsp;{{ os_page.category_title }}
@@ -77,7 +77,7 @@
           {% endfor %}
           <h2>Configuration Reference</h2>
           {% for os_page in site.orcaslicer %}
-            {% if os_page.path contains "/config_reference" %}
+            {% if os_page.path contains "/config_reference/" %}
               <h3>
                 <a href="{{ os_page.url }}">
                   &nbsp;&nbsp;&nbsp;&nbsp;{{ os_page.category_title }}
