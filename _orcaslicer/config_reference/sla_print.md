@@ -6,7 +6,7 @@ categories: "3D Printing"
 category_title: "SLA Print"
 ---
 
-Configuration options for a configuration file in the `sla_print` directory. There are not currently any built-in profiles for SLA printers.
+Configuration options for a configuration file in the `sla_print` directory. No examples provided, as there are not currently any built-in profiles for SLA printers.
 
 ## Compatible machine
 
