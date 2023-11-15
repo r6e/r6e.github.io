@@ -8,308 +8,403 @@ category_title: "Machine Limits"
 
 Configuration options for a configuration file with `"type": "machine"`.
 
-## Maximum acceleration for extruding
+
+## Machine max acceleration e
+
+Maximum acceleration of E axis
+
+**Key:** `machine_max_acceleration_e`
+
+**Type:** `Floats`
+
+**Min:** `0`
+
+**Default** `[5000.0, 5000.0]`
+
+### Example
+
+```json
+"machine_max_acceleration_e": [
+    4051.38,
+    4101.1,
+    4050.57,
+    4146.04,
+    4133.92
+  ]
+```
+
+
+## Machine max acceleration extruding
 
 Maximum acceleration for extruding (M204 P)
 
 **Key:** `machine_max_acceleration_extruding`
 
-**Type:** `[float]`
-
-**Default:** `[1500.0, 1250.0]`
+**Type:** `Floats`
 
 **Min:** `0`
+
+**Default** `[1500.0, 1250.0]`
 
 ### Example
 
 ```json
-"machine_max_acceleration_extruding": ["10000"]
+"machine_max_acceleration_extruding": [
+    1191.49,
+    1457.28
+  ]
 ```
 
-## Maximum acceleration for retracting
+
+## Machine max acceleration retracting
 
 Maximum acceleration for retracting (M204 R)
 
 **Key:** `machine_max_acceleration_retracting`
 
-**Type:** `[float]`
-
-**Default:** `[1500.0, 1250.0]`
+**Type:** `Floats`
 
 **Min:** `0`
+
+**Default** `[1500.0, 1250.0]`
 
 ### Example
 
 ```json
-"machine_max_acceleration_retracting": ["10000","10000"]
+"machine_max_acceleration_retracting": [
+    1223.98,
+    1238.96,
+    1152.2
+  ]
 ```
 
-## Maximum acceleration for travel
+
+## Machine max acceleration travel
 
 Maximum acceleration for travel (M204 T), it only applies to Marlin 2
 
 **Key:** `machine_max_acceleration_travel`
 
-**Type:** `[float]`
-
-**Default:** `[0.0, 0.0]`
+**Type:** `Floats`
 
 **Min:** `0`
+
+**Default** `[0.0, 0.0]`
 
 ### Example
 
 ```json
-"machine_max_acceleration_travel": ["1000","1250"]
+"machine_max_acceleration_travel": [
+    4.88,
+    3.34,
+    1.61
+  ]
 ```
 
-## Maximum acceleration X
 
-Maximum acceleration of the X axis
+## Machine max acceleration x
+
+Maximum acceleration of X axis
 
 **Key:** `machine_max_acceleration_x`
 
-**Type:** `[float]`
-
-**Default:** `[1000.0, 1000.0]`
+**Type:** `Floats`
 
 **Min:** `0`
+
+**Default** `[1000.0, 1000.0]`
 
 ### Example
 
 ```json
-"machine_max_acceleration_x": ["2000","1000"]
+"machine_max_acceleration_x": [
+    784.75
+  ]
 ```
 
-## Maximum acceleration Y
 
-Maximum acceleration of the Y axis
+## Machine max acceleration y
+
+Maximum acceleration of Y axis
 
 **Key:** `machine_max_acceleration_y`
 
-**Type:** `[float]`
-
-**Default:** `[1000.0, 1000.0]`
+**Type:** `Floats`
 
 **Min:** `0`
+
+**Default** `[1000.0, 1000.0]`
 
 ### Example
 
 ```json
-"machine_max_acceleration_y": ["1000","960"]
+"machine_max_acceleration_y": [
+    967.11,
+    817.56
+  ]
 ```
 
-## Maximum acceleration Z
 
-Maximum acceleration of the Z axis
+## Machine max acceleration z
+
+Maximum acceleration of Z axis
 
 **Key:** `machine_max_acceleration_z`
 
-**Type:** `[float]`
-
-**Default:** `[500.0, 200.0]`
+**Type:** `Floats`
 
 **Min:** `0`
+
+**Default** `[500.0, 200.0]`
 
 ### Example
 
 ```json
-"machine_max_acceleration_z": ["100"]
+"machine_max_acceleration_z": [
+    407.26,
+    417.83,
+    271.21,
+    386.66,
+    282.68
+  ]
 ```
 
-## Maximum acceleration E
 
-Maximum acceleration of the E axis
+## Machine max jerk e
 
-**Key:** `machine_max_acceleration_e`
-
-**Type:** `[float]`
-
-**Default:** `[5000.0, 5000.0]`
-
-**Min:** `0`
-
-### Example
-
-```json
-"machine_max_acceleration_e": ["10000","5000"]
-```
-
-## Maximum jerk X
-
-Maximum jerk of the X axis
-
-**Key:** `machine_max_jerk_x`
-
-**Type:** `[float]`
-
-**Default:** `[10.0, 10.0]`
-
-**Min:** `0`
-
-### Example
-
-```json
-"machine_max_jerk_x": ["8","8"]
-```
-
-## Maximum jerk Y
-
-Maximum jerk of the Y axis
-
-**Key:** `machine_max_jerk_y`
-
-**Type:** `[float]`
-
-**Default:** `[10.0, 10.0]`
-
-**Min:** `0`
-
-### Example
-
-```json
-"machine_max_jerk_y": ["12","12"]
-```
-
-## Maximum jerk Z
-
-Maximum jerk of the Z axis
-
-**Key:** `machine_max_jerk_z`
-
-**Type:** `[float]`
-
-**Default:** `[0.2, 0.4]`
-
-**Min:** `0`
-
-### Example
-
-```json
-"machine_max_jerk_z": ["0.4","0.4"]
-```
-
-## Maximum jerk E
-
-Maximum jerk of the E axis
+Maximum jerk of E axis
 
 **Key:** `machine_max_jerk_e`
 
-**Type:** `[float]`
-
-**Default:** `[2.5, 2.5]`
+**Type:** `Floats`
 
 **Min:** `0`
+
+**Default** `[2.5, 2.5]`
 
 ### Example
 
 ```json
-"machine_max_jerk_e": ["1.5","1.5"]
+"machine_max_jerk_e": [
+    1.97,
+    2.03,
+    2.07
+  ]
 ```
 
-## Maximum speed X
 
-Maximum speed of the X axis
+## Machine max jerk x
 
-**Key:** `machine_max_speed_x`
+Maximum jerk of X axis
 
-**Type:** `[float]`
+**Key:** `machine_max_jerk_x`
 
-**Default:** `[500.0, 200.0]`
+**Type:** `Floats`
 
 **Min:** `0`
+
+**Default** `[10.0, 10.0]`
 
 ### Example
 
 ```json
-"machine_max_speed_x": ["500"]
+"machine_max_jerk_x": [
+    8.69,
+    8.37,
+    8.32,
+    8.22
+  ]
 ```
 
-## Maximum speed Y
 
-Maximum speed of the Y axis
+## Machine max jerk y
 
-**Key:** `machine_max_speed_y`
+Maximum jerk of Y axis
 
-**Type:** `[float]`
+**Key:** `machine_max_jerk_y`
 
-**Default:** `[500.0, 200.0]`
+**Type:** `Floats`
 
 **Min:** `0`
+
+**Default** `[10.0, 10.0]`
 
 ### Example
 
 ```json
-"machine_max_speed_y": ["200","100"]
+"machine_max_jerk_y": [
+    8.7,
+    9.86,
+    9.27,
+    8.74
+  ]
 ```
 
-## Maximum speed Z
 
-Maximum speed of the Z axis
+## Machine max jerk z
 
-**Key:** `machine_max_speed_z`
+Maximum jerk of Z axis
 
-**Type:** `[float]`
+**Key:** `machine_max_jerk_z`
 
-**Default:** `[12.0, 12.0]`
+**Type:** `Floats`
 
 **Min:** `0`
+
+**Default** `[0.2, 0.4]`
 
 ### Example
 
 ```json
-"machine_max_speed_z": ["20","20"]
+"machine_max_jerk_z": [
+    0.33,
+    0.36,
+    0.27,
+    0.27,
+    0.28
+  ]
 ```
 
-## Maximum speed E
 
-Maximum speed of the E axis
+## Machine max speed e
+
+Maximum speed of E axis
 
 **Key:** `machine_max_speed_e`
 
-**Type:** `[float]`
-
-**Default:** `[120.0, 120.0]`
+**Type:** `Floats`
 
 **Min:** `0`
+
+**Default** `[120.0, 120.0]`
 
 ### Example
 
 ```json
-"machine_max_speed_e": ["120","120"]
+"machine_max_speed_e": [
+    114.55,
+    90.31,
+    115.91,
+    104.29
+  ]
 ```
 
-## Minimum speed for extruding
+
+## Machine max speed x
+
+Maximum speed of X axis
+
+**Key:** `machine_max_speed_x`
+
+**Type:** `Floats`
+
+**Min:** `0`
+
+**Default** `[500.0, 200.0]`
+
+### Example
+
+```json
+"machine_max_speed_x": [
+    305.48,
+    266.53,
+    377.18
+  ]
+```
+
+
+## Machine max speed y
+
+Maximum speed of Y axis
+
+**Key:** `machine_max_speed_y`
+
+**Type:** `Floats`
+
+**Min:** `0`
+
+**Default** `[500.0, 200.0]`
+
+### Example
+
+```json
+"machine_max_speed_y": [
+    308.46,
+    427.11,
+    432.62,
+    416.41
+  ]
+```
+
+
+## Machine max speed z
+
+Maximum speed of Z axis
+
+**Key:** `machine_max_speed_z`
+
+**Type:** `Floats`
+
+**Min:** `0`
+
+**Default** `[12.0, 12.0]`
+
+### Example
+
+```json
+"machine_max_speed_z": [
+    10.78,
+    9.02,
+    11.27,
+    10.19,
+    9.66
+  ]
+```
+
+
+## Machine min extruding rate
 
 Minimum speed for extruding (M205 S)
 
 **Key:** `machine_min_extruding_rate`
 
-**Type:** `[float]`
-
-**Default:** `[0.0, 0.0]`
+**Type:** `Floats`
 
 **Min:** `0`
+
+**Default** `[0.0, 0.0]`
 
 ### Example
 
 ```json
-"machine_min_extruding_rate": ["0","0"]
+"machine_min_extruding_rate": [
+    2.17,
+    1.67,
+    0.29,
+    3.57,
+    3.98
+  ]
 ```
 
-## Minimum travel speed
+
+## Machine min travel rate
 
 Minimum travel speed (M205 T)
 
 **Key:** `machine_min_travel_rate`
 
-**Type:** `[float]`
-
-**Default:** `[0.0, 0.0]`
+**Type:** `Floats`
 
 **Min:** `0`
+
+**Default** `[0.0, 0.0]`
 
 ### Example
 
 ```json
-"machine_min_travel_rate": ["0","0"]
+"machine_min_travel_rate": [
+    4.82,
+    1.89,
+    4.23
+  ]
 ```

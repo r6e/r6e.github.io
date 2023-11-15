@@ -14,52 +14,54 @@ Klipper's max_accel_to_decel will be adjusted automatically
 
 **Key:** `accel_to_decel_enable`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `true`
+**Default** `true`
 
 ### Example
 
 ```json
-"accel_to_decel_enable": "0"
+"accel_to_decel_enable": true
 ```
+
 
 ## accel_to_decel
 
-Klipper's max_accel_to_decel will be adjusted to this % of acceleration
+Klipper's max_accel_to_decel will be adjusted to this %% of acceleration
 
 **Key:** `accel_to_decel_factor`
 
-**Type:** `percent`
-
-**Default:** `50`
-
-**Max:** `100`
+**Type:** `Percent`
 
 **Min:** `1`
 
+**Max:** `100`
+
+**Default** `50`
+
 ### Example
 
 ```json
-"accel_to_decel_factor": "50%"
+"accel_to_decel_factor": "41%"
 ```
 
-## Adaptive layer height
 
-Enabling this option means the height of every layer except the first will be automatically calculated during slicing according to the slope of the model’s surface.
-Note that this option only takes effect if no prime tower is generated in current plate.
+## Adaptive layer height [deprecated]
+
+[No documentation provided]
 
 **Key:** `adaptive_layer_height`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `0`
+**Default** `false`
 
 ### Example
 
 ```json
-"adaptive_layer_height": "1"
+"adaptive_layer_height": false
 ```
+
 
 ## Bottom shell layers
 
@@ -67,17 +69,18 @@ This is the number of solid layers of bottom shell, including the bottom surface
 
 **Key:** `bottom_shell_layers`
 
-**Type:** `integer`
-
-**Default:** `3`
+**Type:** `Int`
 
 **Min:** `0`
+
+**Default** `3`
 
 ### Example
 
 ```json
-"bottom_shell_layers": "3"
+"bottom_shell_layers": 2
 ```
+
 
 ## Bottom shell thickness
 
@@ -85,17 +88,18 @@ The number of bottom solid layers is increased when slicing if the thickness cal
 
 **Key:** `bottom_shell_thickness`
 
-**Type:** `float`
-
-**Default:** `0.0`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `0.0`
 
 ### Example
 
 ```json
-"bottom_shell_thickness": "0"
+"bottom_shell_thickness": 2.5
 ```
+
 
 ## Bottom surface flow ratio
 
@@ -103,19 +107,20 @@ This factor affects the amount of material for bottom solid infill
 
 **Key:** `bottom_solid_infill_flow_ratio`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `1`
+**Min:** `0`
 
 **Max:** `2`
 
-**Min:** `0`
+**Default** `1`
 
 ### Example
 
 ```json
-"bottom_solid_infill_flow_ratio": "1"
+"bottom_solid_infill_flow_ratio": 1.07
 ```
+
 
 ## Bottom surface pattern
 
@@ -123,61 +128,57 @@ Line pattern of bottom surface infill, not bridge infill
 
 **Key:** `bottom_surface_pattern`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `monotonic`
+**Default** `Monotonic`
 
-**Values:**
-* **Concentric**: `concentric`
-* **Rectilinear**: `zig-zag`
-* **Monotonic**: `monotonic`
-* **Monotonic line**: `monotonicline`
-* **Aligned Rectilinear**: `alignedrectilinear`
-* **Hilbert Curve**: `hilbertcurve`
-* **Archimedean Chords**: `archimedeanchords`
-* **Octagram Spiral**: `octagramspiral`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"bottom_surface_pattern": "monotonic"
+"bottom_surface_pattern": "zig-zag"
 ```
 
-## Bridge acceleration
+
+## Bridge
 
 Acceleration of bridges. If the value is expressed as a percentage (e.g. 50%), it will be calculated based on the outer wall acceleration.
 
 **Key:** `bridge_acceleration`
 
-**Type:** `float`, `percent`
-
-**Default:** `50%`
+**Type:** `FloatOrPercent`
 
 **Min:** `0`
+
+**Default** `50%`
 
 ### Example
 
 ```json
-"bridge_acceleration": "800"
+"bridge_acceleration": "47%"
 ```
 
-## Bridge angle
+
+## Bridge infill direction
 
 Bridging angle override. If left to zero, the bridging angle will be calculated automatically. Otherwise the provided angle will be used for external bridges. Use 180°for zero angle.
 
 **Key:** `bridge_angle`
 
-**Type:** `float`
-
-**Default:** `0.0`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `0.0`
 
 ### Example
 
 ```json
-"bridge_angle": "0"
+"bridge_angle": 1.92
 ```
+
 
 ## Bridge density
 
@@ -185,19 +186,20 @@ Density of external bridges. 100% means solid bridge. Default is 100%.
 
 **Key:** `bridge_density`
 
-**Type:** `percent`
+**Type:** `Percent`
 
-**Default:** `100`
+**Min:** `10`
 
 **Max:** `100`
 
-**Min:** `10`
+**Default** `100`
 
 ### Example
 
 ```json
-"bridge_density": "100%"
+"bridge_density": "79%"
 ```
+
 
 ## Bridge flow
 
@@ -205,19 +207,20 @@ Decrease this value slightly(for example 0.9) to reduce the amount of material f
 
 **Key:** `bridge_flow`
 
-**Type:** `float`
-
-**Default:** `1`
-
-**Max:** `2.0`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Max:** `2`
+
+**Default** `1`
 
 ### Example
 
 ```json
-"bridge_flow": "0.80"
+"bridge_flow": 1.17
 ```
+
 
 ## Don't support bridges
 
@@ -225,15 +228,16 @@ Don't support the whole bridge area which make support very large. Bridge usuall
 
 **Key:** `bridge_no_support`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"bridge_no_support": "0"
+"bridge_no_support": false
 ```
+
 
 ## Bridge speed
 
@@ -241,58 +245,58 @@ Speed of bridge and completely overhang wall
 
 **Key:** `bridge_speed`
 
-**Type:** `float`
-
-**Default:** `25`
+**Type:** `Float`
 
 **Min:** `1`
 
+**Default** `25`
+
 ### Example
 
 ```json
-"bridge_speed": "25"
+"bridge_speed": 23.52
 ```
+
 
 ## Brim ear detection radius
 
-The geometry will be decimated before dectecting sharp angles. This parameter indicates the minimum length of the deviation for the decimation.
-0 to deactivate
+The geometry will be decimated before dectecting sharp angles. This parameter indicates the minimum length of the deviation for the decimation.\n0 to deactivate
 
 **Key:** `brim_ears_detection_length`
 
-**Type:** `float`
-
-**Default:** `1`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `1`
 
 ### Example
 
 ```json
-"brim_ears_detection_length": "1"
+"brim_ears_detection_length": 1.04
 ```
+
 
 ## Brim ear max angle
 
-Maximum angle to let a brim ear appear. 
-If set to 0, no brim will be created. 
-If set to ~180, brim will be created on everything but straight sections.
+Maximum angle to let a brim ear appear. \nIf set to 0, no brim will be created. \nIf set to ~180, brim will be created on everything but straight sections.
 
 **Key:** `brim_ears_max_angle`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `125`
+**Min:** `0`
 
 **Max:** `180`
 
-**Min:** `0`
+**Default** `125`
 
 ### Example
 
 ```json
-"brim_ears_max_angle": "125"
+"brim_ears_max_angle": 147.66
 ```
+
 
 ## Brim-object gap
 
@@ -300,19 +304,20 @@ A gap between innermost brim line and object can make brim be removed more easil
 
 **Key:** `brim_object_gap`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0.0`
+**Min:** `0`
 
 **Max:** `2`
 
-**Min:** `0`
+**Default** `0.0`
 
 ### Example
 
 ```json
-"brim_object_gap": "0"
+"brim_object_gap": 2
 ```
+
 
 ## Brim type
 
@@ -320,23 +325,19 @@ This controls the generation of the brim at outer and/or inner side of models. A
 
 **Key:** `brim_type`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `auto_brim`
+**Default** `AutoBrim`
 
-**Values:**
-* **Auto**: `auto_brim`
-* **Mouse ear**: `brim_ears`
-* **Outer brim only**: `outer_only`
-* **Inner brim only**: `inner_only`
-* **Outer and inner brim**: `outer_and_inner`
-* **No-brim**: `no_brim`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"brim_type": "no_brim"
+"brim_type": "inner_only"
 ```
+
 
 ## Brim width
 
@@ -344,104 +345,75 @@ Distance from model to the outermost brim line
 
 **Key:** `brim_width`
 
-**Type:** `float`
-
-**Default:** `0.0`
-
-**Max:** `100`
+**Type:** `Float`
 
 **Min:** `0`
 
-### Example
+**Max:** `100`
 
-```json
-"brim_width": "5"
-```
-
-## Compatible machine
-
-**Key:** `compatible_printers`
-
-**Type:** `[string]`
-
-**Default:** `null`
+**Default** `0.0`
 
 ### Example
 
 ```json
-"compatible_printers": [
-    "Anker M5 0.4 nozzle",
-    "Anker M5C 0.4 nozzle"
-]
+"brim_width": 3.23
 ```
 
-## Compatible machine condition
 
-A boolean expression using the configuration values of an active printer profile. If this expression evaluates to true, this profile is considered compatible with the active printer profile.
-
-**Key:** `compatible_printers_condition`
-
-**Type:** `string`
-
-**Default:** `null`
-
-### Example
-
-```json
-"compatible_printers_condition": "printer_notes=~/.*PRINTER_VENDOR_PRUSA3D.*/ and printer_notes=~/.*PRINTER_MODEL_MK3.*/ and nozzle_diameter[0]==0.4"
-```
-
-## Default acceleration
+## Normal printing
 
 The default acceleration of both normal printing and travel except initial layer
 
 **Key:** `default_acceleration`
 
-**Type:** `float`
-
-**Default:** `500.0`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `500.0`
 
 ### Example
 
 ```json
-"default_acceleration": "10000"
+"default_acceleration": 541.85
 ```
+
 
 ## Default jerk
 
-The default jerk of both normal printing and travel except initial layer
+Default
 
 **Key:** `default_jerk`
 
-**Type:** `float`
-
-**Default:** `0`
+**Type:** `Float`
 
 **Min:** `0`
 
+**Default** `0`
+
 ### Example
 
 ```json
-"default_jerk": "0"
+"default_jerk": 4.26
 ```
+
 
 ## Detect overhang wall
 
-Detect the overhang percentage relative to line width and use different speed to print. For 100% overhang, bridge speed is used.
+Detect the overhang percentage relative to line width and use different speed to print. For 100%% overhang, bridge speed is used.
 
 **Key:** `detect_overhang_wall`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `true`
+**Default** `true`
 
 ### Example
 
 ```json
-"detect_overhang_wall": "1"
+"detect_overhang_wall": false
 ```
+
 
 ## Detect thin wall
 
@@ -449,57 +421,36 @@ Detect thin wall which can't contain two line width. And use single line to prin
 
 **Key:** `detect_thin_wall`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"detect_thin_wall": "1"
+"detect_thin_wall": true
 ```
+
 
 ## Draft shield
 
-With draft shield active, the skirt will be printed skirt_distance from the object, possibly intersecting brim.
-Enabled = skirt is as tall as the highest printed object.
-Limited = skirt is as tall as specified by skirt_height.
-This is useful to protect an ABS or ASA print from warping and detaching from print bed due to wind draft.
+[No documentation provided]
 
 **Key:** `draft_shield`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `disabled`
+**Default** `Disabled`
 
-**Values:**
-* **Disabled**: `disabled`
-* **Limited**: `limited`
-* **Enabled**: `enabled`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"draft_shield": "disabled"
+"draft_shield": "enabled"
 ```
 
-## Elephant foot compensation
-
-Shrink the initial layer on build plate to compensate for elephant foot effect
-
-**Key:** `elefant_foot_compensation`
-
-**Type:** `float`
-
-**Default:** `0.0`
-
-**Min:** `0`
-
-### Example
-
-```json
-"elefant_foot_compensation": "0"
-```
 
 ## Elephant foot compensation layers
 
@@ -507,17 +458,18 @@ The number of layers on which the elephant foot compensation will be active. The
 
 **Key:** `elefant_foot_compensation_layers`
 
-**Type:** ``
-
-**Default:** `1`
+**Type:** `Int`
 
 **Min:** `1`
+
+**Default** `1`
 
 ### Example
 
 ```json
-"elefant_foot_compensation_layers": 
+"elefant_foot_compensation_layers": 1
 ```
+
 
 ## Arc fitting
 
@@ -525,15 +477,16 @@ Enable this to get a G-code file which has G2 and G3 moves. And the fitting tole
 
 **Key:** `enable_arc_fitting`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `0`
+**Default** `false`
 
 ### Example
 
 ```json
-"enable_arc_fitting": "0"
+"enable_arc_fitting": true
 ```
+
 
 ## Slow down for overhang
 
@@ -541,31 +494,33 @@ Enable this option to slow printing down for different overhang degree
 
 **Key:** `enable_overhang_speed`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `true`
+**Default** `true`
 
 ### Example
 
 ```json
-"enable_overhang_speed": "1"
+"enable_overhang_speed": true
 ```
+
 
 ## Enable prime tower
 
-The wiping tower can be used to clean up the residue on the nozzle and stabilize the chamber pressure inside the nozzle, in order to avoid appearance defects when printing objects.
+[No documentation provided]
 
 **Key:** `enable_prime_tower`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"enable_prime_tower": "0"
+"enable_prime_tower": false
 ```
+
 
 ## Enable support
 
@@ -573,35 +528,37 @@ Enable support generation.
 
 **Key:** `enable_support`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"enable_support": "0"
+"enable_support": true
 ```
 
-## Enforce support for the first n layers
 
-Generate support material for the specified number of layers counting from bottom, regardless of whether normal support material is enabled or not and regardless of any angle threshold. This is useful for getting more adhesion of objects having a very thin or poor footprint on the build plate.
+## Enforce support for the first
+
+[No documentation provided]
 
 **Key:** `enforce_support_layers`
 
-**Type:** `integer`
+**Type:** `Int`
 
-**Default:** `0`
+**Min:** `0`
 
 **Max:** `5000`
 
-**Min:** `0`
+**Default** `0`
 
 ### Example
 
 ```json
-"enforce_support_layers": "0"
+"enforce_support_layers": 2
 ```
+
 
 ## Exclude objects
 
@@ -609,47 +566,33 @@ Enable this option to add EXCLUDE OBJECT command in g-code
 
 **Key:** `exclude_object`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `1`
+**Default** `true`
 
 ### Example
 
 ```json
-"exclude_object": "0"
+"exclude_object": true
 ```
+
 
 ## Extra perimeters on overhangs
 
-Create additional perimeter paths over steep overhangs and areas where bridges cannot be anchored. 
+Create additional perimeter paths over steep overhangs and areas where bridges cannot be anchored.
 
 **Key:** `extra_perimeters_on_overhangs`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
-
-### Example
-
-```json
-"extra_perimeters_on_overhangs": "0"
-```
-
-## Filename format
-
-User can self-define the project file name when export
-
-**Key:** `filename_format`
-
-**Type:** `string`
-
-**Default:** `{input_filename_base}_{filament_type[0]}_{print_time}.gcode`
+**Default** `false`
 
 ### Example
 
 ```json
-"filename_format": "{input_filename_base}_{filament_type[0]}_{print_time}.gcode"
+"extra_perimeters_on_overhangs": true
 ```
+
 
 ## Filter out tiny gaps
 
@@ -657,15 +600,16 @@ Filter out gaps smaller than the threshold specified
 
 **Key:** `filter_out_gap_fill`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0`
+**Default** `0`
 
 ### Example
 
 ```json
-"filter_out_gap_fill": "0"
+"filter_out_gap_fill": 3.16
 ```
+
 
 ## Flush into objects' infill
 
@@ -673,15 +617,16 @@ Purging after filament change will be done inside objects' infills. This may low
 
 **Key:** `flush_into_infill`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"flush_into_infill": "0"
+"flush_into_infill": true
 ```
+
 
 ## Flush into this object
 
@@ -689,15 +634,16 @@ This object will be used to purge the nozzle after a filament change to save fil
 
 **Key:** `flush_into_objects`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"flush_into_objects": "0"
+"flush_into_objects": true
 ```
+
 
 ## Flush into objects' support
 
@@ -705,15 +651,16 @@ Purging after filament change will be done inside objects' support. This may low
 
 **Key:** `flush_into_support`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `true`
+**Default** `true`
 
 ### Example
 
 ```json
-"flush_into_support": "1"
+"flush_into_support": false
 ```
+
 
 ## Fuzzy Skin
 
@@ -721,21 +668,19 @@ Randomly jitter while printing the wall, so that the surface has a rough look. T
 
 **Key:** `fuzzy_skin`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `none`
+**Default** `None`
 
-**Values:**
-* **None**: `none`
-* **Contour**: `external`
-* **Contour and hole**: `all`
-* **All walls**: `allwalls`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"fuzzy_skin": "none"
+"fuzzy_skin": "external"
 ```
+
 
 ## Fuzzy skin point distance
 
@@ -743,19 +688,20 @@ The average diatance between the random points introducded on each line segment
 
 **Key:** `fuzzy_skin_point_distance`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0.8`
+**Min:** `0`
 
 **Max:** `5`
 
-**Min:** `0`
+**Default** `0.8`
 
 ### Example
 
 ```json
-"fuzzy_skin_point_distance": "0.8"
+"fuzzy_skin_point_distance": 0.6
 ```
+
 
 ## Fuzzy skin thickness
 
@@ -763,37 +709,39 @@ The width within which to jitter. It's adversed to be below outer wall line widt
 
 **Key:** `fuzzy_skin_thickness`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0.3`
+**Min:** `0`
 
 **Max:** `1`
 
-**Min:** `0`
+**Default** `0.3`
 
 ### Example
 
 ```json
-"fuzzy_skin_thickness": "0.3"
+"fuzzy_skin_thickness": 0.35
 ```
 
-## Gap infill speed
+
+## Gap infill
 
 Speed of gap infill. Gap usually has irregular line width and should be printed more slowly
 
 **Key:** `gap_infill_speed`
 
-**Type:** `float`
-
-**Default:** `30`
+**Type:** `Float`
 
 **Min:** `1`
+
+**Default** `30`
 
 ### Example
 
 ```json
-"gap_infill_speed": "30"
+"gap_infill_speed": 27.78
 ```
+
 
 ## Add line number
 
@@ -801,15 +749,16 @@ Enable this to add line number(Nx) at the beginning of each G-Code line
 
 **Key:** `gcode_add_line_number`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `0`
+**Default** `false`
 
 ### Example
 
 ```json
-"gcode_add_line_number": "0"
+"gcode_add_line_number": false
 ```
+
 
 ## Verbose G-code
 
@@ -817,15 +766,16 @@ Enable this to get a commented G-code file, with each line explained by a descri
 
 **Key:** `gcode_comments`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `0`
+**Default** `false`
 
 ### Example
 
 ```json
-"gcode_comments": "0"
+"gcode_comments": true
 ```
+
 
 ## Label objects
 
@@ -833,54 +783,50 @@ Enable this to add comments into the G-Code labeling print moves with what objec
 
 **Key:** `gcode_label_objects`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `1`
+**Default** `true`
 
 ### Example
 
 ```json
-"gcode_label_objects": "0"
+"gcode_label_objects": false
 ```
+
 
 ## Convert holes to polyholes
 
-Search for almost-circular holes that span more than one layer and convert the geometry to polyholes. Use the nozzle size and the (biggest) diameter to compute the polyhole.
-See http://hydraraptor.blogspot.com/2011/02/polyholes.html
+Search for almost-circular holes that span more than one layer and convert the geometry to polyholes. Use the nozzle size and the (biggest) diameter to compute the polyhole.\nSee http://hydraraptor.blogspot.com/2011/02/polyholes.html
 
 **Key:** `hole_to_polyhole`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"hole_to_polyhole": "1"
+"hole_to_polyhole": true
 ```
 
-**Note:** There are currently no built-in profiles that use this setting.
 
 ## Polyhole detection margin
 
-Maximum defection of a point to the estimated radius of the circle.
-As cylinders are often exported as triangles of varying size, points may not be on the circle circumference. This setting allows you some leway to broaden the detection.
-In mm or in % of the radius.
+Maximum defection of a point to the estimated radius of the circle.\nAs cylinders are often exported as triangles of varying size, points may not be on the circle circumference. This setting allows you some leway to broaden the detection.\nIn mm or in % of the radius.
 
 **Key:** `hole_to_polyhole_threshold`
 
-**Type:** `float`, `percent`
+**Type:** `FloatOrPercent`
 
-**Default:** `0.01`
+**Default** `0.01`
 
 ### Example
 
 ```json
-"hole_to_polyhole_threshold": "0.02"
+"hole_to_polyhole_threshold": 0.01
 ```
 
-**Note:** There are currently no built-in profiles that use this setting.
 
 ## Polyhole twist
 
@@ -888,83 +834,73 @@ Rotate the polyhole every layer.
 
 **Key:** `hole_to_polyhole_twisted`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `true`
+**Default** `true`
 
 ### Example
 
 ```json
-"hole_to_polyhole_twisted": "1"
+"hole_to_polyhole_twisted": false
 ```
 
-**Note:** There are currently no built-in profiles that use this setting.
 
 ## Independent support layer height
 
-Support layer uses layer height independent with object layer. This is to support customizing z-gap and save print time.This option will be invalid when the prime tower is enabled.
+[No documentation provided]
 
 **Key:** `independent_support_layer_height`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `true`
+**Default** `true`
 
 ### Example
 
 ```json
-"independent_support_layer_height": "1"
+"independent_support_layer_height": false
 ```
+
 
 ## Sparse infill anchor length
 
-Connect an infill line to an internal perimeter with a short segment of an additional perimeter. If expressed as percentage (example: 15%) it is calculated over infill extrusion width. Slic3r tries to connect two close infill lines to a short perimeter segment. If no such perimeter segment shorter than infill_anchor_max is found, the infill line is connected to a perimeter segment at just one side and the length of the perimeter segment taken is limited to this parameter, but no longer than anchor_length_max. 
-Set this parameter to zero to disable anchoring perimeters connected to a single infill line.
+Connect an infill line to an internal perimeter with a short segment of an additional perimeter. If expressed as percentage (example: 15%) it is calculated over infill extrusion width. Slic3r tries to connect two close infill lines to a short perimeter segment. If no such perimeter segment shorter than infill_anchor_max is found, the infill line is connected to a perimeter segment at just one side and the length of the perimeter segment taken is limited to this parameter, but no longer than anchor_length_max. \nSet this parameter to zero to disable anchoring perimeters connected to a single infill line.
 
 **Key:** `infill_anchor`
 
-**Type:** `float`, `percent`
+**Type:** `FloatOrPercent`
 
-**Default:** `400%`
+**Default** `400%`
 
-**Values:**
-* **0 (no open anchors)**: `0`
-* **1 mm**: `1`
-* **2 mm**: `2`
-* **5 mm**: `5`
-* **10 mm**: `10`
-* **1000 (unlimited)**: `1000`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"infill_anchor": "400%"
+"infill_anchor": "382%"
 ```
+
 
 ## Maximum length of the infill anchor
 
-Connect an infill line to an internal perimeter with a short segment of an additional perimeter. If expressed as percentage (example: 15%) it is calculated over infill extrusion width. Slic3r tries to connect two close infill lines to a short perimeter segment. If no such perimeter segment shorter than this parameter is found, the infill line is connected to a perimeter segment at just one side and the length of the perimeter segment taken is limited to infill_anchor, but no longer than this parameter. 
-If set to 0, the old algorithm for infill connection will be used, it should create the same result as with 1000 & 0.
+[No documentation provided]
 
 **Key:** `infill_anchor_max`
 
-**Type:** `float`, `percent`
+**Type:** `FloatOrPercent`
 
-**Default:** `20`
+**Default** `20.0`
 
-**Values:**
-* **0 (no open anchors)**: `0`
-* **1 mm**: `1`
-* **2 mm**: `2`
-* **5 mm**: `5`
-* **10 mm**: `10`
-* **1000 (unlimited)**: `1000`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"infill_anchor_max": "20"
+"infill_anchor_max": "24%"
 ```
+
 
 ## Infill combination
 
@@ -972,15 +908,16 @@ Automatically Combine sparse infill of several layers to print together to reduc
 
 **Key:** `infill_combination`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"infill_combination": "0"
+"infill_combination": false
 ```
+
 
 ## Infill direction
 
@@ -988,37 +925,39 @@ Angle for sparse infill pattern, which controls the start or main direction of l
 
 **Key:** `infill_direction`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `45`
+**Min:** `0`
 
 **Max:** `360`
 
-**Min:** `0`
+**Default** `45`
 
 ### Example
 
 ```json
-"infill_direction": "45"
+"infill_direction": 35.76
 ```
 
-## Infill
+
+## Infill jerk
 
 Jerk for infill
 
 **Key:** `infill_jerk`
 
-**Type:** `float`
-
-**Default:** `9`
+**Type:** `Float`
 
 **Min:** `1`
+
+**Default** `9`
 
 ### Example
 
 ```json
-"infill_jerk": "12"
+"infill_jerk": 8.17
 ```
+
 
 ## Infill/Wall overlap
 
@@ -1026,31 +965,16 @@ Infill area is enlarged slightly to overlap with wall for better bonding. The pe
 
 **Key:** `infill_wall_overlap`
 
-**Type:** `percent`
+**Type:** `Percent`
 
-**Default:** `15`
-
-### Example
-
-```json
-"infill_wall_overlap": "15%"
-```
-
-## Inherits profile
-
-Name of parent profile
-
-**Key:** `inherits`
-
-**Type:** `string`
-
-**Default:** `null`
+**Default** `15`
 
 ### Example
 
 ```json
-"inherits": "fdm_process_common"
+"infill_wall_overlap": "12%"
 ```
+
 
 ## Initial layer acceleration
 
@@ -1058,35 +982,37 @@ Acceleration of initial layer. Using a lower value can improve build plate adhes
 
 **Key:** `initial_layer_acceleration`
 
-**Type:** `float`
-
-**Default:** `300`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `300`
 
 ### Example
 
 ```json
-"initial_layer_acceleration": "5000"
+"initial_layer_acceleration": 326.77
 ```
 
-## Initial layer infill speed
+
+## Initial layer infill
 
 Speed of solid infill part of initial layer
 
 **Key:** `initial_layer_infill_speed`
 
-**Type:** `float`
-
-**Default:** `60.0`
+**Type:** `Float`
 
 **Min:** `1`
+
+**Default** `60.0`
 
 ### Example
 
 ```json
-"initial_layer_infill_speed": "120"
+"initial_layer_infill_speed": 67.37
 ```
+
 
 ## Initial layer jerk
 
@@ -1094,17 +1020,18 @@ Jerk for initial layer
 
 **Key:** `initial_layer_jerk`
 
-**Type:** `float`
-
-**Default:** `9`
+**Type:** `Float`
 
 **Min:** `1`
+
+**Default** `9`
 
 ### Example
 
 ```json
-"initial_layer_jerk": "8"
+"initial_layer_jerk": 8.02
 ```
+
 
 ## Initial layer line width
 
@@ -1112,19 +1039,20 @@ Line width of initial layer. If expressed as a %, it will be computed over the n
 
 **Key:** `initial_layer_line_width`
 
-**Type:** `float`, `percent`
+**Type:** `FloatOrPercent`
 
-**Default:** `0.0`
+**Min:** `0`
 
 **Max:** `1000`
 
-**Min:** `0`
+**Default** `0.0`
 
 ### Example
 
 ```json
-"initial_layer_line_width": "0.5"
+"initial_layer_line_width": "4%"
 ```
+
 
 ## First layer minimum wall width
 
@@ -1132,17 +1060,18 @@ The minimum wall width that should be used for the first layer is recommended to
 
 **Key:** `initial_layer_min_bead_width`
 
-**Type:** `percent`
-
-**Default:** `85`
+**Type:** `Percent`
 
 **Min:** `0`
+
+**Default** `85`
 
 ### Example
 
 ```json
-"initial_layer_min_bead_width": "85%"
+"initial_layer_min_bead_width": "82%"
 ```
+
 
 ## Initial layer height
 
@@ -1150,17 +1079,18 @@ Height of initial layer. Making initial layer height to be thick slightly can im
 
 **Key:** `initial_layer_print_height`
 
-**Type:** `float`
-
-**Default:** `0.2`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `0.2`
 
 ### Example
 
 ```json
-"initial_layer_print_height": "0.2"
+"initial_layer_print_height": 0.15
 ```
+
 
 ## Initial layer speed
 
@@ -1168,17 +1098,18 @@ Speed of initial layer except the solid infill part
 
 **Key:** `initial_layer_speed`
 
-**Type:** `float`
-
-**Default:** `30`
+**Type:** `Float`
 
 **Min:** `1`
+
+**Default** `30`
 
 ### Example
 
 ```json
-"initial_layer_speed": "20"
+"initial_layer_speed": 35.13
 ```
+
 
 ## Initial layer travel speed
 
@@ -1186,17 +1117,18 @@ Travel speed of initial layer
 
 **Key:** `initial_layer_travel_speed`
 
-**Type:** `float`, `percent`
-
-**Default:** `100%`
+**Type:** `FloatOrPercent`
 
 **Min:** `1`
+
+**Default** `100%`
 
 ### Example
 
 ```json
-"initial_layer_travel_speed": "50%"
+"initial_layer_travel_speed": "98%"
 ```
+
 
 ## Inner wall acceleration
 
@@ -1204,17 +1136,18 @@ Acceleration of inner walls
 
 **Key:** `inner_wall_acceleration`
 
-**Type:** `float`
-
-**Default:** `10000`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `10000`
 
 ### Example
 
 ```json
-"inner_wall_acceleration": "10000"
+"inner_wall_acceleration": 10225.13
 ```
+
 
 ## Inner wall jerk
 
@@ -1222,17 +1155,18 @@ Jerk of inner walls
 
 **Key:** `inner_wall_jerk`
 
-**Type:** `float`
-
-**Default:** `9`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `9`
 
 ### Example
 
 ```json
-"inner_wall_jerk": "7"
+"inner_wall_jerk": 10.19
 ```
+
 
 ## Inner wall line width
 
@@ -1240,19 +1174,20 @@ Line width of inner wall. If expressed as a %, it will be computed over the nozz
 
 **Key:** `inner_wall_line_width`
 
-**Type:** `float`, `percent`
+**Type:** `FloatOrPercent`
 
-**Default:** `0.0`
+**Min:** `0`
 
 **Max:** `1000`
 
-**Min:** `0`
+**Default** `0.0`
 
 ### Example
 
 ```json
-"inner_wall_line_width": "0.45"
+"inner_wall_line_width": "4%"
 ```
+
 
 ## Inner wall speed
 
@@ -1260,17 +1195,18 @@ Speed of inner wall
 
 **Key:** `inner_wall_speed`
 
-**Type:** `float`
-
-**Default:** `60`
+**Type:** `Float`
 
 **Min:** `1`
+
+**Default** `60`
 
 ### Example
 
 ```json
-"inner_wall_speed": "60"
+"inner_wall_speed": 69.68
 ```
+
 
 ## Interface shells
 
@@ -1278,15 +1214,16 @@ Force the generation of solid shells between adjacent materials/volumes. Useful 
 
 **Key:** `interface_shells`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"interface_shells": "0"
+"interface_shells": true
 ```
+
 
 ## Internal bridge speed
 
@@ -1294,17 +1231,18 @@ Speed of internal bridge. If the value is expressed as a percentage, it will be 
 
 **Key:** `internal_bridge_speed`
 
-**Type:** `float`, `percent`
-
-**Default:** `150%`
+**Type:** `FloatOrPercent`
 
 **Min:** `1`
+
+**Default** `150%`
 
 ### Example
 
 ```json
-"internal_bridge_speed": "100%"
+"internal_bridge_speed": "140%"
 ```
+
 
 ## Internal solid infill acceleration
 
@@ -1312,17 +1250,18 @@ Acceleration of internal solid infill. If the value is expressed as a percentage
 
 **Key:** `internal_solid_infill_acceleration`
 
-**Type:** `float`, `percent`
-
-**Default:** `100%`
+**Type:** `FloatOrPercent`
 
 **Min:** `0`
+
+**Default** `100%`
 
 ### Example
 
 ```json
-"internal_solid_infill_acceleration": "7000"
+"internal_solid_infill_acceleration": "119%"
 ```
+
 
 ## Internal solid infill line width
 
@@ -1330,19 +1269,20 @@ Line width of internal solid infill. If expressed as a %, it will be computed ov
 
 **Key:** `internal_solid_infill_line_width`
 
-**Type:** `float`, `percent`
+**Type:** `FloatOrPercent`
 
-**Default:** `0.0`
+**Min:** `0`
 
 **Max:** `1000`
 
-**Min:** `0`
+**Default** `0.0`
 
 ### Example
 
 ```json
-"internal_solid_infill_line_width": "0.4"
+"internal_solid_infill_line_width": "4%"
 ```
+
 
 ## Internal solid infill pattern
 
@@ -1350,25 +1290,19 @@ Line pattern of internal solid infill. if the detect nattow internal solid infil
 
 **Key:** `internal_solid_infill_pattern`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `monotonic`
+**Default** `Monotonic`
 
-**Values:**
-* **Concentric**: `concentric`
-* **Rectilinear**: `zig-zag`
-* **Monotonic**: `monotonic`
-* **Monotonic line**: `monotonicline`
-* **Aligned Rectilinear**: `alignedrectilinear`
-* **Hilbert Curve**: `hilbertcurve`
-* **Archimedean Chords**: `archimedeanchords`
-* **Octagram Spiral**: `octagramspiral`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"internal_solid_infill_pattern": "zig-zag"
+"internal_solid_infill_pattern": "alignedrectilinear"
 ```
+
 
 ## Internal solid infill speed
 
@@ -1376,17 +1310,18 @@ Speed of internal solid infill, not the top and bottom surface
 
 **Key:** `internal_solid_infill_speed`
 
-**Type:** `float`
-
-**Default:** `100`
+**Type:** `Float`
 
 **Min:** `1`
+
+**Default** `100`
 
 ### Example
 
 ```json
-"internal_solid_infill_speed": "30"
+"internal_solid_infill_speed": 98.6
 ```
+
 
 ## Ironing angle
 
@@ -1394,21 +1329,20 @@ The angle ironing is done at. A negative number disables this function and uses 
 
 **Key:** `ironing_angle`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `-1`
+**Min:** `-1`
 
 **Max:** `359`
 
-**Min:** `-1`
+**Default** `-1`
 
 ### Example
 
 ```json
-"ironing_angle": "45"
+"ironing_angle": -0.77
 ```
 
-**Note:** There are currently no built-in profiles that use this setting.
 
 ## Ironing flow
 
@@ -1416,19 +1350,20 @@ The amount of material to extrude during ironing. Relative to flow of normal lay
 
 **Key:** `ironing_flow`
 
-**Type:** `percent`
+**Type:** `Percent`
 
-**Default:** `10`
+**Min:** `0`
 
 **Max:** `100`
 
-**Min:** `0`
+**Default** `10`
 
 ### Example
 
 ```json
-"ironing_flow": "15%"
+"ironing_flow": "9%"
 ```
+
 
 ## Ironing Pattern
 
@@ -1436,34 +1371,19 @@ The pattern that will be used when ironing
 
 **Key:** `ironing_pattern`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `rectilinear`
+**Default** `Rectilinear`
 
-**Values:**
-* **Concentric**: `concentric`
-* **Rectilinear**: `zig-zag`
-* **Grid**: `grid`
-* **Line**: `line`
-* **Cubic**: `cubic`
-* **Triangles**: `triangles`
-* **Tri-hexagon**: `tri-hexagon`
-* **Gyroid**: `gyroid`
-* **Honeycomb**: `honeycomb`
-* **Adaptive Cubic**: `adaptivecubic`
-* **Aligned Rectilinear**: `alignedrectilinear`
-* **3D Honeycomb**: `3dhoneycomb`
-* **Hilbert Curve**: `hilbertcurve`
-* **Archimedean Chords**: `archimedeanchords`
-* **Octagram Spiral**: `octagramspiral`
-* **Support Cubic**: `supportcubic`
-* **Lightning**: `lightning`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"ironing_pattern": "zig-zag"
+"ironing_pattern": "concentric"
 ```
+
 
 ## Ironing line spacing
 
@@ -1471,19 +1391,20 @@ The distance between the lines of ironing
 
 **Key:** `ironing_spacing`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0.1`
+**Min:** `0`
 
 **Max:** `1`
 
-**Min:** `0`
+**Default** `0.1`
 
 ### Example
 
 ```json
-"ironing_spacing": "0.1"
+"ironing_spacing": 0.11
 ```
+
 
 ## Ironing speed
 
@@ -1491,17 +1412,18 @@ Print speed of ironing lines
 
 **Key:** `ironing_speed`
 
-**Type:** `float`
-
-**Default:** `20`
+**Type:** `Float`
 
 **Min:** `1`
+
+**Default** `20`
 
 ### Example
 
 ```json
-"ironing_speed": "15"
+"ironing_speed": 24.54
 ```
+
 
 ## Ironing Type
 
@@ -1509,59 +1431,40 @@ Ironing is using small flow to print on same height of surface again to make fla
 
 **Key:** `ironing_type`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `no ironing`
+**Default** `NoIroning`
 
-**Values:**
-* **No ironing**: `no ironing`
-* **Top surfaces**: `top`
-* **Topmost surface**: `topmost`
-* **All solid layer**: `solid`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"ironing_type": "no ironing"
+"ironing_type": "topmost"
 ```
 
-## Layer height
 
-Slicing height for each layer. Smaller layer height means more accurate and more printing time
+## Line width
 
-**Key:** `layer_height`
-
-**Type:** `float`
-
-**Default:** `0.2`
-
-**Min:** `0`
-
-### Example
-
-```json
-"layer_height": "0.24"
-```
-
-## Default line width
-
-Default line width if other line widths are set to 0. If expressed as a %, it will be computed over the nozzle diameter.
+[No documentation provided]
 
 **Key:** `line_width`
 
-**Type:** `float`, `percent`
+**Type:** `FloatOrPercent`
 
-**Default:** `0`
+**Min:** `0`
 
 **Max:** `1000`
 
-**Min:** `0`
+**Default** `0.0`
 
 ### Example
 
 ```json
-"line_width": "0.52"
+"line_width": "1%"
 ```
+
 
 ## Make overhang printable
 
@@ -1569,35 +1472,37 @@ Modify the geometry to print overhangs without support material.
 
 **Key:** `make_overhang_printable`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"make_overhang_printable": "0"
+"make_overhang_printable": false
 ```
+
 
 ## Make overhang printable maximum angle
 
-Maximum angle of overhangs to allow after making more steep overhangs printable.90° will not change the model at all and allow any overhang, while 0 will replace all overhangs with conical material.
+Maximum angle of overhangs to allow after making more steep overhangs printable. 90° will not change the model at all and allow any overhang, while 0 will replace all overhangs with conical material.
 
 **Key:** `make_overhang_printable_angle`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `55.0`
+**Min:** `0`
 
-**Max:** `90.0`
+**Max:** `90`
 
-**Min:** `0.0`
+**Default** `55.0`
 
 ### Example
 
 ```json
-"make_overhang_printable_angle": "55"
+"make_overhang_printable_angle": 54.32
 ```
+
 
 ## Make overhang printable hole area
 
@@ -1605,17 +1510,18 @@ Maximum area of a hole in the base of the model before it's filled by conical ma
 
 **Key:** `make_overhang_printable_hole_size`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0.0`
+**Min:** `0`
 
-**Min:** `0.0`
+**Default** `0.0`
 
 ### Example
 
 ```json
-"make_overhang_printable_hole_size": "0"
+"make_overhang_printable_hole_size": 1.37
 ```
+
 
 ## Max bridge length
 
@@ -1623,17 +1529,18 @@ Max length of bridges that don't need support. Set it to 0 if you want all bridg
 
 **Key:** `max_bridge_length`
 
-**Type:** `float`
-
-**Default:** `10`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `10`
 
 ### Example
 
 ```json
-"max_bridge_length": "10"
+"max_bridge_length": 11.65
 ```
+
 
 ## Avoid crossing wall - Max detour length
 
@@ -1641,71 +1548,58 @@ Maximum detour distance for avoiding crossing wall. Don't detour if the detour d
 
 **Key:** `max_travel_detour_distance`
 
-**Type:** `float`, `percent`
-
-**Default:** `0.0`
+**Type:** `FloatOrPercent`
 
 **Min:** `0`
+
+**Default** `0.0`
 
 ### Example
 
 ```json
-"max_travel_detour_distance": "0"
+"max_travel_detour_distance": "4%"
 ```
+
 
 ## Extrusion rate smoothing
 
-This parameter smooths out sudden extrusion rate changes that happen when the printer transitions from printing a high flow (high speed/larger width) extrusion to a lower flow (lower speed/smaller width) extrusion and vice versa.
-
-It defines the maximum rate by which the extruded volumetric flow in mm3/sec can change over time. Higher values mean higher extrusion rate changes are allowed, resulting in faster speed transitions.
-
-A value of 0 disables the feature. 
-
-For a high speed, high flow direct drive printer (like the Bambu lab or Voron) this value is usually not needed. However it can provide some marginal benefit in certain cases where feature speeds vary greatly. For example, when there are aggressive slowdowns due to overhangs. In these cases a high value of around 300-350mm3/s2 is recommended as this allows for just enough smoothing to assist pressure advance achieve a smoother flow transition.
-
-For slower printers without pressure advance, the value should be set much lower. A value of 10-15mm3/s2 is a good starting point for direct drive extruders and 5-10mm3/s2 for Bowden style. 
-
-This feature is known as Pressure Equalizer in Prusa slicer.
-
-Note: this parameter disables arc fitting.
+[No documentation provided]
 
 **Key:** `max_volumetric_extrusion_rate_slope`
 
-**Type:** `float`
-
-**Default:** `0`
+**Type:** `Float`
 
 **Min:** `0`
 
+**Default** `0`
+
 ### Example
 
 ```json
-"max_volumetric_extrusion_rate_slope": 
+"max_volumetric_extrusion_rate_slope": 0.62
 ```
+
 
 ## Smoothing segment length
 
-A lower value results in smoother extrusion rate transitions. However, this results in a significantly larger gcode file and more instructions for the printer to process. 
-
-Default value of 3 works well for most cases. If your printer is stuttering, increase this value to reduce the number of adjustments made
-
-Allowed values: 1-5
+[No documentation provided]
 
 **Key:** `max_volumetric_extrusion_rate_slope_segment_length`
 
-**Type:** `integer`
+**Type:** `Int`
 
-**Default:** `3`
+**Min:** `1`
 
 **Max:** `5`
 
-**Min:** `1`
+**Default** `3`
 
 ### Example
 
 ```json
-"max_volumetric_extrusion_rate_slope_segment_length": 
+"max_volumetric_extrusion_rate_slope_segment_length": 2
 ```
+
 
 ## Minimum wall width
 
@@ -1713,17 +1607,18 @@ Width of the wall that will replace thin features (according to the Minimum feat
 
 **Key:** `min_bead_width`
 
-**Type:** `percent`
-
-**Default:** `85`
+**Type:** `Percent`
 
 **Min:** `0`
+
+**Default** `85`
 
 ### Example
 
 ```json
-"min_bead_width": "85%"
+"min_bead_width": "106%"
 ```
+
 
 ## Minimum feature size
 
@@ -1731,36 +1626,37 @@ Minimum thickness of thin features. Model features that are thinner than this va
 
 **Key:** `min_feature_size`
 
-**Type:** `percent`
-
-**Default:** `25`
+**Type:** `Percent`
 
 **Min:** `0`
+
+**Default** `25`
 
 ### Example
 
 ```json
-"min_feature_size": "25%"
+"min_feature_size": "22%"
 ```
+
 
 ## One wall threshold
 
-If a top surface has to be printed and it's partially covered by another layer, it won't be considered at a top layer where its width is below this value. This can be useful to not let the 'one perimeter on top' trigger on surface that should be covered only by perimeters. This value can be a mm or a % of the perimeter extrusion width.
-Warning: If enabled, artifacts can be created is you have some thin features on the next layer, like letters. Set this setting to 0 to remove these artifacts.
+[No documentation provided]
 
 **Key:** `min_width_top_surface`
 
-**Type:** `float`, `percent`
-
-**Default:** `300%`
+**Type:** `FloatOrPercent`
 
 **Min:** `0`
+
+**Default** `300%`
 
 ### Example
 
 ```json
-"min_width_top_surface": "300%"
+"min_width_top_surface": "285%"
 ```
+
 
 ## Minimum sparse infill threshold
 
@@ -1768,17 +1664,18 @@ Sparse infill area which is smaller than threshold value is replaced by internal
 
 **Key:** `minimum_sparse_infill_area`
 
-**Type:** `float`
-
-**Default:** `15`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `15`
 
 ### Example
 
 ```json
-"minimum_sparse_infill_area": "10"
+"minimum_sparse_infill_area": 13.11
 ```
+
 
 ## Configuration notes
 
@@ -1786,9 +1683,9 @@ You can put here your personal notes. This text will be added to the G-code head
 
 **Key:** `notes`
 
-**Type:** `string`
+**Type:** `String`
 
-**Default:** (empty)
+**Default** ``
 
 ### Example
 
@@ -1796,21 +1693,23 @@ You can put here your personal notes. This text will be added to the G-code head
 "notes": ""
 ```
 
+
 ## Only one wall on first layer
 
 Use only one wall on first layer, to give more space to the bottom infill pattern
 
 **Key:** `only_one_wall_first_layer`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"only_one_wall_first_layer": "0"
+"only_one_wall_first_layer": true
 ```
+
 
 ## Only one wall on top surfaces
 
@@ -1818,31 +1717,33 @@ Use only one wall on flat top surface, to give more space to the top infill patt
 
 **Key:** `only_one_wall_top`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"only_one_wall_top": "1"
+"only_one_wall_top": false
 ```
 
-## Enable ooze prevention
 
-This option will drop the temperature of the inactive extruders to prevent oozing. It will enable a tall skirt automatically and move extruders outside such skirt when changing temperatures.
+## Ooze prevention
+
+[No documentation provided]
 
 **Key:** `ooze_prevention`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"ooze_prevention": "0"
+"ooze_prevention": false
 ```
+
 
 ## Outer wall acceleration
 
@@ -1850,17 +1751,18 @@ Acceleration of outer wall. Using a lower value can improve quality
 
 **Key:** `outer_wall_acceleration`
 
-**Type:** `float`
-
-**Default:** `500`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `500`
 
 ### Example
 
 ```json
-"outer_wall_acceleration": "5000"
+"outer_wall_acceleration": 493.58
 ```
+
 
 ## Outer wall jerk
 
@@ -1868,17 +1770,18 @@ Jerk of outer walls
 
 **Key:** `outer_wall_jerk`
 
-**Type:** `float`
-
-**Default:** `9`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `9`
 
 ### Example
 
 ```json
-"outer_wall_jerk": "7"
+"outer_wall_jerk": 10.47
 ```
+
 
 ## Outer wall line width
 
@@ -1886,19 +1789,20 @@ Line width of outer wall. If expressed as a %, it will be computed over the nozz
 
 **Key:** `outer_wall_line_width`
 
-**Type:** `float`, `percent`
+**Type:** `FloatOrPercent`
 
-**Default:** `0.0`
+**Min:** `0`
 
 **Max:** `1000`
 
-**Min:** `0`
+**Default** `0.0`
 
 ### Example
 
 ```json
-"outer_wall_line_width": "0.4"
+"outer_wall_line_width": "1%"
 ```
+
 
 ## Outer wall speed
 
@@ -1906,126 +1810,130 @@ Speed of outer wall which is outermost and visible. It's used to be slower than 
 
 **Key:** `outer_wall_speed`
 
-**Type:** `float`
-
-**Default:** `60`
+**Type:** `Float`
 
 **Min:** `1`
 
+**Default** `60`
+
 ### Example
 
 ```json
-"outer_wall_speed": "60"
+"outer_wall_speed": 58.66
 ```
 
-## overhang_1_4_speed
 
-Speed for line of wall which has degree of overhang between 10% and 25% line width. 0 means using original wall speed
+## (10%, 25%)
+
+[No documentation provided]
 
 **Key:** `overhang_1_4_speed`
 
-**Type:** `float`, `percent`
-
-**Default:** `0`
+**Type:** `FloatOrPercent`
 
 **Min:** `0`
+
+**Default** `0.0`
 
 ### Example
 
 ```json
-"overhang_1_4_speed": "0"
+"overhang_1_4_speed": 0.95
 ```
 
-## overhang_2_4_speed
 
-Speed for line of wall which has degree of overhang between 25% and 50% line width. 0 means using original wall speed
+## [25%, 50%)
+
+[No documentation provided]
 
 **Key:** `overhang_2_4_speed`
 
-**Type:** `float`, `percent`
-
-**Default:** `0`
+**Type:** `FloatOrPercent`
 
 **Min:** `0`
+
+**Default** `0.0`
 
 ### Example
 
 ```json
-"overhang_2_4_speed": "20"
+"overhang_2_4_speed": "3%"
 ```
 
-## overhang_3_4_speed
+
+## [50%, 75%)
 
 Speed for line of wall which has degree of overhang between 50% and 75% line width. 0 means using original wall speed
 
 **Key:** `overhang_3_4_speed`
 
-**Type:** `float`, `percent`
-
-**Default:** `0`
+**Type:** `FloatOrPercent`
 
 **Min:** `0`
+
+**Default** `0.0`
 
 ### Example
 
 ```json
-"overhang_3_4_speed": "15"
+"overhang_3_4_speed": "1%"
 ```
 
-## overhang_4_4_speed
+
+## [75%, 100%)
 
 Speed for line of wall which has degree of overhang between 75% and 100% line width. 0 means using original wall speed
 
 **Key:** `overhang_4_4_speed`
 
-**Type:** `float`, `percent`
-
-**Default:** `0`
+**Type:** `FloatOrPercent`
 
 **Min:** `0`
+
+**Default** `0.0`
 
 ### Example
 
 ```json
-"overhang_4_4_speed": "10"
+"overhang_4_4_speed": "4%"
 ```
 
-## Overhang reversal
+
+## Reverse on odd
 
 Extrude perimeters that have a part over an overhang in the reverse direction on odd layers. This alternating pattern can drastically improve steep overhang.
 
 **Key:** `overhang_reverse`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"overhang_reverse": 
+"overhang_reverse": true
 ```
 
-## Overhang reversal threshold
 
-Number of mm the overhang need to be for the reversal to be considered useful. Can be a % of the perimeter width.
-Value 0 enables reversal on every odd layers regardless.
+## Reverse threshold
+
+Number of mm the overhang need to be for the reversal to be considered useful. Can be a % of the perimeter width.\nValue 0 enables reversal on every odd layers regardless.
 
 **Key:** `overhang_reverse_threshold`
 
-**Type:** `float`, `percent`
-
-**Default:** `50%`
+**Type:** `FloatOrPercent`
 
 **Min:** `0`
+
+**Default** `50%`
 
 ### Example
 
 ```json
-"overhang_reverse_threshold": "3.4"
+"overhang_reverse_threshold": "48%"
 ```
 
-**Note:** There are currently no built-in profiles that use this setting.
 
 ## Classic mode
 
@@ -2033,15 +1941,16 @@ Enable this option to use classic mode
 
 **Key:** `overhang_speed_classic`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"overhang_speed_classic": "0"
+"overhang_speed_classic": false
 ```
+
 
 ## Post-processing Scripts
 
@@ -2049,15 +1958,20 @@ If you want to process the output G-code through custom scripts, just list their
 
 **Key:** `post_process`
 
-**Type:** `[string]`
+**Type:** `Strings`
 
-**Default:** `null`
+**Default** `[""]`
 
 ### Example
 
 ```json
-"post_process": []
+"post_process": [
+    "",
+    "",
+    ""
+  ]
 ```
+
 
 ## Precise wall(experimental)
 
@@ -2065,33 +1979,35 @@ Improve shell precision by adjusting outer wall spacing. This also improves laye
 
 **Key:** `precise_outer_wall`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"precise_outer_wall": "0"
+"precise_outer_wall": true
 ```
+
 
 ## Prime tower brim width
 
-Brim width for the prime tower
+Brim width
 
 **Key:** `prime_tower_brim_width`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `3.0`
+**Min:** `0`
 
-**Min:** `0.0`
+**Default** `3.0`
 
 ### Example
 
 ```json
-"prime_tower_brim_width": "3"
+"prime_tower_brim_width": 3.48
 ```
+
 
 ## Prime tower width
 
@@ -2099,17 +2015,18 @@ Width of prime tower
 
 **Key:** `prime_tower_width`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `60.0`
+**Min:** `2`
 
-**Min:** `2.0`
+**Default** `60.0`
 
 ### Example
 
 ```json
-"prime_tower_width": "60"
+"prime_tower_width": 45.19
 ```
+
 
 ## Prime volume
 
@@ -2117,37 +2034,39 @@ The volume of material to prime extruder on tower.
 
 **Key:** `prime_volume`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `45.0`
+**Min:** `1`
 
-**Min:** `1.0`
+**Default** `45.0`
 
 ### Example
 
 ```json
-"prime_volume": "45"
+"prime_volume": 53.02
 ```
 
-## Flow ratio
+
+## Print flow ratio
 
 The material may have volumetric change after switching between molten state and crystalline state. This setting changes all extrusion flow of this filament in gcode proportionally. Recommended value range is between 0.95 and 1.05. Maybe you can tune this value to get nice flat surface when there has slight overflow or underflow
 
 **Key:** `print_flow_ratio`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `1`
+**Min:** `0`
 
 **Max:** `2`
 
-**Min:** `0.01`
+**Default** `1`
 
 ### Example
 
 ```json
-"print_flow_ratio": "0.98"
+"print_flow_ratio": 0.9
 ```
+
 
 ## Print sequence
 
@@ -2155,13 +2074,12 @@ Print sequence, layer by layer or object by object
 
 **Key:** `print_sequence`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `by layer`
+**Default** `ByLayer`
 
-**Values:**
-* **By layer**: `by layer`
-* **By object**: `by object`
+**Enum values:**
+
 
 ### Example
 
@@ -2169,23 +2087,25 @@ Print sequence, layer by layer or object by object
 "print_sequence": "by layer"
 ```
 
+
 ## Raft contact Z distance
 
 Z gap between object and raft. Ignored for soluble interface
 
 **Key:** `raft_contact_distance`
 
-**Type:** `float`
-
-**Default:** `0.1`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `0.1`
 
 ### Example
 
 ```json
-"raft_contact_distance": "0.15"
+"raft_contact_distance": 0.11
 ```
+
 
 ## Raft expansion
 
@@ -2193,55 +2113,58 @@ Expand all raft layers in XY plane
 
 **Key:** `raft_expansion`
 
-**Type:** `float`
-
-**Default:** `1.5`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `1.5`
 
 ### Example
 
 ```json
-"raft_expansion": "1.5"
+"raft_expansion": 1.26
 ```
 
-## Raft initial layer density
+
+## Initial layer density
 
 Density of the first raft or support layer
 
 **Key:** `raft_first_layer_density`
 
-**Type:** `percent`
+**Type:** `Percent`
 
-**Default:** `90`
+**Min:** `10`
 
 **Max:** `100`
 
-**Min:** `10`
+**Default** `90`
 
 ### Example
 
 ```json
-"raft_first_layer_density": "90%"
+"raft_first_layer_density": "89%"
 ```
 
-## Raft initial layer expansion
+
+## Initial layer expansion
 
 Expand the first raft or support layer to improve bed plate adhesion
 
 **Key:** `raft_first_layer_expansion`
 
-**Type:** `float`
-
-**Default:** `2.0`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** ``
 
 ### Example
 
 ```json
-"raft_first_layer_expansion": "2"
+"raft_first_layer_expansion": 2.17
 ```
+
 
 ## Raft layers
 
@@ -2249,19 +2172,20 @@ Object will be raised by this number of support layers. Use this function to avo
 
 **Key:** `raft_layers`
 
-**Type:** `integer`
+**Type:** `Int`
 
-**Default:** `0`
+**Min:** `0`
 
 **Max:** `100`
 
-**Min:** `0`
+**Default** `0`
 
 ### Example
 
 ```json
-"raft_layers": "0"
+"raft_layers": 2
 ```
+
 
 ## Avoid crossing wall
 
@@ -2269,15 +2193,16 @@ Detour and avoid to travel across wall which may cause blob on surface
 
 **Key:** `reduce_crossing_wall`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"reduce_crossing_wall": "0"
+"reduce_crossing_wall": true
 ```
+
 
 ## Reduce infill retraction
 
@@ -2285,15 +2210,16 @@ Don't retract when the travel is in infill area absolutely. That means the oozin
 
 **Key:** `reduce_infill_retraction`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"reduce_infill_retraction": "1"
+"reduce_infill_retraction": false
 ```
+
 
 ## Resolution
 
@@ -2301,17 +2227,18 @@ G-code path is genereated after simplifing the contour of model to avoid too muc
 
 **Key:** `resolution`
 
-**Type:** `float`
-
-**Default:** `0.01`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `0.01`
 
 ### Example
 
 ```json
-"resolution": "0.012"
+"resolution": 0.01
 ```
+
 
 ## Role base wipe speed
 
@@ -2319,34 +2246,35 @@ The wipe speed is determined by the speed of the current extrusion role.e.g. if 
 
 **Key:** `role_based_wipe_speed`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `true`
+**Default** `true`
 
 ### Example
 
 ```json
-"role_based_wipe_speed": "1"
+"role_based_wipe_speed": true
 ```
+
 
 ## Seam gap
 
-In order to reduce the visibility of the seam in a closed loop extrusion, the loop is interrupted and shortened by a specified amount.
-This amount can be specified in millimeters or as a percentage of the current extruder diameter. The default value for this parameter is 10%.
+In order to reduce the visibility of the seam in a closed loop extrusion, the loop is interrupted and shortened by a specified amount.\nThis amount can be specified in millimeters or as a percentage of the current extruder diameter. The default value for this parameter is 10%.
 
 **Key:** `seam_gap`
 
-**Type:** `float`, `percent`
-
-**Default:** `10%`
+**Type:** `FloatOrPercent`
 
 **Min:** `0`
+
+**Default** `10%`
 
 ### Example
 
 ```json
-"seam_gap": "2%"
+"seam_gap": "12%"
 ```
+
 
 ## Seam position
 
@@ -2354,21 +2282,19 @@ The start position to print each part of outer wall
 
 **Key:** `seam_position`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `aligned`
+**Default** `Aligned`
 
-**Values:**
-* **Nearest**: `nearest`
-* **Aligned**: `aligned`
-* **Back**: `back`
-* **Random**: `random`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"seam_position": "nearest"
+"seam_position": "random"
 ```
+
 
 ## Prime all printing extruders
 
@@ -2376,15 +2302,16 @@ If enabled, all printing extruders will be primed at the front edge of the print
 
 **Key:** `single_extruder_multi_material_priming`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `true`
+**Default** `true`
 
 ### Example
 
 ```json
-"single_extruder_multi_material_priming": "1"
+"single_extruder_multi_material_priming": true
 ```
+
 
 ## Skirt distance
 
@@ -2392,19 +2319,20 @@ Distance from skirt to brim or object
 
 **Key:** `skirt_distance`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `2`
+**Min:** `0`
 
 **Max:** `10`
 
-**Min:** `0`
+**Default** `2`
 
 ### Example
 
 ```json
-"skirt_distance": "2"
+"skirt_distance": 2.15
 ```
+
 
 ## Skirt height
 
@@ -2412,17 +2340,18 @@ How many layers of skirt. Usually only one layer
 
 **Key:** `skirt_height`
 
-**Type:** `integer`
-
-**Default:** `1`
+**Type:** `Int`
 
 **Max:** `10000`
+
+**Default** `1`
 
 ### Example
 
 ```json
-"skirt_height": "1"
+"skirt_height": 1
 ```
+
 
 ## Skirt loops
 
@@ -2430,19 +2359,20 @@ Number of loops for the skirt. Zero means disabling skirt
 
 **Key:** `skirt_loops`
 
-**Type:** `integer`
+**Type:** `Int`
 
-**Default:** `1`
+**Min:** `0`
 
 **Max:** `10`
 
-**Min:** `0`
+**Default** `1`
 
 ### Example
 
 ```json
-"skirt_loops": "3"
+"skirt_loops": 1
 ```
+
 
 ## Skirt speed
 
@@ -2450,50 +2380,31 @@ Speed of skirt, in mm/s. Zero means use default layer extrusion speed.
 
 **Key:** `skirt_speed`
 
-**Type:** `float`
-
-**Default:** `50.0`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `50.0`
 
 ### Example
 
 ```json
-"skirt_speed": "0"
+"skirt_speed": 51.26
 ```
 
-## Slice gap closing radius
-
-Cracks smaller than 2x gap closing radius are being filled during the triangle mesh slicing. The gap closing operation may reduce the final print resolution, therefore it is advisable to keep the value reasonably low.
-
-**Key:** `slice_closing_radius`
-
-**Type:** `float`
-
-**Default:** `0.049`
-
-**Min:** `0`
-
-### Example
-
-```json
-"slice_closing_radius": "0.049"
-```
 
 ## Slicing Mode
 
-Use "Even-odd" for 3DLabPrint airplane models. Use "Close holes" to close all holes in the model.
+Use \"Even-odd\" for 3DLabPrint airplane models. Use \"Close holes\" to close all holes in the model.
 
 **Key:** `slicing_mode`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `regular`
+**Default** `Regular`
 
-**Values:**
-* **Regular**: `regular`
-* **Even-odd**: `even_odd`
-* **Close holes**: `close_holes`
+**Enum values:**
+
 
 ### Example
 
@@ -2501,23 +2412,25 @@ Use "Even-odd" for 3DLabPrint airplane models. Use "Close holes" to close all ho
 "slicing_mode": "regular"
 ```
 
+
 ## Number of slow layers
 
 The first few layers are printed slower than normal. The speed is gradually increased in a linear fashion over the specified number of layers.
 
 **Key:** `slow_down_layers`
 
-**Type:** `integer`
-
-**Default:** `0`
+**Type:** `Int`
 
 **Min:** `0`
+
+**Default** `0`
 
 ### Example
 
 ```json
-"slow_down_layers": "1"
+"slow_down_layers": 3
 ```
+
 
 ## Slow down for curled perimeters
 
@@ -2525,15 +2438,16 @@ Enable this option to slow printing down in areas where potential curled perimet
 
 **Key:** `slowdown_for_curled_perimeters`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"slowdown_for_curled_perimeters": 
+"slowdown_for_curled_perimeters": false
 ```
+
 
 ## Small perimeters
 
@@ -2541,17 +2455,18 @@ This separate setting will affect the speed of perimeters having radius <= small
 
 **Key:** `small_perimeter_speed`
 
-**Type:** `float`, `percent`
-
-**Default:** `50%`
+**Type:** `FloatOrPercent`
 
 **Min:** `1`
+
+**Default** `50%`
 
 ### Example
 
 ```json
-"small_perimeter_speed": "20"
+"small_perimeter_speed": "40%"
 ```
+
 
 ## Small perimeters threshold
 
@@ -2559,35 +2474,37 @@ This sets the threshold for small perimeter length. Default threshold is 0mm
 
 **Key:** `small_perimeter_threshold`
 
-**Type:** `float`
-
-**Default:** `0`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `0`
 
 ### Example
 
 ```json
-"small_perimeter_threshold": "6"
+"small_perimeter_threshold": 0.19
 ```
 
-## Solid infill filament
+
+## Solid infill
 
 Filament to print solid infill
 
 **Key:** `solid_infill_filament`
 
-**Type:** `integer`
-
-**Default:** `1`
+**Type:** `Int`
 
 **Min:** `1`
+
+**Default** `1`
 
 ### Example
 
 ```json
-"solid_infill_filament": "1"
+"solid_infill_filament": 1
 ```
+
 
 ## Sparse infill acceleration
 
@@ -2595,17 +2512,18 @@ Acceleration of sparse infill. If the value is expressed as a percentage (e.g. 1
 
 **Key:** `sparse_infill_acceleration`
 
-**Type:** `float`, `percent`
-
-**Default:** `100%`
+**Type:** `FloatOrPercent`
 
 **Min:** `0`
+
+**Default** `100%`
 
 ### Example
 
 ```json
-"sparse_infill_acceleration": "1000"
+"sparse_infill_acceleration": "102%"
 ```
+
 
 ## Sparse infill density
 
@@ -2613,19 +2531,20 @@ Density of internal sparse infill, 100% means solid throughout
 
 **Key:** `sparse_infill_density`
 
-**Type:** `percent`
+**Type:** `Percent`
 
-**Default:** `20`
+**Min:** `0`
 
 **Max:** `100`
 
-**Min:** `0`
+**Default** `20`
 
 ### Example
 
 ```json
-"sparse_infill_density": "15%"
+"sparse_infill_density": "23%"
 ```
+
 
 ## Sparse infill filament
 
@@ -2633,17 +2552,18 @@ Filament to print internal sparse infill.
 
 **Key:** `sparse_infill_filament`
 
-**Type:** `integer`
-
-**Default:** `1`
+**Type:** `Int`
 
 **Min:** `1`
+
+**Default** `1`
 
 ### Example
 
 ```json
-"sparse_infill_filament": "1"
+"sparse_infill_filament": 1
 ```
+
 
 ## Sparse infill line width
 
@@ -2651,19 +2571,20 @@ Line width of internal sparse infill. If expressed as a %, it will be computed o
 
 **Key:** `sparse_infill_line_width`
 
-**Type:** `float`, `percent`
+**Type:** `FloatOrPercent`
 
-**Default:** `0.0`
+**Min:** `0`
 
 **Max:** `1000`
 
-**Min:** `0`
+**Default** `0.0`
 
 ### Example
 
 ```json
-"sparse_infill_line_width": "0.45"
+"sparse_infill_line_width": "2%"
 ```
+
 
 ## Sparse infill pattern
 
@@ -2671,34 +2592,19 @@ Line pattern for internal sparse infill
 
 **Key:** `sparse_infill_pattern`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `cubic`
+**Default** `Cubic`
 
-**Values:**
-* **Concentric**: `concentric`
-* **Rectilinear**: `zig-zag`
-* **Grid**: `grid`
-* **Line**: `line`
-* **Cubic**: `cubic`
-* **Triangles**: `triangles`
-* **Tri-hexagon**: `tri-hexagon`
-* **Gyroid**: `gyroid`
-* **Honeycomb**: `honeycomb`
-* **Adaptive Cubic**: `adaptivecubic`
-* **Aligned Rectilinear**: `alignedrectilinear`
-* **3D Honeycomb**: `3dhoneycomb`
-* **Hilbert Curve**: `hilbertcurve`
-* **Archimedean Chords**: `archimedeanchords`
-* **Octagram Spiral**: `octagramspiral`
-* **Support Cubic**: `supportcubic`
-* **Lightning**: `lightning`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"sparse_infill_pattern": "grid"
+"sparse_infill_pattern": "3dhoneycomb"
 ```
+
 
 ## Sparse infill speed
 
@@ -2706,17 +2612,18 @@ Speed of internal sparse infill
 
 **Key:** `sparse_infill_speed`
 
-**Type:** `float`
-
-**Default:** `100`
+**Type:** `Float`
 
 **Min:** `1`
+
+**Default** `100`
 
 ### Example
 
 ```json
-"sparse_infill_speed": "250"
+"sparse_infill_speed": 105.62
 ```
+
 
 ## Spiral vase
 
@@ -2724,15 +2631,16 @@ Spiralize smooths out the z moves of the outer contour. And turns a solid model 
 
 **Key:** `spiral_mode`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"spiral_mode": "0"
+"spiral_mode": true
 ```
+
 
 ## Staggered inner seams
 
@@ -2740,73 +2648,71 @@ This option causes the inner seams to be shifted backwards based on their depth,
 
 **Key:** `staggered_inner_seams`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"staggered_inner_seams": "0"
+"staggered_inner_seams": true
 ```
+
 
 ## Temperature variation
 
-Temperature difference to be applied when an extruder is not active. Enables a full-height "sacrificial" skirt on which the nozzles are periodically wiped.
+[No documentation provided]
 
 **Key:** `standby_temperature_delta`
 
-**Type:** `integer`
+**Type:** `Int`
 
-**Default:** `-5`
+**Min:** `0`
 
-**Max:** `max_temp`
+**Max:** `0`
 
-**Min:** `-max_temp`
+**Default** `-5`
 
 ### Example
 
 ```json
-"standby_temperature_delta": "-5"
+"standby_temperature_delta": 0
 ```
 
-## Support pattern angle
+
+## Pattern angle
 
 Use this setting to rotate the support pattern on the horizontal plane.
 
 **Key:** `support_angle`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0`
+**Min:** `0`
 
 **Max:** `359`
 
-**Min:** `0`
+**Default** `0`
 
 ### Example
 
 ```json
-"support_angle": "0"
+"support_angle": 1.5
 ```
 
-## Support base pattern
+
+## Base pattern
 
 Line pattern of support
 
 **Key:** `support_base_pattern`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `rectilinear`
+**Default** `Rectilinear`
 
-**Values:**
-* **Default**: `default`
-* **Rectilinear**: `rectilinear`
-* **Rectilinear grid**: `rectilinear-grid`
-* **Honeycomb**: `honeycomb`
-* **Lightning**: `lightning`
-* **Hollow**: `hollow`
+**Enum values:**
+
 
 ### Example
 
@@ -2814,57 +2720,61 @@ Line pattern of support
 "support_base_pattern": "rectilinear"
 ```
 
-## Support base pattern spacing
+
+## Base pattern spacing
 
 Spacing between support lines
 
 **Key:** `support_base_pattern_spacing`
 
-**Type:** `float`
-
-**Default:** `2.5`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `2.5`
 
 ### Example
 
 ```json
-"support_base_pattern_spacing": "2.5"
+"support_base_pattern_spacing": 2.69
 ```
 
-## Support bottom interface spacing
+
+## Bottom interface spacing
 
 Spacing of bottom interface lines. Zero means solid interface
 
 **Key:** `support_bottom_interface_spacing`
 
-**Type:** `float`
-
-**Default:** `0.5`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `0.5`
 
 ### Example
 
 ```json
-"support_bottom_interface_spacing": "0.5"
+"support_bottom_interface_spacing": 0.4
 ```
 
-## Support bottom Z distance
+
+## Bottom Z distance
 
 The z gap between the bottom support interface and object
 
 **Key:** `support_bottom_z_distance`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0.2`
+**Default** `0.2`
 
 ### Example
 
 ```json
-"support_bottom_z_distance": "0.2"
+"support_bottom_z_distance": 0.23
 ```
+
 
 ## Support critical regions only
 
@@ -2872,15 +2782,16 @@ Only create support for critical regions including sharp tail, cantilever, etc.
 
 **Key:** `support_critical_regions_only`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"support_critical_regions_only": "0"
+"support_critical_regions_only": false
 ```
+
 
 ## Normal Support expansion
 
@@ -2888,109 +2799,106 @@ Expand (+) or shrink (-) the horizontal span of normal support
 
 **Key:** `support_expansion`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0`
+**Default** `0`
 
 ### Example
 
 ```json
-"support_expansion": "0"
+"support_expansion": 0.62
 ```
+
 
 ## Support/raft base
 
-Filament to print support base and raft. "Default" means no specific filament for support and current filament is used
+[No documentation provided]
 
 **Key:** `support_filament`
 
-**Type:** `integer`
-
-**Default:** `1`
+**Type:** `Int`
 
 **Min:** `0`
+
+**Default** `1`
 
 ### Example
 
 ```json
-"support_filament": "0"
+"support_filament": 1
 ```
 
-## Support bottom interface layers
 
-Number of bottom interface layers. -1 means same with use top interface layers
+## Bottom interface layers
+
+[No documentation provided]
 
 **Key:** `support_interface_bottom_layers`
 
-**Type:** `integer`
-
-**Default:** `0`
-
-**Values:**
-* **-1**: `-1`
-* **0**: `0`
-* **1**: `1`
-* **2**: `2`
-* **3**: `3`
+**Type:** `Int`
 
 **Min:** `-1`
 
+**Default** `0`
+
+**Enum values:**
+
+
 ### Example
 
 ```json
-"support_interface_bottom_layers": "-1"
+"support_interface_bottom_layers": 0
 ```
 
-## Support/raft interface filament
 
-Filament to print support interface. "Default" means no specific filament for support interface and current filament is used
+## Support/raft interface
+
+[No documentation provided]
 
 **Key:** `support_interface_filament`
 
-**Type:** `integer`
-
-**Default:** `1`
+**Type:** `Int`
 
 **Min:** `0`
+
+**Default** `1`
 
 ### Example
 
 ```json
-"support_interface_filament": "0"
+"support_interface_filament": 1
 ```
 
-## Support interface use loop pattern
+
+## Interface use loop pattern
 
 Cover the top contact layer of the supports with loops. Disabled by default.
 
 **Key:** `support_interface_loop_pattern`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"support_interface_loop_pattern": "1"
+"support_interface_loop_pattern": false
 ```
 
-## Support interface pattern
+
+## Interface pattern
 
 Line pattern of support interface. Default pattern for non-soluble support interface is Rectilinear, while default pattern for soluble support interface is Concentric
 
 **Key:** `support_interface_pattern`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `rectilinear`
+**Default** `Rectilinear`
 
-**Values:**
-* **Default**: `auto`
-* **Rectilinear**: `rectilinear`
-* **Concentric**: `concentric`
-* **Rectilinear Interlaced**: `rectilinear_interlaced`
-* **Grid**: `grid`
+**Enum values:**
+
 
 ### Example
 
@@ -2998,65 +2906,66 @@ Line pattern of support interface. Default pattern for non-soluble support inter
 "support_interface_pattern": "rectilinear"
 ```
 
-## Support interface spacing
+
+## Top interface spacing
 
 Spacing of interface lines. Zero means solid interface
 
 **Key:** `support_interface_spacing`
 
-**Type:** `float`
-
-**Default:** `0.5`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `0.5`
 
 ### Example
 
 ```json
-"support_interface_spacing": "0"
+"support_interface_spacing": 0.62
 ```
 
-## Support interface speed
+
+## Support interface
 
 Speed of support interface
 
 **Key:** `support_interface_speed`
 
-**Type:** `float`
-
-**Default:** `80`
+**Type:** `Float`
 
 **Min:** `1`
+
+**Default** `80`
 
 ### Example
 
 ```json
-"support_interface_speed": "100%"
+"support_interface_speed": 60.16
 ```
 
-## Support interface layers
+
+## Top interface layers
 
 Number of top interface layers
 
 **Key:** `support_interface_top_layers`
 
-**Type:** `integer`
-
-**Default:** `3`
-
-**Values:**
-* **0**: `0`
-* **1**: `1`
-* **2**: `2`
-* **3**: `3`
+**Type:** `Int`
 
 **Min:** `0`
+
+**Default** `3`
+
+**Enum values:**
+
 
 ### Example
 
 ```json
-"support_interface_top_layers": "2"
+"support_interface_top_layers": 2
 ```
+
 
 ## Support line width
 
@@ -3064,19 +2973,20 @@ Line width of support. If expressed as a %, it will be computed over the nozzle 
 
 **Key:** `support_line_width`
 
-**Type:** `float`, `percent`
+**Type:** `FloatOrPercent`
 
-**Default:** `0.0`
+**Min:** `0`
 
 **Max:** `1000`
 
-**Min:** `0`
+**Default** `0.0`
 
 ### Example
 
 ```json
-"support_line_width": "0.52"
+"support_line_width": 0.95
 ```
+
 
 ## Support/object xy distance
 
@@ -3084,35 +2994,37 @@ XY separation between an object and its support
 
 **Key:** `support_object_xy_distance`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0.35`
+**Min:** `0`
 
 **Max:** `10`
 
-**Min:** `0`
+**Default** `0.35`
 
 ### Example
 
 ```json
-"support_object_xy_distance": "50%"
+"support_object_xy_distance": 0.42
 ```
 
-## Supports on build plate only
+
+## On build plate only
 
 Don't create support on model surface, only on build plate
 
 **Key:** `support_on_build_plate_only`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"support_on_build_plate_only": "0"
+"support_on_build_plate_only": true
 ```
+
 
 ## Remove small overhangs
 
@@ -3120,15 +3032,16 @@ Remove small overhangs that possibly need no supports.
 
 **Key:** `support_remove_small_overhang`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `true`
+**Default** `true`
 
 ### Example
 
 ```json
-"support_remove_small_overhang": "1"
+"support_remove_small_overhang": false
 ```
+
 
 ## Support speed
 
@@ -3136,81 +3049,76 @@ Speed of support
 
 **Key:** `support_speed`
 
-**Type:** `float`
-
-**Default:** `80`
+**Type:** `Float`
 
 **Min:** `1`
 
+**Default** `80`
+
 ### Example
 
 ```json
-"support_speed": "40"
+"support_speed": 99.45
 ```
+
 
 ## Support style
 
-Style and shape of the support. For normal support, projecting the supports into a regular grid will create more stable supports (default), while snug support towers will save material and reduce object scarring.
-For tree support, slim and organic style will merge branches more aggressively and save a lot of material (default organic), while hybrid style will create similar structure to normal support under large flat overhangs.
+Style and shape of the support. For normal support, projecting the supports into a regular grid will create more stable supports (default), while snug support towers will save material and reduce object scarring.\nFor tree support, slim and organic style will merge branches more aggressively and save a lot of material (default organic), while hybrid style will create similar structure to normal support under large flat overhangs.
 
 **Key:** `support_style`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `default`
+**Default** `Default`
 
-**Values:**
-* **Default**: `default`
-* **Grid**: `grid`
-* **Snug**: `snug`
-* **Tree Slim**: `tree_slim`
-* **Tree Strong**: `tree_strong`
-* **Tree Hybrid**: `tree_hybrid`
-* **Organic**: `organic`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"support_style": "grid"
+"support_style": "organic"
 ```
 
-## Support threshold angle
+
+## Threshold angle
 
 Support will be generated for overhangs whose slope angle is below the threshold.
 
 **Key:** `support_threshold_angle`
 
-**Type:** `integer`
+**Type:** `Int`
 
-**Default:** `30`
+**Min:** `1`
 
 **Max:** `90`
 
-**Min:** `1`
+**Default** `30`
 
 ### Example
 
 ```json
-"support_threshold_angle": "30"
+"support_threshold_angle": 31
 ```
 
-## Support top Z distance
+
+## Top Z distance
 
 The z gap between the top support interface and object
 
 **Key:** `support_top_z_distance`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0.2`
-
-**Min:** `0`
+**Default** `0.2`
 
 ### Example
 
 ```json
-"support_top_z_distance": "0.24"
+"support_top_z_distance": 0.19
 ```
+
 
 ## Support type
 
@@ -3218,21 +3126,19 @@ normal(auto) and tree(auto) is used to generate support automatically. If normal
 
 **Key:** `support_type`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `normal(auto)`
+**Default** `NormalAuto`
 
-**Values:**
-* **normal(auto)**: `normal(auto)`
-* **tree(auto)**: `tree(auto)`
-* **normal(manual)**: `normal(manual)`
-* **tree(manual)**: `tree(manual)`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"support_type": "normal(auto)"
+"support_type": "tree(auto)"
 ```
+
 
 ## Thick bridges
 
@@ -3240,29 +3146,29 @@ If enabled, bridges are more reliable, can bridge longer distances, but may look
 
 **Key:** `thick_bridges`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"thick_bridges": "0"
+"thick_bridges": false
 ```
 
-## Timelapse type
+
+## Timelapse
 
 If smooth or traditional mode is selected, a timelapse video will be generated for each print. After each layer is printed, a snapshot is taken with the chamber camera. All of these snapshots are composed into a timelapse video when printing completes. If smooth mode is selected, the toolhead will move to the excess chute after each layer is printed and then take a snapshot. Since the melt filament may leak from the nozzle during the process of taking a snapshot, prime tower is required for smooth mode to wipe nozzle.
 
 **Key:** `timelapse_type`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `traditional`
+**Default** `Traditional`
 
-**Values:**
-* **Traditional**: `0`
-* **Smooth**: `1`
+**Enum values:**
+
 
 ### Example
 
@@ -3270,23 +3176,25 @@ If smooth or traditional mode is selected, a timelapse video will be generated f
 "timelapse_type": "0"
 ```
 
-## Top solid layers
+
+## Top shell layers
 
 This is the number of solid layers of top shell, including the top surface layer. When the thickness calculated by this value is thinner than top shell thickness, the top shell layers will be increased
 
 **Key:** `top_shell_layers`
 
-**Type:** `integer`
-
-**Default:** `4`
+**Type:** `Int`
 
 **Min:** `0`
+
+**Default** `4`
 
 ### Example
 
 ```json
-"top_shell_layers": "4"
+"top_shell_layers": 4
 ```
+
 
 ## Top shell thickness
 
@@ -3294,17 +3202,18 @@ The number of top solid layers is increased when slicing if the thickness calcul
 
 **Key:** `top_shell_thickness`
 
-**Type:** `float`
-
-**Default:** `0.6`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `0.6`
 
 ### Example
 
 ```json
-"top_shell_thickness": "0.8"
+"top_shell_thickness": 0.72
 ```
+
 
 ## Top surface flow ratio
 
@@ -3312,19 +3221,20 @@ This factor affects the amount of material for top solid infill. You can decreas
 
 **Key:** `top_solid_infill_flow_ratio`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `1`
+**Min:** `0`
 
 **Max:** `2`
 
-**Min:** `0`
+**Default** `1`
 
 ### Example
 
 ```json
-"top_solid_infill_flow_ratio": "1"
+"top_solid_infill_flow_ratio": 0.79
 ```
+
 
 ## Top surface acceleration
 
@@ -3332,17 +3242,18 @@ Acceleration of top surface infill. Using a lower value may improve top surface 
 
 **Key:** `top_surface_acceleration`
 
-**Type:** `float`
-
-**Default:** `500`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `500`
 
 ### Example
 
 ```json
-"top_surface_acceleration": "0"
+"top_surface_acceleration": 378.9
 ```
+
 
 ## Top surface jerk
 
@@ -3350,17 +3261,18 @@ Jerk for top surface
 
 **Key:** `top_surface_jerk`
 
-**Type:** `float`
-
-**Default:** `9`
+**Type:** `Float`
 
 **Min:** `1`
+
+**Default** `9`
 
 ### Example
 
 ```json
-"top_surface_jerk": "9"
+"top_surface_jerk": 7.01
 ```
+
 
 ## Top surface line width
 
@@ -3368,19 +3280,20 @@ Line width for top surfaces. If expressed as a %, it will be computed over the n
 
 **Key:** `top_surface_line_width`
 
-**Type:** `float`, `percent`
+**Type:** `FloatOrPercent`
 
-**Default:** `0.0`
+**Min:** `0`
 
 **Max:** `1000`
 
-**Min:** `0`
+**Default** `0.0`
 
 ### Example
 
 ```json
-"top_surface_line_width": "0.4"
+"top_surface_line_width": "4%"
 ```
+
 
 ## Top surface pattern
 
@@ -3388,25 +3301,19 @@ Line pattern of top surface infill
 
 **Key:** `top_surface_pattern`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `monotonic`
+**Default** `Monotonic`
 
-**Values:**
-* **Concentric**: `concentric`
-* **Rectilinear**: `zig-zag`
-* **Monotonic**: `monotonic`
-* **Monotonic line**: `monotonicline`
-* **Aligned Rectilinear**: `alignedrectilinear`
-* **Hilbert Curve**: `hilbertcurve`
-* **Archimedean Chords**: `archimedeanchords`
-* **Octagram Spiral**: `octagramspiral`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"top_surface_pattern": "monotonic"
+"top_surface_pattern": "monotonicline"
 ```
+
 
 ## Top surface speed
 
@@ -3414,17 +3321,18 @@ Speed of top surface infill which is solid
 
 **Key:** `top_surface_speed`
 
-**Type:** `float`
-
-**Default:** `100`
+**Type:** `Float`
 
 **Min:** `1`
+
+**Default** `100`
 
 ### Example
 
 ```json
-"top_surface_speed": "30"
+"top_surface_speed": 90.03
 ```
+
 
 ## Travel acceleration
 
@@ -3432,17 +3340,18 @@ Acceleration of travel moves
 
 **Key:** `travel_acceleration`
 
-**Type:** `float`
-
-**Default:** `10000`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Default** `10000`
 
 ### Example
 
 ```json
-"travel_acceleration": "0"
+"travel_acceleration": 8288.41
 ```
+
 
 ## Travel jerk
 
@@ -3450,17 +3359,18 @@ Jerk for travel
 
 **Key:** `travel_jerk`
 
-**Type:** `float`
-
-**Default:** `12`
+**Type:** `Float`
 
 **Min:** `1`
+
+**Default** `12`
 
 ### Example
 
 ```json
-"travel_jerk": "8"
+"travel_jerk": 13.12
 ```
+
 
 ## Travel speed
 
@@ -3468,87 +3378,92 @@ Speed of travel which is faster and without extrusion
 
 **Key:** `travel_speed`
 
-**Type:** `float`
-
-**Default:** `120`
+**Type:** `Float`
 
 **Min:** `1`
 
+**Default** `120`
+
 ### Example
 
 ```json
-"travel_speed": "400"
+"travel_speed": 111.97
 ```
+
 
 ## Z travel speed
 
-Speed of vertical travel along z axis. This is typically lower because build plate or gantry is hard to be moved. Zero means using travel speed directly in gcode, but will be limited by printer's ability when run gcode
+[No documentation provided]
 
 **Key:** `travel_speed_z`
 
-**Type:** `float`
-
-**Default:** `0.0`
+**Type:** `Float`
 
 **Min:** `0`
 
+**Default** `0.0`
+
 ### Example
 
 ```json
-"travel_speed_z": "12"
+"travel_speed_z": 0.01
 ```
+
 
 ## Tree support adaptive layer height
 
-Enabling this option means the height of tree support layer except the first will be automatically calculated 
+Enabling this option means the height of  tree support layer except the first will be automatically calculated
 
 **Key:** `tree_support_adaptive_layer_height`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `1`
+**Default** `true`
 
 ### Example
 
 ```json
-"tree_support_adaptive_layer_height": "1"
+"tree_support_adaptive_layer_height": true
 ```
 
-## Tree support preferred Branch Angle
 
-The preferred angle of the branches, when they do not have to avoid the model. Use a lower angle to make them more vertical and more stable. Use a higher angle for branches to merge faster.
+## Preferred Branch Angle
+
+[No documentation provided]
 
 **Key:** `tree_support_angle_slow`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `25`
+**Min:** `10`
 
 **Max:** `85`
 
-**Min:** `10`
+**Default** `25`
 
 ### Example
 
 ```json
-"tree_support_angle_slow": "30"
+"tree_support_angle_slow": 31.24
 ```
 
-## Tree support auto brim width
+
+## Auto brim width
 
 Enabling this option means the width of the brim for tree support will be automatically calculated
 
 **Key:** `tree_support_auto_brim`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `1`
+**Default** `true`
 
 ### Example
 
 ```json
-"tree_support_auto_brim": "1"
+"tree_support_auto_brim": false
 ```
+
 
 ## Tree support branch angle
 
@@ -3556,19 +3471,20 @@ This setting determines the maximum overhang angle that t he branches of tree su
 
 **Key:** `tree_support_branch_angle`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `40.0`
+**Min:** `0`
 
 **Max:** `60`
 
-**Min:** `0`
+**Default** `40.0`
 
 ### Example
 
 ```json
-"tree_support_branch_angle": "40"
+"tree_support_branch_angle": 39.36
 ```
+
 
 ## Tree support branch angle organic
 
@@ -3576,19 +3492,20 @@ This setting determines the maximum overhang angle that t he branches of tree su
 
 **Key:** `tree_support_branch_angle_organic`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `40.0`
+**Min:** `0`
 
 **Max:** `60`
 
-**Min:** `0`
+**Default** `40.0`
 
 ### Example
 
 ```json
-"tree_support_branch_angle_organic": "40"
+"tree_support_branch_angle_organic": 43.18
 ```
+
 
 ## Tree support branch diameter
 
@@ -3596,59 +3513,62 @@ This setting determines the initial diameter of support nodes.
 
 **Key:** `tree_support_branch_diameter`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `5.0`
+**Min:** `1`
 
 **Max:** `10`
 
-**Min:** `1.0`
+**Default** `5.0`
 
 ### Example
 
 ```json
-"tree_support_branch_diameter": "2"
+"tree_support_branch_diameter": 4.52
 ```
+
 
 ## Tree support branch diameter angle
 
-The angle of the branches' diameter as they gradually become thicker towards the bottom. An angle of 0 will cause the branches to have uniform thickness over their length. A bit of an angle can increase stability of the organic support.
+[No documentation provided]
 
 **Key:** `tree_support_branch_diameter_angle`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `5`
+**Min:** `0`
 
 **Max:** `15`
 
-**Min:** `0`
+**Default** `5`
 
 ### Example
 
 ```json
-"tree_support_branch_diameter_angle": "5"
+"tree_support_branch_diameter_angle": 3.97
 ```
 
-## Tree support branch diameter with double walls
 
-Branches with area larger than the area of a circle of this diameter will be printed with double walls for stability. Set this value to zero for no double walls.
+## Branch Diameter with double walls
+
+[No documentation provided]
 
 **Key:** `tree_support_branch_diameter_double_wall`
 
-**Type:** `float`
-
-**Default:** `3.0`
-
-**Max:** `100.0`
+**Type:** `Float`
 
 **Min:** `0`
+
+**Max:** `100`
+
+**Default** `3.0`
 
 ### Example
 
 ```json
-"tree_support_branch_diameter_double_wall": "3"
+"tree_support_branch_diameter_double_wall": 3.2
 ```
+
 
 ## Tree support branch diameter organic
 
@@ -3656,19 +3576,20 @@ This setting determines the initial diameter of support nodes.
 
 **Key:** `tree_support_branch_diameter_organic`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `2.0`
+**Min:** `1`
 
 **Max:** `10`
 
-**Min:** `1.0`
+**Default** `2.0`
 
 ### Example
 
 ```json
-"tree_support_branch_diameter_organic": "2"
+"tree_support_branch_diameter_organic": 1.58
 ```
+
 
 ## Tree support branch distance
 
@@ -3676,39 +3597,41 @@ This setting determines the distance between neighboring tree support nodes.
 
 **Key:** `tree_support_branch_distance`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `5.0`
+**Min:** `1`
 
 **Max:** `10`
 
-**Min:** `1.0`
+**Default** `5.0`
 
 ### Example
 
 ```json
-"tree_support_branch_distance": "5"
+"tree_support_branch_distance": 5.58
 ```
 
-## Tree support branch distance
+
+## Tree support branch distance organic
 
 This setting determines the distance between neighboring tree support nodes.
 
 **Key:** `tree_support_branch_distance_organic`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `1.0`
+**Min:** `1`
 
 **Max:** `10`
 
-**Min:** `1.0`
+**Default** `1.0`
 
 ### Example
 
 ```json
-"tree_support_branch_distance_organic": "1"
+"tree_support_branch_distance_organic": 1.09
 ```
+
 
 ## Tree support brim width
 
@@ -3716,55 +3639,58 @@ Distance from tree branch to the outermost brim line
 
 **Key:** `tree_support_brim_width`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `3`
+**Min:** `0`
 
-**Min:** `0.0`
+**Default** `3`
 
 ### Example
 
 ```json
-"tree_support_brim_width": "3"
+"tree_support_brim_width": 2.73
 ```
 
-## Tree support branch tip Diameter
 
-Branch tip diameter for organic supports.
+## Tip Diameter
+
+[No documentation provided]
 
 **Key:** `tree_support_tip_diameter`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0.8`
+**Min:** `0`
 
-**Max:** `100.0`
+**Max:** `100`
 
-**Min:** `0.1`
+**Default** `0.8`
 
 ### Example
 
 ```json
-"tree_support_tip_diameter": "0.6"
+"tree_support_tip_diameter": 0.65
 ```
 
-## Tree support ranch Density
 
-Adjusts the density of the support structure used to generate the tips of the branches. A higher value results in better overhangs but the supports are harder to remove, thus it is recommended to enable top support interfaces instead of a high branch density value if dense interfaces are needed.
+## Branch Density
+
+[No documentation provided]
 
 **Key:** `tree_support_top_rate`
 
-**Type:** `percent`
-
-**Default:** `30`
+**Type:** `Percent`
 
 **Min:** `5`
+
+**Default** `30`
 
 ### Example
 
 ```json
-"tree_support_top_rate": "30%"
+"tree_support_top_rate": "33%"
 ```
+
 
 ## Tree support wall loops
 
@@ -3772,17 +3698,18 @@ This setting specify the count of walls around tree support
 
 **Key:** `tree_support_wall_count`
 
-**Type:** `integer`
-
-**Default:** `1`
+**Type:** `Int`
 
 **Min:** `0`
+
+**Default** `1`
 
 ### Example
 
 ```json
-"tree_support_wall_count": "0"
+"tree_support_wall_count": 1
 ```
+
 
 ## Wall distribution count
 
@@ -3790,17 +3717,18 @@ The number of walls, counted from the center, over which the variation needs to 
 
 **Key:** `wall_distribution_count`
 
-**Type:** `integer`
-
-**Default:** `1`
+**Type:** `Int`
 
 **Min:** `1`
+
+**Default** `1`
 
 ### Example
 
 ```json
-"wall_distribution_count": "1"
+"wall_distribution_count": 1
 ```
+
 
 ## Wall filament
 
@@ -3808,17 +3736,18 @@ Filament to print walls
 
 **Key:** `wall_filament`
 
-**Type:** `integer`
-
-**Default:** `1`
+**Type:** `Int`
 
 **Min:** `1`
+
+**Default** `1`
 
 ### Example
 
 ```json
-"wall_filament": "1"
+"wall_filament": 1
 ```
+
 
 ## Wall generator
 
@@ -3826,42 +3755,39 @@ Classic wall generator produces walls with constant extrusion width and for very
 
 **Key:** `wall_generator`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `arachne`
+**Default** `Arachne`
 
-**Values:**
-* **Classic**: `classic`
-* **Arachne**: `arachne`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"wall_generator": "classic"
+"wall_generator": "arachne"
 ```
+
 
 ## Order of inner wall/outer wall/infil
 
-Print sequence of inner wall, outer wall and infill. 
+Print sequence of inner wall, outer wall and infill.
 
 **Key:** `wall_infill_order`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `inner wall/outer wall/infill`
+**Default** `InnerOuterInfill`
 
-**Values:**
-* **inner/outer/infill**: `inner wall/outer wall/infill`
-* **outer/inner/infill**: `outer wall/inner wall/infill`
-* **infill/inner/outer**: `infill/inner wall/outer wall`
-* **infill/outer/inner**: `infill/outer wall/inner wall`
-* **inner-outer-inner/infill**: `inner-outer-inner wall/infill`
+**Enum values:**
+
 
 ### Example
 
 ```json
-"wall_infill_order": "inner wall/outer wall/infill"
+"wall_infill_order": "inner-outer-inner wall/infill"
 ```
+
 
 ## Wall loops
 
@@ -3869,19 +3795,20 @@ Number of walls of every layer
 
 **Key:** `wall_loops`
 
-**Type:** `integer`
+**Type:** `Int`
 
-**Default:** `2`
+**Min:** `0`
 
 **Max:** `1000`
 
-**Min:** `0`
+**Default** `2`
 
 ### Example
 
 ```json
-"wall_loops": "4"
+"wall_loops": 1
 ```
+
 
 ## Wall transitioning threshold angle
 
@@ -3889,19 +3816,20 @@ When to create transitions between even and odd numbers of walls. A wedge shape 
 
 **Key:** `wall_transition_angle`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `10.0`
+**Min:** `1`
 
-**Max:** `59.0`
+**Max:** `59`
 
-**Min:** `1.0`
+**Default** `10.0`
 
 ### Example
 
 ```json
-"wall_transition_angle": "10"
+"wall_transition_angle": 7.84
 ```
+
 
 ## Wall transitioning filter margin
 
@@ -3909,17 +3837,18 @@ Prevent transitioning back and forth between one extra wall and one less. This m
 
 **Key:** `wall_transition_filter_deviation`
 
-**Type:** `percent`
-
-**Default:** `25`
+**Type:** `Percent`
 
 **Min:** `0`
+
+**Default** `25`
 
 ### Example
 
 ```json
-"wall_transition_filter_deviation": "25%"
+"wall_transition_filter_deviation": "19%"
 ```
+
 
 ## Wall transition length
 
@@ -3927,17 +3856,18 @@ When transitioning between different numbers of walls as the part becomes thinne
 
 **Key:** `wall_transition_length`
 
-**Type:** `percent`
-
-**Default:** `100`
+**Type:** `Percent`
 
 **Min:** `0`
+
+**Default** `100`
 
 ### Example
 
 ```json
-"wall_transition_length": "100%"
+"wall_transition_length": "104%"
 ```
+
 
 ## Wipe on loops
 
@@ -3945,15 +3875,16 @@ To minimize the visibility of the seam in a closed loop extrusion, a small inwar
 
 **Key:** `wipe_on_loops`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"wipe_on_loops": "0"
+"wipe_on_loops": true
 ```
+
 
 ## Wipe speed
 
@@ -3961,53 +3892,56 @@ The wipe speed is determined by the speed setting specified in this configuratio
 
 **Key:** `wipe_speed`
 
-**Type:** `float`, `percent`
-
-**Default:** `80%`
+**Type:** `FloatOrPercent`
 
 **Min:** `0`
+
+**Default** `80%`
 
 ### Example
 
 ```json
-"wipe_speed": "200"
+"wipe_speed": "76%"
 ```
 
-## Wipe tower maximal bridging distance
+
+## Maximal bridging distance
 
 Maximal distance between supports on sparse infill sections.
 
 **Key:** `wipe_tower_bridging`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `10.0`
+**Default** `10.0`
 
 ### Example
 
 ```json
-"wipe_tower_bridging": "10"
+"wipe_tower_bridging": 11.31
 ```
 
-## Wipe tower tabilization cone apex angle
+
+## Stabilization cone apex angle
 
 Angle at the apex of the cone that is used to stabilize the wipe tower. Larger angle means wider base.
 
 **Key:** `wipe_tower_cone_angle`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0.0`
+**Min:** `0`
 
-**Max:** `90.0`
+**Max:** `90`
 
-**Min:** `0.0`
+**Default** `0.0`
 
 ### Example
 
 ```json
-"wipe_tower_cone_angle": "0"
+"wipe_tower_cone_angle": 0.48
 ```
+
 
 ## Wipe tower purge lines spacing
 
@@ -4015,19 +3949,20 @@ Spacing of purge lines on the wipe tower.
 
 **Key:** `wipe_tower_extra_spacing`
 
-**Type:** `percent`
+**Type:** `Percent`
 
-**Default:** `100.0`
+**Min:** `100`
 
-**Max:** `300.0`
+**Max:** `300`
 
-**Min:** `100.0`
+**Default** `100.0`
 
 ### Example
 
 ```json
-"wipe_tower_extra_spacing": "100%"
+"wipe_tower_extra_spacing": "118%"
 ```
+
 
 ## Wipe tower extruder
 
@@ -4035,33 +3970,35 @@ The extruder to use when printing perimeter of the wipe tower. Set to 0 to use t
 
 **Key:** `wipe_tower_extruder`
 
-**Type:** `integer`
-
-**Default:** `0`
+**Type:** `Int`
 
 **Min:** `0`
+
+**Default** `0`
 
 ### Example
 
 ```json
-"wipe_tower_extruder": "0"
+"wipe_tower_extruder": 1
 ```
 
-## Wipe tower no sparse layers (EXPERIMENTAL)
+
+## No sparse layers (EXPERIMENTAL)
 
 If enabled, the wipe tower will not be printed on layers with no toolchanges. On layers with a toolchange, extruder will travel downward to print the wipe tower. User is responsible for ensuring there is no collision with the print.
 
 **Key:** `wipe_tower_no_sparse_layers`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
 ### Example
 
 ```json
-"wipe_tower_no_sparse_layers": "0"
+"wipe_tower_no_sparse_layers": true
 ```
+
 
 ## Wipe tower rotation angle
 
@@ -4069,15 +4006,16 @@ Wipe tower rotation angle with respect to x-axis.
 
 **Key:** `wipe_tower_rotation_angle`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0.0`
+**Default** `0.0`
 
 ### Example
 
 ```json
-"wipe_tower_rotation_angle": "0"
+"wipe_tower_rotation_angle": 2.91
 ```
+
 
 ## Purging volumes - load/unload volumes
 
@@ -4085,15 +4023,20 @@ This vector saves required volumes to change from/to each tool used on the wipe 
 
 **Key:** `wiping_volumes_extruders`
 
-**Type:** `[float]`
+**Type:** `Floats`
 
-**Default:** `[[70.0, 70.0, 70.0, 70.0, 70.0, 70.0, 70.0, 70.0, 70.0, 70.0]]`
+**Default** `[70.0, 70.0, 70.0, 70.0, 70.0, 70.0, 70.0, 70.0, 70.0, 70.0]`
 
 ### Example
 
 ```json
-"wiping_volumes_extruders": ["70","70","70","70","70","70","70","70","70","70"]
+"wiping_volumes_extruders": [
+    73.5,
+    73.0,
+    70.26
+  ]
 ```
+
 
 ## X-Y contour compensation
 
@@ -4101,15 +4044,16 @@ Contour of object will be grown or shrunk in XY plane by the configured value. P
 
 **Key:** `xy_contour_compensation`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0`
+**Default** `0`
 
 ### Example
 
 ```json
-"xy_contour_compensation": "0"
+"xy_contour_compensation": 1.62
 ```
+
 
 ## X-Y hole compensation
 
@@ -4117,12 +4061,12 @@ Holes of object will be grown or shrunk in XY plane by the configured value. Pos
 
 **Key:** `xy_hole_compensation`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0`
+**Default** `0`
 
 ### Example
 
 ```json
-"xy_hole_compensation": "0"
+"xy_hole_compensation": 3.33
 ```

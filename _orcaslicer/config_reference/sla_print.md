@@ -8,43 +8,43 @@ category_title: "SLA Print"
 
 Configuration options for a configuration file in the `sla_print` directory. No examples provided, as there are not currently any built-in profiles for SLA printers.
 
-## Compatible machine
+## Default sla print profile
 
-**Key:** `compatible_printers`
-
-**Type:** `[string]`
-
-**Default:** `null`
-
-## Compatible machine condition
-
-A boolean expression using the configuration values of an active printer profile. If this expression evaluates to true, this profile is considered compatible with the active printer profile.
-
-**Key:** `compatible_printers_condition`
-
-**Type:** `string`
-
-**Default:** `null`
-
-## default_sla_print_profile
+[No documentation provided]
 
 **Key:** `default_sla_print_profile`
 
-**Type:** `string`
+**Type:** `String`
 
-**Default:** `null`
+**Default** ``
 
-## faded_layers
+### Example
+
+```json
+"default_sla_print_profile": ""
+```
+
+
+## Faded layers
+
+[No documentation provided]
 
 **Key:** `faded_layers`
 
-**Type:** `integer`
+**Type:** `Int`
 
-**Default:** `10`
+**Min:** `3`
 
 **Max:** `20`
 
-**Min:** `3`
+**Default** `10`
+
+### Example
+
+```json
+"faded_layers": 8
+```
+
 
 ## Filename format
 
@@ -52,63 +52,96 @@ User can self-define the project file name when export
 
 **Key:** `filename_format`
 
-**Type:** `string`
+**Type:** `String`
 
-**Default:** `{input_filename_base}_{filament_type[0]}_{print_time}.gcode`
+**Default** `{input_filename_base}_{filament_type[0]}_{print_time}.gcode`
 
-## hollowing_closing_distance
+### Example
+
+```json
+"filename_format": ""
+```
+
+
+## Hollowing closing distance
+
+[No documentation provided]
 
 **Key:** `hollowing_closing_distance`
 
-**Type:** `float`
-
-**Default:** `2.0`
-
-**Max:** `10`
+**Type:** `Float`
 
 **Min:** `0`
 
-## hollowing_enable
+**Max:** `10`
+
+**Default** `2.0`
+
+### Example
+
+```json
+"hollowing_closing_distance": 1.63
+```
+
+
+## Hollowing enable
+
+[No documentation provided]
 
 **Key:** `hollowing_enable`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
-## hollowing_min_thickness
+### Example
+
+```json
+"hollowing_enable": false
+```
+
+
+## Hollowing min thickness
+
+[No documentation provided]
 
 **Key:** `hollowing_min_thickness`
 
-**Type:** `float`
-
-**Default:** `3.0`
-
-**Max:** `10`
+**Type:** `Float`
 
 **Min:** `1`
 
-## hollowing_quality
+**Max:** `10`
+
+**Default** `3.0`
+
+### Example
+
+```json
+"hollowing_min_thickness": 2.96
+```
+
+
+## Hollowing quality
+
+[No documentation provided]
 
 **Key:** `hollowing_quality`
 
-**Type:** `float`
-
-**Default:** `0.5`
-
-**Max:** `1`
+**Type:** `Float`
 
 **Min:** `0`
 
-## Inherits profile
+**Max:** `1`
 
-Name of parent profile
+**Default** `0.5`
 
-**Key:** `inherits`
+### Example
 
-**Type:** `string`
+```json
+"hollowing_quality": 0.57
+```
 
-**Default:** `null`
 
 ## Layer height
 
@@ -116,352 +149,641 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 
 **Key:** `layer_height`
 
-**Type:** `float`
-
-**Default:** `0.2`
+**Type:** `Float`
 
 **Min:** `0`
 
-## pad_around_object
+**Default** `0.2`
+
+### Example
+
+```json
+"layer_height": 0.19
+```
+
+
+## Pad around object
+
+[No documentation provided]
 
 **Key:** `pad_around_object`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
-## pad_around_object_everywhere
+### Example
+
+```json
+"pad_around_object": true
+```
+
+
+## Pad around object everywhere
+
+[No documentation provided]
 
 **Key:** `pad_around_object_everywhere`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
-## pad_brim_size
+### Example
+
+```json
+"pad_around_object_everywhere": true
+```
+
+
+## Pad brim size
+
+[No documentation provided]
 
 **Key:** `pad_brim_size`
 
-**Type:** `float`
-
-**Default:** `1.6`
-
-**Max:** `30`
+**Type:** `Float`
 
 **Min:** `0`
 
-## pad_enable
+**Max:** `30`
+
+**Default** `1.6`
+
+### Example
+
+```json
+"pad_brim_size": 1.48
+```
+
+
+## Pad enable
+
+[No documentation provided]
 
 **Key:** `pad_enable`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `true`
+**Default** `true`
 
-## pad_max_merge_distance
+### Example
+
+```json
+"pad_enable": false
+```
+
+
+## Pad max merge distance
+
+[No documentation provided]
 
 **Key:** `pad_max_merge_distance`
 
-**Type:** `float`
-
-**Default:** `50.0`
+**Type:** `Float`
 
 **Min:** `0`
 
-## pad_object_connector_penetration
+**Default** `50.0`
+
+### Example
+
+```json
+"pad_max_merge_distance": 58.26
+```
+
+
+## Pad object connector penetration
+
+[No documentation provided]
 
 **Key:** `pad_object_connector_penetration`
 
-**Type:** `float`
-
-**Default:** `0.3`
+**Type:** `Float`
 
 **Min:** `0`
 
-## pad_object_connector_stride
+**Default** `0.3`
+
+### Example
+
+```json
+"pad_object_connector_penetration": 0.26
+```
+
+
+## Pad object connector stride
+
+[No documentation provided]
 
 **Key:** `pad_object_connector_stride`
 
-**Type:** `float`
-
-**Default:** `10`
+**Type:** `Float`
 
 **Min:** `0`
 
-## pad_object_connector_width
+**Default** `10`
+
+### Example
+
+```json
+"pad_object_connector_stride": 10.1
+```
+
+
+## Pad object connector width
+
+[No documentation provided]
 
 **Key:** `pad_object_connector_width`
 
-**Type:** `float`
-
-**Default:** `0.5`
+**Type:** `Float`
 
 **Min:** `0`
 
-## pad_object_gap
+**Default** `0.5`
+
+### Example
+
+```json
+"pad_object_connector_width": 0.58
+```
+
+
+## Pad object gap
+
+[No documentation provided]
 
 **Key:** `pad_object_gap`
 
-**Type:** `float`
-
-**Default:** `1`
-
-**Max:** `10`
+**Type:** `Float`
 
 **Min:** `0`
 
-## pad_wall_height
+**Max:** `10`
+
+**Default** `1`
+
+### Example
+
+```json
+"pad_object_gap": 1.03
+```
+
+
+## Pad wall height
+
+[No documentation provided]
 
 **Key:** `pad_wall_height`
 
-**Type:** `float`
-
-**Default:** `0.0`
-
-**Max:** `30`
+**Type:** `Float`
 
 **Min:** `0`
 
-## pad_wall_slope
+**Max:** `30`
+
+**Default** `0.0`
+
+### Example
+
+```json
+"pad_wall_height": 1.57
+```
+
+
+## Pad wall slope
+
+[No documentation provided]
 
 **Key:** `pad_wall_slope`
 
-**Type:** `float`
-
-**Default:** `90.0`
-
-**Max:** `90`
+**Type:** `Float`
 
 **Min:** `45`
 
-## pad_wall_thickness
+**Max:** `90`
+
+**Default** `90.0`
+
+### Example
+
+```json
+"pad_wall_slope": 81.94
+```
+
+
+## Pad wall thickness
+
+[No documentation provided]
 
 **Key:** `pad_wall_thickness`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `2.0`
+**Min:** `0`
 
 **Max:** `30`
 
-**Min:** `0`
+**Default** `2.0`
+
+### Example
+
+```json
+"pad_wall_thickness": 2.44
+```
+
 
 ## Slice gap closing radius
 
-Cracks smaller than 2x gap closing radius are being filled during the triangle mesh slicing. The gap closing operation may reduce the final print resolution, therefore it is advisable to keep the value reasonably low.
+[No documentation provided]
 
 **Key:** `slice_closing_radius`
 
-**Type:** `float`
-
-**Default:** `0.049`
+**Type:** `Float`
 
 **Min:** `0`
 
-## support_base_diameter
+**Default** `0.049`
+
+### Example
+
+```json
+"slice_closing_radius": 0.05
+```
+
+
+## Support base diameter
+
+[No documentation provided]
 
 **Key:** `support_base_diameter`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `4.0`
+**Min:** `0`
 
 **Max:** `30`
 
-**Min:** `0`
+**Default** `4.0`
 
-## support_base_height
+### Example
+
+```json
+"support_base_diameter": 3.56
+```
+
+
+## Support base height
+
+[No documentation provided]
 
 **Key:** `support_base_height`
 
-**Type:** `float`
-
-**Default:** `1.0`
+**Type:** `Float`
 
 **Min:** `0`
 
-## support_base_safety_distance
+**Default** `1.0`
+
+### Example
+
+```json
+"support_base_height": 1.24
+```
+
+
+## Support base safety distance
+
+[No documentation provided]
 
 **Key:** `support_base_safety_distance`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `1`
+**Min:** `0`
 
 **Max:** `10`
 
-**Min:** `0`
+**Default** `1`
 
-## support_buildplate_only
+### Example
+
+```json
+"support_base_safety_distance": 1.1
+```
+
+
+## Support buildplate only
+
+[No documentation provided]
 
 **Key:** `support_buildplate_only`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `null`
+**Default** `false`
 
-## support_critical_angle
+### Example
+
+```json
+"support_buildplate_only": true
+```
+
+
+## Support critical angle
+
+[No documentation provided]
 
 **Key:** `support_critical_angle`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `45`
+**Min:** `0`
 
 **Max:** `90`
 
-**Min:** `0`
+**Default** `45`
 
-## support_head_front_diameter
+### Example
+
+```json
+"support_critical_angle": 38.29
+```
+
+
+## Support head front diameter
+
+[No documentation provided]
 
 **Key:** `support_head_front_diameter`
 
-**Type:** `float`
-
-**Default:** `0.4`
+**Type:** `Float`
 
 **Min:** `0`
 
-## support_head_penetration
+**Default** `0.4`
+
+### Example
+
+```json
+"support_head_front_diameter": 0.38
+```
+
+
+## Support head penetration
+
+[No documentation provided]
 
 **Key:** `support_head_penetration`
 
-**Type:** `float`
-
-**Default:** `0.2`
+**Type:** `Float`
 
 **Min:** `0`
 
-## support_head_width
+**Default** `0.2`
+
+### Example
+
+```json
+"support_head_penetration": 0.16
+```
+
+
+## Support head width
+
+[No documentation provided]
 
 **Key:** `support_head_width`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `1.0`
+**Min:** `0`
 
 **Max:** `20`
 
-**Min:** `0`
+**Default** `1.0`
 
-## support_max_bridge_length
+### Example
+
+```json
+"support_head_width": 0.89
+```
+
+
+## Support max bridge length
+
+[No documentation provided]
 
 **Key:** `support_max_bridge_length`
 
-**Type:** `float`
-
-**Default:** `15.0`
+**Type:** `Float`
 
 **Min:** `0`
 
-## support_max_bridges_on_pillar
+**Default** `15.0`
+
+### Example
+
+```json
+"support_max_bridge_length": 18.05
+```
+
+
+## Support max bridges on pillar
+
+[No documentation provided]
 
 **Key:** `support_max_bridges_on_pillar`
 
-**Type:** `integer`
+**Type:** `Int`
 
-**Default:** `3`
+**Min:** `0`
 
 **Max:** `50`
 
-**Min:** `0`
+**Default** `3`
 
-## support_max_pillar_link_distance
+### Example
+
+```json
+"support_max_bridges_on_pillar": 3
+```
+
+
+## Support max pillar link distance
+
+[No documentation provided]
 
 **Key:** `support_max_pillar_link_distance`
 
-**Type:** `float`
-
-**Default:** `10.0`
+**Type:** `Float`
 
 **Min:** `0`
 
-## support_object_elevation
+**Default** `10.0`
+
+### Example
+
+```json
+"support_max_pillar_link_distance": 10.78
+```
+
+
+## Support object elevation
+
+[No documentation provided]
 
 **Key:** `support_object_elevation`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `5.0`
+**Min:** `0`
 
 **Max:** `150`
 
-**Min:** `0`
+**Default** `5.0`
 
-## support_pillar_connection_mode
+### Example
+
+```json
+"support_object_elevation": 5.01
+```
+
+
+## Support pillar connection mode
+
+[No documentation provided]
 
 **Key:** `support_pillar_connection_mode`
 
-**Type:** `enum`
+**Type:** `Enum`
 
-**Default:** `dynamic`
+**Default** `slapcmDynamic`
 
-**Values:**
-* **Zig-zag**: `zigzag`
-* **Cross**: `cross`
-* **Dynamic**: `dynamic`
+**Enum values:**
 
-## support_pillar_diameter
+
+### Example
+
+```json
+"support_pillar_connection_mode": "cross"
+```
+
+
+## Support pillar diameter
+
+[No documentation provided]
 
 **Key:** `support_pillar_diameter`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `1.0`
+**Min:** `0`
 
 **Max:** `15`
 
-**Min:** `0`
+**Default** `1.0`
 
-## support_pillar_widening_factor
+### Example
+
+```json
+"support_pillar_diameter": 1.23
+```
+
+
+## Support pillar widening factor
+
+[No documentation provided]
 
 **Key:** `support_pillar_widening_factor`
 
-**Type:** `float`
+**Type:** `Float`
 
-**Default:** `0.0`
+**Min:** `0`
 
 **Max:** `1`
 
-**Min:** `0`
+**Default** `0.0`
 
-## support_points_density_relative
+### Example
+
+```json
+"support_pillar_widening_factor": 0
+```
+
+
+## Support points density relative
+
+[No documentation provided]
 
 **Key:** `support_points_density_relative`
 
-**Type:** `integer`
-
-**Default:** `100`
+**Type:** `Int`
 
 **Min:** `0`
 
-## support_points_minimal_distance
+**Default** `100`
+
+### Example
+
+```json
+"support_points_density_relative": 86
+```
+
+
+## Support points minimal distance
+
+[No documentation provided]
 
 **Key:** `support_points_minimal_distance`
 
-**Type:** `float`
-
-**Default:** `1.0`
+**Type:** `Float`
 
 **Min:** `0`
 
-## support_small_pillar_diameter_percent
+**Default** `1.0`
+
+### Example
+
+```json
+"support_points_minimal_distance": 1.12
+```
+
+
+## Support small pillar diameter percent
+
+[No documentation provided]
 
 **Key:** `support_small_pillar_diameter_percent`
 
-**Type:** `percent`
-
-**Default:** `50`
-
-**Max:** `100`
+**Type:** `Percent`
 
 **Min:** `1`
 
-## supports_enable
+**Max:** `100`
+
+**Default** `50`
+
+### Example
+
+```json
+"support_small_pillar_diameter_percent": "56%"
+```
+
+
+## Supports enable
+
+[No documentation provided]
 
 **Key:** `supports_enable`
 
-**Type:** `boolean`
+**Type:** `Bool`
 
-**Default:** `true`
+**Default** `true`
 
+### Example
+
+```json
+"supports_enable": false
+```
