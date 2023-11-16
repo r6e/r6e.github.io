@@ -23,7 +23,7 @@ Configuration options for a configuration file in the `sla_materials` directory.
 ### Example
 
 ```json
-"bottle_cost": 4.18
+"bottle_cost": 1.45
 ```
 
 
@@ -42,7 +42,7 @@ Configuration options for a configuration file in the `sla_materials` directory.
 ### Example
 
 ```json
-"bottle_volume": 1120.97
+"bottle_volume": 818.28
 ```
 
 
@@ -61,7 +61,7 @@ Configuration options for a configuration file in the `sla_materials` directory.
 ### Example
 
 ```json
-"bottle_weight": 1.18
+"bottle_weight": 1.12
 ```
 
 
@@ -73,20 +73,18 @@ Configuration options for a configuration file in the `sla_materials` directory.
 
 **Type:** `Strings`
 
-**Default** `[""]`
+**Default** `[]`
 
 ### Example
 
 ```json
-"compatible_printers": [
-    ""
-  ]
+"compatible_printers": [""]
 ```
 
 
 ## Compatible machine condition
 
-[No documentation provided]
+A boolean expression using the configuration values of an active printer profile. If this expression evaluates to true, this profile is considered compatible with the active printer profile.
 
 **Key:** `compatible_printers_condition`
 
@@ -109,23 +107,18 @@ Configuration options for a configuration file in the `sla_materials` directory.
 
 **Type:** `Strings`
 
-**Default** `[""]`
+**Default** `[]`
 
 ### Example
 
 ```json
-"compatible_prints": [
-    "",
-    "",
-    "",
-    ""
-  ]
+"compatible_prints": [""]
 ```
 
 
 ## Compatible process profiles condition
 
-[No documentation provided]
+A boolean expression using the configuration values of an active print profile. If this expression evaluates to true, this profile is considered compatible with the active print profile.
 
 **Key:** `compatible_prints_condition`
 
@@ -172,7 +165,7 @@ Configuration options for a configuration file in the `sla_materials` directory.
 ### Example
 
 ```json
-"exposure_time": 11.68
+"exposure_time": 10.05
 ```
 
 
@@ -191,7 +184,7 @@ Configuration options for a configuration file in the `sla_materials` directory.
 ### Example
 
 ```json
-"initial_exposure_time": 15.23
+"initial_exposure_time": 18.14
 ```
 
 
@@ -210,7 +203,7 @@ Configuration options for a configuration file in the `sla_materials` directory.
 ### Example
 
 ```json
-"initial_layer_height": 0.33
+"initial_layer_height": 0.25
 ```
 
 
@@ -247,7 +240,9 @@ Configuration options for a configuration file in the `sla_materials` directory.
 
 ```json
 "material_correction": [
-    0.91
+    0.89,
+    0.75,
+    0.9
   ]
 ```
 
@@ -267,7 +262,7 @@ Configuration options for a configuration file in the `sla_materials` directory.
 ### Example
 
 ```json
-"material_correction_x": 0.81
+"material_correction_x": 0.86
 ```
 
 
@@ -286,7 +281,7 @@ Configuration options for a configuration file in the `sla_materials` directory.
 ### Example
 
 ```json
-"material_correction_y": 1.02
+"material_correction_y": 1.01
 ```
 
 
@@ -305,7 +300,7 @@ Configuration options for a configuration file in the `sla_materials` directory.
 ### Example
 
 ```json
-"material_correction_z": 1.05
+"material_correction_z": 0.88
 ```
 
 
@@ -324,7 +319,7 @@ Configuration options for a configuration file in the `sla_materials` directory.
 ### Example
 
 ```json
-"material_density": 0.77
+"material_density": 1.1
 ```
 
 

@@ -9,7 +9,7 @@ category_title: "Machine Limits"
 Configuration options for a configuration file with `"type": "machine"`.
 
 
-## Machine max acceleration e
+## Maximum acceleration E
 
 Maximum acceleration of E axis
 
@@ -25,16 +25,13 @@ Maximum acceleration of E axis
 
 ```json
 "machine_max_acceleration_e": [
-    4051.38,
-    4101.1,
-    4050.57,
-    4146.04,
-    4133.92
+    4874.85,
+    4684.16
   ]
 ```
 
 
-## Machine max acceleration extruding
+## Maximum acceleration for extruding
 
 Maximum acceleration for extruding (M204 P)
 
@@ -50,13 +47,13 @@ Maximum acceleration for extruding (M204 P)
 
 ```json
 "machine_max_acceleration_extruding": [
-    1191.49,
-    1457.28
+    1153.28,
+    1039.11
   ]
 ```
 
 
-## Machine max acceleration retracting
+## Maximum acceleration for retracting
 
 Maximum acceleration for retracting (M204 R)
 
@@ -72,14 +69,13 @@ Maximum acceleration for retracting (M204 R)
 
 ```json
 "machine_max_acceleration_retracting": [
-    1223.98,
-    1238.96,
-    1152.2
+    1365.46,
+    1390.95
   ]
 ```
 
 
-## Machine max acceleration travel
+## Maximum acceleration for travel
 
 Maximum acceleration for travel (M204 T), it only applies to Marlin 2
 
@@ -95,14 +91,13 @@ Maximum acceleration for travel (M204 T), it only applies to Marlin 2
 
 ```json
 "machine_max_acceleration_travel": [
-    4.88,
-    3.34,
-    1.61
+    3.01,
+    0.09
   ]
 ```
 
 
-## Machine max acceleration x
+## Maximum acceleration X
 
 Maximum acceleration of X axis
 
@@ -118,12 +113,13 @@ Maximum acceleration of X axis
 
 ```json
 "machine_max_acceleration_x": [
-    784.75
+    985.0,
+    895.75
   ]
 ```
 
 
-## Machine max acceleration y
+## Maximum acceleration Y
 
 Maximum acceleration of Y axis
 
@@ -139,13 +135,13 @@ Maximum acceleration of Y axis
 
 ```json
 "machine_max_acceleration_y": [
-    967.11,
-    817.56
+    966.69,
+    822.93
   ]
 ```
 
 
-## Machine max acceleration z
+## Maximum acceleration Z
 
 Maximum acceleration of Z axis
 
@@ -161,16 +157,13 @@ Maximum acceleration of Z axis
 
 ```json
 "machine_max_acceleration_z": [
-    407.26,
-    417.83,
-    271.21,
-    386.66,
-    282.68
+    406.84,
+    376.46
   ]
 ```
 
 
-## Machine max jerk e
+## Maximum jerk E
 
 Maximum jerk of E axis
 
@@ -186,14 +179,13 @@ Maximum jerk of E axis
 
 ```json
 "machine_max_jerk_e": [
-    1.97,
-    2.03,
-    2.07
+    1.99,
+    2.29
   ]
 ```
 
 
-## Machine max jerk x
+## Maximum jerk X
 
 Maximum jerk of X axis
 
@@ -209,15 +201,13 @@ Maximum jerk of X axis
 
 ```json
 "machine_max_jerk_x": [
-    8.69,
-    8.37,
-    8.32,
-    8.22
+    9.92,
+    7.51
   ]
 ```
 
 
-## Machine max jerk y
+## Maximum jerk Y
 
 Maximum jerk of Y axis
 
@@ -233,15 +223,13 @@ Maximum jerk of Y axis
 
 ```json
 "machine_max_jerk_y": [
-    8.7,
-    9.86,
-    9.27,
-    8.74
+    8.92,
+    9.01
   ]
 ```
 
 
-## Machine max jerk z
+## Maximum jerk Z
 
 Maximum jerk of Z axis
 
@@ -258,15 +246,12 @@ Maximum jerk of Z axis
 ```json
 "machine_max_jerk_z": [
     0.33,
-    0.36,
-    0.27,
-    0.27,
-    0.28
+    0.31
   ]
 ```
 
 
-## Machine max speed e
+## Maximum speed E
 
 Maximum speed of E axis
 
@@ -282,15 +267,13 @@ Maximum speed of E axis
 
 ```json
 "machine_max_speed_e": [
-    114.55,
-    90.31,
-    115.91,
-    104.29
+    100.42,
+    98.58
   ]
 ```
 
 
-## Machine max speed x
+## Maximum speed X
 
 Maximum speed of X axis
 
@@ -306,14 +289,13 @@ Maximum speed of X axis
 
 ```json
 "machine_max_speed_x": [
-    305.48,
-    266.53,
-    377.18
+    316.84,
+    313.76
   ]
 ```
 
 
-## Machine max speed y
+## Maximum speed Y
 
 Maximum speed of Y axis
 
@@ -329,15 +311,13 @@ Maximum speed of Y axis
 
 ```json
 "machine_max_speed_y": [
-    308.46,
-    427.11,
-    432.62,
-    416.41
+    378.28,
+    434.89
   ]
 ```
 
 
-## Machine max speed z
+## Maximum speed Z
 
 Maximum speed of Z axis
 
@@ -353,16 +333,13 @@ Maximum speed of Z axis
 
 ```json
 "machine_max_speed_z": [
-    10.78,
-    9.02,
-    11.27,
-    10.19,
-    9.66
+    11.65,
+    9.1
   ]
 ```
 
 
-## Machine min extruding rate
+## Minimum speed for extruding
 
 Minimum speed for extruding (M205 S)
 
@@ -378,16 +355,13 @@ Minimum speed for extruding (M205 S)
 
 ```json
 "machine_min_extruding_rate": [
-    2.17,
-    1.67,
-    0.29,
-    3.57,
-    3.98
+    4.86,
+    4.74
   ]
 ```
 
 
-## Machine min travel rate
+## Minimum travel speed
 
 Minimum travel speed (M205 T)
 
@@ -403,8 +377,7 @@ Minimum travel speed (M205 T)
 
 ```json
 "machine_min_travel_rate": [
-    4.82,
-    1.89,
-    4.23
+    2.4,
+    4.88
   ]
 ```

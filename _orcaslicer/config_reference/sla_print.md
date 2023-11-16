@@ -80,7 +80,7 @@ User can self-define the project file name when export
 ### Example
 
 ```json
-"hollowing_closing_distance": 1.63
+"hollowing_closing_distance": 1.61
 ```
 
 
@@ -118,7 +118,7 @@ User can self-define the project file name when export
 ### Example
 
 ```json
-"hollowing_min_thickness": 2.96
+"hollowing_min_thickness": 3.65
 ```
 
 
@@ -139,7 +139,7 @@ User can self-define the project file name when export
 ### Example
 
 ```json
-"hollowing_quality": 0.57
+"hollowing_quality": 0.46
 ```
 
 
@@ -158,7 +158,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"layer_height": 0.19
+"layer_height": 0.22
 ```
 
 
@@ -175,7 +175,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_around_object": true
+"pad_around_object": false
 ```
 
 
@@ -213,7 +213,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_brim_size": 1.48
+"pad_brim_size": 1.45
 ```
 
 
@@ -230,7 +230,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_enable": false
+"pad_enable": true
 ```
 
 
@@ -249,7 +249,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_max_merge_distance": 58.26
+"pad_max_merge_distance": 39.06
 ```
 
 
@@ -268,7 +268,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_object_connector_penetration": 0.26
+"pad_object_connector_penetration": 0.24
 ```
 
 
@@ -287,7 +287,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_object_connector_stride": 10.1
+"pad_object_connector_stride": 12.1
 ```
 
 
@@ -306,7 +306,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_object_connector_width": 0.58
+"pad_object_connector_width": 0.49
 ```
 
 
@@ -327,7 +327,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_object_gap": 1.03
+"pad_object_gap": 1.14
 ```
 
 
@@ -348,7 +348,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_wall_height": 1.57
+"pad_wall_height": 3.77
 ```
 
 
@@ -369,7 +369,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_wall_slope": 81.94
+"pad_wall_slope": 70.16
 ```
 
 
@@ -390,13 +390,13 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_wall_thickness": 2.44
+"pad_wall_thickness": 1.6
 ```
 
 
 ## Slice gap closing radius
 
-[No documentation provided]
+Cracks smaller than 2x gap closing radius are being filled during the triangle mesh slicing. The gap closing operation may reduce the final print resolution, therefore it is advisable to keep the value reasonably low.
 
 **Key:** `slice_closing_radius`
 
@@ -409,7 +409,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"slice_closing_radius": 0.05
+"slice_closing_radius": 0.06
 ```
 
 
@@ -430,7 +430,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"support_base_diameter": 3.56
+"support_base_diameter": 4.88
 ```
 
 
@@ -449,7 +449,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"support_base_height": 1.24
+"support_base_height": 1.21
 ```
 
 
@@ -470,7 +470,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"support_base_safety_distance": 1.1
+"support_base_safety_distance": 0.82
 ```
 
 
@@ -508,7 +508,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"support_critical_angle": 38.29
+"support_critical_angle": 40.51
 ```
 
 
@@ -546,7 +546,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"support_head_penetration": 0.16
+"support_head_penetration": 0.2
 ```
 
 
@@ -567,7 +567,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"support_head_width": 0.89
+"support_head_width": 1.22
 ```
 
 
@@ -586,7 +586,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"support_max_bridge_length": 18.05
+"support_max_bridge_length": 11.56
 ```
 
 
@@ -626,7 +626,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"support_max_pillar_link_distance": 10.78
+"support_max_pillar_link_distance": 9.66
 ```
 
 
@@ -647,7 +647,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"support_object_elevation": 5.01
+"support_object_elevation": 5.93
 ```
 
 
@@ -688,7 +688,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"support_pillar_diameter": 1.23
+"support_pillar_diameter": 1.1
 ```
 
 
@@ -709,7 +709,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"support_pillar_widening_factor": 0
+"support_pillar_widening_factor": 1
 ```
 
 
@@ -728,7 +728,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"support_points_density_relative": 86
+"support_points_density_relative": 93
 ```
 
 
@@ -747,7 +747,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"support_points_minimal_distance": 1.12
+"support_points_minimal_distance": 1.09
 ```
 
 
@@ -768,7 +768,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"support_small_pillar_diameter_percent": "56%"
+"support_small_pillar_diameter_percent": "55%"
 ```
 
 
@@ -785,5 +785,5 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"supports_enable": false
+"supports_enable": true
 ```

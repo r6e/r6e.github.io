@@ -21,15 +21,13 @@ Activate for better air filtration. G-code command: M106 P3 S(0-255)
 ### Example
 
 ```json
-"activate_air_filtration": [
-    true
-  ]
+"activate_air_filtration": [true]
 ```
 
 
 ## Activate temperature control
 
-Enable this option for chamber temperature control. An M191 command will be added before \"machine_start_gcode\"\nG-code commands: M141/M191 S(0-255)
+Enable this option for chamber temperature control. An M191 command will be added before "machine_start_gcode"\nG-code commands: M141/M191 S(0-255)
 
 **Key:** `activate_chamber_temp_control`
 
@@ -40,16 +38,14 @@ Enable this option for chamber temperature control. An M191 command will be adde
 ### Example
 
 ```json
-"activate_chamber_temp_control": [
-    true,
-    true
-  ]
+"activate_chamber_temp_control": [true]
 ```
 
 
-## Additional cooling fan speed
+## Fan speed (auxiliary fan)
 
-[No documentation provided]
+Speed of auxiliary part cooling fan. Auxiliary fan will run at this speed during printing except the first several layers which is defined by no cooling layers.
+Please enable auxiliary_fan in printer settings to use this feature. G-code command: M106 P2 S(0-255)
 
 **Key:** `additional_cooling_fan_speed`
 
@@ -64,15 +60,13 @@ Enable this option for chamber temperature control. An M191 command will be adde
 ### Example
 
 ```json
-"additional_cooling_fan_speed": [
-    0
-  ]
+"additional_cooling_fan_speed": [3]
 ```
 
 
 ## Chamber temperature
 
-[No documentation provided]
+Higher chamber temperature can help suppress or reduce warping and potentially lead to higher interlayer bonding strength for high temperature materials like ABS, ASA, PC, PA and so on. At the same time, the air filtration of ABS and ASA will get worse.While for PLA, PETG, TPU, PVA and other low temperature materials, the actual chamber temperature should not be high to avoid cloggings, so 0 which stands for turning off is highly recommended
 
 **Key:** `chamber_temperature`
 
@@ -80,16 +74,14 @@ Enable this option for chamber temperature control. An M191 command will be adde
 
 **Min:** `0`
 
-**Max:** `0`
+**Max:** `1500`
 
 **Default** `[0]`
 
 ### Example
 
 ```json
-"chamber_temperature": [
-    2
-  ]
+"chamber_temperature": [3]
 ```
 
 
@@ -110,14 +102,11 @@ Close all cooling fan for the first certain layers. Cooling fan of the first lay
 ### Example
 
 ```json
-"close_fan_the_first_x_layers": [
-    1,
-    0
-  ]
+"close_fan_the_first_x_layers": [0]
 ```
 
 
-## Complete print exhaust fan speed
+## Exhaust fan speed (print complete)
 
 Speed of exhuast fan after printing completes
 
@@ -134,10 +123,7 @@ Speed of exhuast fan after printing completes
 ### Example
 
 ```json
-"complete_print_exhaust_fan_speed": [
-    72,
-    86
-  ]
+"complete_print_exhaust_fan_speed": [78]
 ```
 
 
@@ -158,14 +144,11 @@ Bed temperature for layers except the initial one. Value 0 means the filament do
 ### Example
 
 ```json
-"cool_plate_temp": [
-    34,
-    40
-  ]
+"cool_plate_temp": [27]
 ```
 
 
-## Cool plate temperature initial layer
+## Cool plate temperature (initial layer)
 
 Bed temperature of the initial layer. Value 0 means the filament does not support to print on the Cool Plate
 
@@ -182,13 +165,7 @@ Bed temperature of the initial layer. Value 0 means the filament does not suppor
 ### Example
 
 ```json
-"cool_plate_temp_initial_layer": [
-    30,
-    35,
-    36,
-    41,
-    28
-  ]
+"cool_plate_temp_initial_layer": [29]
 ```
 
 
@@ -205,14 +182,11 @@ Default filament color
 ### Example
 
 ```json
-"default_filament_colour": [
-    "",
-    ""
-  ]
+"default_filament_colour": [""]
 ```
 
 
-## During print exhaust fan speed
+## Exhaust fan speed (during print)
 
 Speed of exhuast fan during printing.This speed will overwrite the speed in filament custom gcode
 
@@ -229,11 +203,7 @@ Speed of exhuast fan during printing.This speed will overwrite the speed in fila
 ### Example
 
 ```json
-"during_print_exhaust_fan_speed": [
-    57,
-    46,
-    60
-  ]
+"during_print_exhaust_fan_speed": [49]
 ```
 
 
@@ -250,10 +220,7 @@ Enable this option to optimize part cooling fan speed for overhang and bridge to
 ### Example
 
 ```json
-"enable_overhang_bridge_fan": [
-    false,
-    true
-  ]
+"enable_overhang_bridge_fan": [false]
 ```
 
 
@@ -270,15 +237,11 @@ Enable pressure advance, auto calibration result will be overwriten once enabled
 ### Example
 
 ```json
-"enable_pressure_advance": [
-    true,
-    false,
-    false
-  ]
+"enable_pressure_advance": [false]
 ```
 
 
-## Eng plate temperature
+## Engineering plate temperature
 
 Bed temperature for layers except the initial one. Value 0 means the filament does not support to print on the Engineering Plate
 
@@ -295,14 +258,11 @@ Bed temperature for layers except the initial one. Value 0 means the filament do
 ### Example
 
 ```json
-"eng_plate_temp": [
-    46,
-    48
-  ]
+"eng_plate_temp": [37]
 ```
 
 
-## Eng plate temperature initial layer
+## Engineering plate temperature (initial layer)
 
 Bed temperature of the initial layer. Value 0 means the filament does not support to print on the Engineering Plate
 
@@ -319,13 +279,11 @@ Bed temperature of the initial layer. Value 0 means the filament does not suppor
 ### Example
 
 ```json
-"eng_plate_temp_initial_layer": [
-    40
-  ]
+"eng_plate_temp_initial_layer": [40]
 ```
 
 
-## Fan cooling layer time
+## Enable fan cooling for short layer times
 
 Part cooling fan will be enabled for layers of which estimated time is shorter than this value. Fan speed is interpolated between the minimum and maximum fan speeds according to layer printing time
 
@@ -337,18 +295,16 @@ Part cooling fan will be enabled for layers of which estimated time is shorter t
 
 **Max:** `1000`
 
-**Default** `["60.0f"]`
+**Default** `[60.0]`
 
 ### Example
 
 ```json
-"fan_cooling_layer_time": [
-    74.36
-  ]
+"fan_cooling_layer_time": [64.24]
 ```
 
 
-## Fan max speed
+## Fan speed (max)
 
 Part cooling fan speed may be increased when auto cooling is enabled. This is the maximum speed limitation of part cooling fan
 
@@ -365,13 +321,11 @@ Part cooling fan speed may be increased when auto cooling is enabled. This is th
 ### Example
 
 ```json
-"fan_max_speed": [
-    97
-  ]
+"fan_max_speed": [79]
 ```
 
 
-## Fan min speed
+## Fan speed (min)
 
 Minimum speed for part cooling fan
 
@@ -388,15 +342,11 @@ Minimum speed for part cooling fan
 ### Example
 
 ```json
-"fan_min_speed": [
-    17,
-    20,
-    20
-  ]
+"fan_min_speed": [18]
 ```
 
 
-## Filament colour
+## Filament color
 
 Only used as a visual help on UI
 
@@ -409,16 +359,11 @@ Only used as a visual help on UI
 ### Example
 
 ```json
-"filament_colour": [
-    "",
-    "",
-    "",
-    ""
-  ]
+"filament_colour": [""]
 ```
 
 
-## Speed of the last cooling move
+## Cooling move speed (last)
 
 Cooling moves are gradually accelerating towards this speed.
 
@@ -433,13 +378,11 @@ Cooling moves are gradually accelerating towards this speed.
 ### Example
 
 ```json
-"filament_cooling_final_speed": [
-    2.98
-  ]
+"filament_cooling_final_speed": [2.98]
 ```
 
 
-## Speed of the first cooling move
+## Cooling move speed (first)
 
 Cooling moves are gradually accelerating beginning at this speed.
 
@@ -454,11 +397,7 @@ Cooling moves are gradually accelerating beginning at this speed.
 ### Example
 
 ```json
-"filament_cooling_initial_speed": [
-    2.49,
-    2.54,
-    2.52
-  ]
+"filament_cooling_initial_speed": [1.92]
 ```
 
 
@@ -470,23 +409,18 @@ Filament is cooled by being moved back and forth in the cooling tubes. Specify d
 
 **Type:** `Ints`
 
-**Max:** `0`
+**Max:** `20`
 
 **Default** `[4]`
 
 ### Example
 
 ```json
-"filament_cooling_moves": [
-    0,
-    0,
-    0,
-    0
-  ]
+"filament_cooling_moves": [4]
 ```
 
 
-## Filament cost
+## Filamet cost per kg
 
 Filament price. For statistics only
 
@@ -501,9 +435,7 @@ Filament price. For statistics only
 ### Example
 
 ```json
-"filament_cost": [
-    4.12
-  ]
+"filament_cost": [2.56]
 ```
 
 
@@ -522,14 +454,11 @@ Filament density. For statistics only
 ### Example
 
 ```json
-"filament_density": [
-    0.48,
-    4.3
-  ]
+"filament_density": [0.52]
 ```
 
 
-## Filament deretraction speed
+## Deretraction speed
 
 Speed for reloading filament into extruder. Zero means same speed with retraction
 
@@ -544,12 +473,7 @@ Speed for reloading filament into extruder. Zero means same speed with retractio
 ### Example
 
 ```json
-"filament_deretraction_speed": [
-    1.05,
-    2.93,
-    0.29,
-    3.64
-  ]
+"filament_deretraction_speed": [1.28]
 ```
 
 
@@ -568,16 +492,11 @@ Filament diameter is used to calculate extrusion in gcode, so it's important and
 ### Example
 
 ```json
-"filament_diameter": [
-    1.44,
-    1.72,
-    1.91,
-    1.84
-  ]
+"filament_diameter": [1.72]
 ```
 
 
-## Filament end gcode
+## End G-code
 
 End G-code when finish the printing of this filament
 
@@ -590,16 +509,11 @@ End G-code when finish the printing of this filament
 ### Example
 
 ```json
-"filament_end_gcode": [
-    "",
-    "",
-    "",
-    ""
-  ]
+"filament_end_gcode": [""]
 ```
 
 
-## Filament flow ratio
+## Flow ratio
 
 The material may have volumetric change after switching between molten state and crystalline state. This setting changes all extrusion flow of this filament in gcode proportionally. Recommended value range is between 0.95 and 1.05. Maybe you can tune this value to get nice flat surface when there has slight overflow or underflow
 
@@ -614,11 +528,7 @@ The material may have volumetric change after switching between molten state and
 ### Example
 
 ```json
-"filament_flow_ratio": [
-    1.2,
-    1.01,
-    1.19
-  ]
+"filament_flow_ratio": [1.02]
 ```
 
 
@@ -635,9 +545,7 @@ Support material is commonly used to print support and support interface
 ### Example
 
 ```json
-"filament_is_support": [
-    true
-  ]
+"filament_is_support": [true]
 ```
 
 
@@ -656,13 +564,7 @@ Time for the printer firmware (or the Multi Material Unit 2.0) to load a new fil
 ### Example
 
 ```json
-"filament_load_time": [
-    0.03,
-    2.82,
-    0.06,
-    3.01,
-    4.78
-  ]
+"filament_load_time": [3.77]
 ```
 
 
@@ -681,13 +583,7 @@ Speed used for loading the filament on the wipe tower.
 ### Example
 
 ```json
-"filament_loading_speed": [
-    30.0,
-    25.36,
-    30.73,
-    33.08,
-    26.17
-  ]
+"filament_loading_speed": [22.98]
 ```
 
 
@@ -706,16 +602,11 @@ Speed ulsed at the very beginning of loading phase.
 ### Example
 
 ```json
-"filament_loading_speed_start": [
-    2.31,
-    2.81,
-    2.46,
-    2.66
-  ]
+"filament_loading_speed_start": [2.68]
 ```
 
 
-## Max volumetric speed
+## Volumetric speed (max)
 
 This setting stands for how much volume of filament can be melted and extruded per second. Printing speed is limited by max volumetric speed, in case of too high and unreasonable speed setting. Can't be zero
 
@@ -732,13 +623,7 @@ This setting stands for how much volume of filament can be melted and extruded p
 ### Example
 
 ```json
-"filament_max_volumetric_speed": [
-    2.32,
-    1.84,
-    1.75,
-    2.33,
-    1.95
-  ]
+"filament_max_volumetric_speed": [1.65]
 ```
 
 
@@ -757,18 +642,13 @@ After a tool change, the exact position of the newly loaded filament inside the 
 ### Example
 
 ```json
-"filament_minimal_purge_on_wipe_tower": [
-    18.61,
-    16.69,
-    17.42,
-    14.96
-  ]
+"filament_minimal_purge_on_wipe_tower": [11.65]
 ```
 
 
 ## Enable ramming for multitool setups
 
-[No documentation provided]
+Perform ramming when using multitool printer (i.e. when the 'Single Extruder Multimaterial' in Printer Settings is unchecked). When checked, a small amount of filament is rapidly extruded on the wipe tower just before the toolchange. This option is only used when the wipe tower is enabled.
 
 **Key:** `filament_multitool_ramming`
 
@@ -779,11 +659,7 @@ After a tool change, the exact position of the newly loaded filament inside the 
 ### Example
 
 ```json
-"filament_multitool_ramming": [
-    false,
-    false,
-    false
-  ]
+"filament_multitool_ramming": [false]
 ```
 
 
@@ -802,9 +678,7 @@ Flow used for ramming the filament before the toolchange.
 ### Example
 
 ```json
-"filament_multitool_ramming_flow": [
-    10.52
-  ]
+"filament_multitool_ramming_flow": [7.67]
 ```
 
 
@@ -823,9 +697,7 @@ The volume to be rammed before the toolchange.
 ### Example
 
 ```json
-"filament_multitool_ramming_volume": [
-    10.16
-  ]
+"filament_multitool_ramming_volume": [9.44]
 ```
 
 
@@ -842,13 +714,7 @@ You can put your notes regarding the filament here.
 ### Example
 
 ```json
-"filament_notes": [
-    "",
-    "",
-    "",
-    "",
-    ""
-  ]
+"filament_notes": [""]
 ```
 
 
@@ -860,22 +726,16 @@ This string is edited by RammingDialog and contains ramming specific parameters.
 
 **Type:** `Strings`
 
-**Default** `[]`
+**Default** `["120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6"]`
 
 ### Example
 
 ```json
-"filament_ramming_parameters": [
-    "",
-    "",
-    "",
-    "",
-    ""
-  ]
+"filament_ramming_parameters": [""]
 ```
 
 
-## Filament retract before wipe
+## Retract amount before wipe
 
 The length of fast retraction before wipe, relative to retraction length
 
@@ -890,17 +750,11 @@ The length of fast retraction before wipe, relative to retraction length
 ### Example
 
 ```json
-"filament_retract_before_wipe": [
-    "94%",
-    "123%",
-    "82%",
-    "95%",
-    "117%"
-  ]
+"filament_retract_before_wipe": ["98%"]
 ```
 
 
-## Filament retract lift above
+## Only lift Z above
 
 If you set this to a positive value, Z lift will only take place above the specified absolute Z.
 
@@ -915,13 +769,11 @@ If you set this to a positive value, Z lift will only take place above the speci
 ### Example
 
 ```json
-"filament_retract_lift_above": [
-    1.74
-  ]
+"filament_retract_lift_above": [4.07]
 ```
 
 
-## Filament retract lift below
+## Only lift Z below
 
 If you set this to a positive value, Z lift will only take place below the specified absolute Z.
 
@@ -936,16 +788,11 @@ If you set this to a positive value, Z lift will only take place below the speci
 ### Example
 
 ```json
-"filament_retract_lift_below": [
-    4.85,
-    1.05,
-    0.09,
-    2.73
-  ]
+"filament_retract_lift_below": [1.49]
 ```
 
 
-## Filament retract lift enforce
+## Enforce z-hop behavior
 
 Enforce Z Hop behavior. This setting is impacted by the above settings (Only lift Z above/below).
 
@@ -955,7 +802,7 @@ Enforce Z Hop behavior. This setting is impacted by the above settings (Only lif
 
 **Nullable:** true
 
-**Default** `["RetractLiftEnforceType ::rletAllSurfaces"]`
+**Default** `["AllSurfaces"]`
 
 **Enum values:**
 
@@ -963,14 +810,11 @@ Enforce Z Hop behavior. This setting is impacted by the above settings (Only lif
 ### Example
 
 ```json
-"filament_retract_lift_enforce": [
-    "Top and Bottom",
-    "Bottom Only"
-  ]
+"filament_retract_lift_enforce": ["Top Only"]
 ```
 
 
-## Filament retract restart extra
+## Extra length on restart
 
 When the retraction is compensated after the travel move, the extruder will push this additional amount of filament. This setting is rarely needed.
 
@@ -985,17 +829,11 @@ When the retraction is compensated after the travel move, the extruder will push
 ### Example
 
 ```json
-"filament_retract_restart_extra": [
-    3.44,
-    4.38,
-    0.49,
-    1.29,
-    1.26
-  ]
+"filament_retract_restart_extra": [4.3]
 ```
 
 
-## Filament retract when changing layer
+## Retract when change layer
 
 Force a retraction when changes layer
 
@@ -1010,13 +848,11 @@ Force a retraction when changes layer
 ### Example
 
 ```json
-"filament_retract_when_changing_layer": [
-    false
-  ]
+"filament_retract_when_changing_layer": [false]
 ```
 
 
-## Filament retraction length
+## Retraction length
 
 Some amount of material in extruder is pulled back to avoid ooze during long travel. Set zero to disable retraction
 
@@ -1031,17 +867,11 @@ Some amount of material in extruder is pulled back to avoid ooze during long tra
 ### Example
 
 ```json
-"filament_retraction_length": [
-    0.61,
-    0.78,
-    0.71,
-    0.68,
-    0.84
-  ]
+"filament_retraction_length": [0.9]
 ```
 
 
-## Filament retraction minimum travel
+## Travel distance threshold
 
 Only trigger retraction when the travel distance is longer than this threshold
 
@@ -1056,13 +886,11 @@ Only trigger retraction when the travel distance is longer than this threshold
 ### Example
 
 ```json
-"filament_retraction_minimum_travel": [
-    1.65
-  ]
+"filament_retraction_minimum_travel": [2.46]
 ```
 
 
-## Filament retraction speed
+## Retraction speed
 
 Speed of retractions
 
@@ -1077,12 +905,7 @@ Speed of retractions
 ### Example
 
 ```json
-"filament_retraction_speed": [
-    33.35,
-    33.61,
-    37.33,
-    28.8
-  ]
+"filament_retraction_speed": [31.64]
 ```
 
 
@@ -1101,7 +924,7 @@ In order to reduce the visibility of the seam in a closed loop extrusion, the lo
 ### Example
 
 ```json
-"filament_seam_gap": "11%"
+"filament_seam_gap": "8%"
 ```
 
 
@@ -1120,11 +943,7 @@ Enter the shrinkage percentage that the filament will get after cooling (94% if 
 ### Example
 
 ```json
-"filament_shrink": [
-    "105%",
-    "101%",
-    "78%"
-  ]
+"filament_shrink": ["97%"]
 ```
 
 
@@ -1141,13 +960,11 @@ Soluble material is commonly used to print support and support interface
 ### Example
 
 ```json
-"filament_soluble": [
-    true
-  ]
+"filament_soluble": [false]
 ```
 
 
-## Filament start gcode
+## Start G-code
 
 Start G-code when start the printing of this filament
 
@@ -1160,13 +977,7 @@ Start G-code when start the printing of this filament
 ### Example
 
 ```json
-"filament_start_gcode": [
-    "",
-    "",
-    "",
-    "",
-    ""
-  ]
+"filament_start_gcode": [""]
 ```
 
 
@@ -1185,10 +996,7 @@ Time to wait after the filament is unloaded. May help to get reliable toolchange
 ### Example
 
 ```json
-"filament_toolchange_delay": [
-    3.98,
-    3.81
-  ]
+"filament_toolchange_delay": [3.51]
 ```
 
 
@@ -1208,11 +1016,7 @@ The material type of filament
 ### Example
 
 ```json
-"filament_type": [
-    "",
-    "",
-    ""
-  ]
+"filament_type": [""]
 ```
 
 
@@ -1231,13 +1035,7 @@ Time for the printer firmware (or the Multi Material Unit 2.0) to unload a filam
 ### Example
 
 ```json
-"filament_unload_time": [
-    3.32,
-    0.83,
-    0.07,
-    2.55,
-    3.2
-  ]
+"filament_unload_time": [2.84]
 ```
 
 
@@ -1256,13 +1054,7 @@ Speed used for unloading the filament on the wipe tower (does not affect  initia
 ### Example
 
 ```json
-"filament_unloading_speed": [
-    105.69,
-    76.19,
-    90.7,
-    79.31,
-    82.7
-  ]
+"filament_unloading_speed": [74.63]
 ```
 
 
@@ -1281,12 +1073,7 @@ Speed used for unloading the tip of the filament immediately after ramming.
 ### Example
 
 ```json
-"filament_unloading_speed_start": [
-    105.93,
-    83.38,
-    95.37,
-    119.62
-  ]
+"filament_unloading_speed_start": [96.73]
 ```
 
 
@@ -1298,18 +1085,16 @@ Vendor of filament. For show only
 
 **Type:** `Strings`
 
-**Default** `["L(\"(Undefined)\")"]`
+**Default** `["(Undefined)"]`
 
 ### Example
 
 ```json
-"filament_vendor": [
-    ""
-  ]
+"filament_vendor": [""]
 ```
 
 
-## Filament wipe
+## Wipe while retracting
 
 Move nozzle along the last extrusion path when retracting to clean leaked material on nozzle. This can minimize blob when print new part after travel
 
@@ -1324,13 +1109,11 @@ Move nozzle along the last extrusion path when retracting to clean leaked materi
 ### Example
 
 ```json
-"filament_wipe": [
-    true
-  ]
+"filament_wipe": [false]
 ```
 
 
-## Filament wipe distance
+## Wipe Distance
 
 Discribe how long the nozzle will move along the last path when retracting
 
@@ -1347,17 +1130,11 @@ Discribe how long the nozzle will move along the last path when retracting
 ### Example
 
 ```json
-"filament_wipe_distance": [
-    1.05,
-    1.21,
-    1.02,
-    1.09,
-    0.81
-  ]
+"filament_wipe_distance": [0.76]
 ```
 
 
-## Filament z hop
+## Z hop when retract
 
 Whenever the retraction is done, the nozzle is lifted a little to create clearance between nozzle and the print. It prevents nozzle from hitting the print when travel move. Using spiral line to lift z can prevent stringing
 
@@ -1372,17 +1149,11 @@ Whenever the retraction is done, the nozzle is lifted a little to create clearan
 ### Example
 
 ```json
-"filament_z_hop": [
-    0.4,
-    0.46,
-    0.34,
-    0.35,
-    0.48
-  ]
+"filament_z_hop": [0.46]
 ```
 
 
-## Filament z hop types
+## Z hop type
 
 Z hop type
 
@@ -1400,17 +1171,13 @@ Z hop type
 ### Example
 
 ```json
-"filament_z_hop_types": [
-    "Slope Lift",
-    "Normal Lift",
-    "Spiral Lift"
-  ]
+"filament_z_hop_types": ["Auto Lift"]
 ```
 
 
 ## Full fan speed at layer
 
-Fan speed will be ramped up linearly from zero at layer \"close_fan_the_first_x_layers\" to maximum at layer \"full_fan_speed_layer\". \"full_fan_speed_layer\" will be ignored if lower than \"close_fan_the_first_x_layers\", in which case the fan will be running at maximum allowed speed at layer \"close_fan_the_first_x_layers\" + 1.
+Fan speed will be ramped up linearly from zero at layer "close_fan_the_first_x_layers" to maximum at layer "full_fan_speed_layer". "full_fan_speed_layer" will be ignored if lower than "close_fan_the_first_x_layers", in which case the fan will be running at maximum allowed speed at layer "close_fan_the_first_x_layers" + 1.
 
 **Key:** `full_fan_speed_layer`
 
@@ -1425,9 +1192,7 @@ Fan speed will be ramped up linearly from zero at layer \"close_fan_the_first_x_
 ### Example
 
 ```json
-"full_fan_speed_layer": [
-    0
-  ]
+"full_fan_speed_layer": [4]
 ```
 
 
@@ -1448,14 +1213,11 @@ Bed temperature for layers except the initial one. Value 0 means the filament do
 ### Example
 
 ```json
-"hot_plate_temp": [
-    41,
-    47
-  ]
+"hot_plate_temp": [51]
 ```
 
 
-## Hot plate temperature initial layer
+## Hot plate temperature (initial layer)
 
 Bed temperature of the initial layer. Value 0 means the filament does not support to print on the High Temp Plate
 
@@ -1470,13 +1232,7 @@ Bed temperature of the initial layer. Value 0 means the filament does not suppor
 ### Example
 
 ```json
-"hot_plate_temp_initial_layer": [
-    48,
-    55,
-    46,
-    48,
-    44
-  ]
+"hot_plate_temp_initial_layer": [51]
 ```
 
 
@@ -1490,21 +1246,18 @@ Nozzle temperature for layers after the initial one
 
 **Min:** `0`
 
-**Max:** `0`
+**Max:** `1500`
 
 **Default** `[200]`
 
 ### Example
 
 ```json
-"nozzle_temperature": [
-    0,
-    0
-  ]
+"nozzle_temperature": [242]
 ```
 
 
-## Nozzle temperature initial layer
+## Nozzle temperature (initial layer)
 
 Nozzle temperature to print initial layer when using this filament
 
@@ -1514,22 +1267,20 @@ Nozzle temperature to print initial layer when using this filament
 
 **Min:** `0`
 
-**Max:** `0`
+**Max:** `1500`
 
 **Default** `[200]`
 
 ### Example
 
 ```json
-"nozzle_temperature_initial_layer": [
-    0
-  ]
+"nozzle_temperature_initial_layer": [171]
 ```
 
 
-## Nozzle temperature range high
+## Filament maximum nozzle temperature
 
-[No documentation provided]
+The maximum temperature this filament may be printed at
 
 **Key:** `nozzle_temperature_range_high`
 
@@ -1537,26 +1288,20 @@ Nozzle temperature to print initial layer when using this filament
 
 **Min:** `0`
 
-**Max:** `0`
+**Max:** `1500`
 
 **Default** `[240]`
 
 ### Example
 
 ```json
-"nozzle_temperature_range_high": [
-    0,
-    0,
-    0,
-    0,
-    0
-  ]
+"nozzle_temperature_range_high": [285]
 ```
 
 
-## Nozzle temperature range low
+## Filament minimum nozzle temperature
 
-[No documentation provided]
+The minimum temperature this filament may be printed at
 
 **Key:** `nozzle_temperature_range_low`
 
@@ -1564,24 +1309,18 @@ Nozzle temperature to print initial layer when using this filament
 
 **Min:** `0`
 
-**Max:** `0`
+**Max:** `1500`
 
 **Default** `[190]`
 
 ### Example
 
 ```json
-"nozzle_temperature_range_low": [
-    0,
-    0,
-    0,
-    0,
-    0
-  ]
+"nozzle_temperature_range_low": [191]
 ```
 
 
-## Fan speed for overhang
+## Fan speed (overhang)
 
 Force part cooling fan to be this speed when printing bridge or overhang wall which has large overhang degree. Forcing cooling for overhang and bridge can get better quality for these part
 
@@ -1598,10 +1337,7 @@ Force part cooling fan to be this speed when printing bridge or overhang wall wh
 ### Example
 
 ```json
-"overhang_fan_speed": [
-    92,
-    81
-  ]
+"overhang_fan_speed": [79]
 ```
 
 
@@ -1621,10 +1357,7 @@ Force cooling fan to be specific speed when overhang degree of printed part exce
 ### Example
 
 ```json
-"overhang_fan_threshold": [
-    "95%",
-    "0%"
-  ]
+"overhang_fan_threshold": ["50%"]
 ```
 
 
@@ -1643,10 +1376,7 @@ Pressure advance(Klipper) AKA Linear advance factor(Marlin)
 ### Example
 
 ```json
-"pressure_advance": [
-    0.02,
-    0.02
-  ]
+"pressure_advance": [0.02]
 ```
 
 
@@ -1663,9 +1393,7 @@ If enable this setting, part cooling fan will never be stoped and will run at le
 ### Example
 
 ```json
-"reduce_fan_stop_start_freq": [
-    true
-  ]
+"reduce_fan_stop_start_freq": [false]
 ```
 
 
@@ -1686,18 +1414,13 @@ Minimum HRC of nozzle required to print the filament. Zero means no checking of 
 ### Example
 
 ```json
-"required_nozzle_HRC": [
-    4,
-    3,
-    0,
-    3
-  ]
+"required_nozzle_HRC": [4]
 ```
 
 
 ## Slow printing down for better layer cooling
 
-Enable this option to slow printing speed down to make the final layer time not shorter than the layer time threshold in \"Max fan speed threshold\", so that layer can be cooled for longer time. This can improve the cooling quality for needle and small details
+Enable this option to slow printing speed down to make the final layer time not shorter than the layer time threshold in "Max fan speed threshold", so that layer can be cooled for longer time. This can improve the cooling quality for needle and small details
 
 **Key:** `slow_down_for_layer_cooling`
 
@@ -1708,17 +1431,13 @@ Enable this option to slow printing speed down to make the final layer time not 
 ### Example
 
 ```json
-"slow_down_for_layer_cooling": [
-    true,
-    false,
-    true
-  ]
+"slow_down_for_layer_cooling": [true]
 ```
 
 
-## Slow down layer time
+## Layer time
 
-[No documentation provided]
+The printing speed in exported gcode will be slowed down, when the estimated layer time is shorter than this value, to get better cooling for these layers
 
 **Key:** `slow_down_layer_time`
 
@@ -1728,21 +1447,16 @@ Enable this option to slow printing speed down to make the final layer time not 
 
 **Max:** `1000`
 
-**Default** `["5.0f"]`
+**Default** `[5.0]`
 
 ### Example
 
 ```json
-"slow_down_layer_time": [
-    5.68,
-    4.09,
-    3.77,
-    6.02
-  ]
+"slow_down_layer_time": [6.12]
 ```
 
 
-## Min print speed
+## Print speed (min)
 
 The minimum printing speed for the filament when slow down for better layer cooling is enabled, when printing overhangs and when feature speeds are not specified explicitly.
 
@@ -1757,13 +1471,11 @@ The minimum printing speed for the filament when slow down for better layer cool
 ### Example
 
 ```json
-"slow_down_min_speed": [
-    12.34
-  ]
+"slow_down_min_speed": [9.2]
 ```
 
 
-## Support interface fan speed
+## Fan speed (support interface)
 
 This fan speed is enforced during all support interfaces, to be able to weaken their bonding with a high fan speed.\nSet to -1 to disable this override.\nCan only be overriden by disable_fan_first_layers.
 
@@ -1780,9 +1492,7 @@ This fan speed is enforced during all support interfaces, to be able to weaken t
 ### Example
 
 ```json
-"support_material_interface_fan_speed": [
-    0
-  ]
+"support_material_interface_fan_speed": [0]
 ```
 
 
@@ -1799,13 +1509,7 @@ The material softens at this temperature, so when the bed temperature is equal t
 ### Example
 
 ```json
-"temperature_vitrification": [
-    107,
-    96,
-    117,
-    99,
-    75
-  ]
+"temperature_vitrification": [103]
 ```
 
 
@@ -1826,16 +1530,11 @@ Bed temperature for layers except the initial one. Value 0 means the filament do
 ### Example
 
 ```json
-"textured_plate_temp": [
-    51,
-    47,
-    35,
-    51
-  ]
+"textured_plate_temp": [41]
 ```
 
 
-## Textured plate temperature initial layer
+## Textured plate temperature (initial layer)
 
 Bed temperature of the initial layer. Value 0 means the filament does not support to print on the Textured PEI Plate
 
@@ -1852,7 +1551,5 @@ Bed temperature of the initial layer. Value 0 means the filament does not suppor
 ### Example
 
 ```json
-"textured_plate_temp_initial_layer": [
-    44
-  ]
+"textured_plate_temp_initial_layer": [39]
 ```

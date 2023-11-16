@@ -21,7 +21,7 @@ Configuration options for a configuration file for an SLA printer in the `machin
 ### Example
 
 ```json
-"absolute_correction": 2.24
+"absolute_correction": 2.94
 ```
 
 
@@ -40,7 +40,7 @@ Configuration options for a configuration file for an SLA printer in the `machin
 ### Example
 
 ```json
-"area_fill": 55.31
+"area_fill": 53.51
 ```
 
 
@@ -93,7 +93,7 @@ Configuration options for a configuration file for an SLA printer in the `machin
 ### Example
 
 ```json
-"display_height": 80.47
+"display_height": 73.48
 ```
 
 
@@ -151,7 +151,7 @@ Configuration options for a configuration file for an SLA printer in the `machin
 ```
 
 
-## Display pixels X
+## Display pixels (X)
 
 [No documentation provided]
 
@@ -166,11 +166,11 @@ Configuration options for a configuration file for an SLA printer in the `machin
 ### Example
 
 ```json
-"display_pixels_x": 2154
+"display_pixels_x": 1930
 ```
 
 
-## Display pixels Y
+## Display pixels (Y)
 
 [No documentation provided]
 
@@ -185,7 +185,7 @@ Configuration options for a configuration file for an SLA printer in the `machin
 ### Example
 
 ```json
-"display_pixels_y": 1592
+"display_pixels_y": 1626
 ```
 
 
@@ -204,7 +204,7 @@ Configuration options for a configuration file for an SLA printer in the `machin
 ### Example
 
 ```json
-"display_width": 131.86
+"display_width": 138.5
 ```
 
 
@@ -223,7 +223,7 @@ Shrink the initial layer on build plate to compensate for elephant foot effect
 ### Example
 
 ```json
-"elefant_foot_compensation": 4.67
+"elefant_foot_compensation": 1.28
 ```
 
 
@@ -242,7 +242,7 @@ Shrink the initial layer on build plate to compensate for elephant foot effect
 ### Example
 
 ```json
-"elefant_foot_min_width": 0.19
+"elefant_foot_min_width": 0.23
 ```
 
 
@@ -261,7 +261,7 @@ Shrink the initial layer on build plate to compensate for elephant foot effect
 ### Example
 
 ```json
-"fast_tilt_time": 6.19
+"fast_tilt_time": 4.65
 ```
 
 
@@ -282,7 +282,7 @@ Shrink the initial layer on build plate to compensate for elephant foot effect
 ### Example
 
 ```json
-"gamma_correction": 0.91
+"gamma_correction": 0.78
 ```
 
 
@@ -318,7 +318,7 @@ Name of parent profile
 ### Example
 
 ```json
-"max_exposure_time": 103.55
+"max_exposure_time": 113.99
 ```
 
 
@@ -337,7 +337,7 @@ Name of parent profile
 ### Example
 
 ```json
-"max_initial_exposure_time": 117.46
+"max_initial_exposure_time": 164.77
 ```
 
 
@@ -356,7 +356,7 @@ Name of parent profile
 ### Example
 
 ```json
-"min_exposure_time": 1.91
+"min_exposure_time": 3.09
 ```
 
 
@@ -375,7 +375,7 @@ Name of parent profile
 ### Example
 
 ```json
-"min_initial_exposure_time": 2.56
+"min_initial_exposure_time": 0.2
 ```
 
 
@@ -394,8 +394,20 @@ Name of parent profile
 ```json
 "printable_area": [
     [
-      119.36,
-      84.75
+      77.76,
+      97.69
+    ],
+    [
+      94.75,
+      111.05
+    ],
+    [
+      77.57,
+      118.26
+    ],
+    [
+      117.11,
+      123.76
     ]
   ]
 ```
@@ -418,7 +430,7 @@ Maximum printable height which is limited by mechanism of printer
 ### Example
 
 ```json
-"printable_height": 110.26
+"printable_height": 118.32
 ```
 
 
@@ -438,7 +450,7 @@ Printer technology
 ### Example
 
 ```json
-"printer_technology": "FFF"
+"printer_technology": "SLA"
 ```
 
 
@@ -458,9 +470,8 @@ Printer technology
 
 ```json
 "relative_correction": [
-    0.96,
-    0.97,
-    0.95
+    0.77,
+    0.96
   ]
 ```
 
@@ -480,7 +491,7 @@ Printer technology
 ### Example
 
 ```json
-"relative_correction_x": 0.86
+"relative_correction_x": 1.14
 ```
 
 
@@ -499,7 +510,7 @@ Printer technology
 ### Example
 
 ```json
-"relative_correction_y": 0.87
+"relative_correction_y": 0.98
 ```
 
 
@@ -518,7 +529,7 @@ Printer technology
 ### Example
 
 ```json
-"relative_correction_z": 1.03
+"relative_correction_z": 1.14
 ```
 
 
@@ -537,5 +548,5 @@ Printer technology
 ### Example
 
 ```json
-"slow_tilt_time": 9.35
+"slow_tilt_time": 6.43
 ```

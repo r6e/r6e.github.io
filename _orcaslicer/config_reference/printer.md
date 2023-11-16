@@ -27,29 +27,21 @@ Enable this option if machine has auxiliary part cooling fan. G-code command: M1
 
 ## Bed exclude area
 
-[No documentation provided]
+Unprintable area in XY plane. For example, X1 Series printers use the front left corner to cut filament during filament change. The area is expressed as polygon by points in following format: "XxY, XxY, ..."
 
 **Key:** `bed_exclude_area`
 
 **Type:** `Points`
 
-**Default** `[0, 0]`
+**Default** `[[0, 0]]`
 
 ### Example
 
 ```json
 "bed_exclude_area": [
     [
-      2.0,
-      2.4
-    ],
-    [
-      0.83,
-      4.7
-    ],
-    [
-      0.42,
-      2.41
+      3.64,
+      1.14
     ]
   ]
 ```
@@ -86,8 +78,8 @@ Best auto arranging position in range [0,1] w.r.t. bed shape.
 
 ```json
 "best_object_pos": [
-    0.6,
-    0.57
+    0.62,
+    0.55
   ]
 ```
 
@@ -124,7 +116,7 @@ Length of the cooling tube to limit space for cooling moves inside it.
 ### Example
 
 ```json
-"cooling_tube_length": 3.79
+"cooling_tube_length": 5.25
 ```
 
 
@@ -143,7 +135,7 @@ Distance of the center-point of the cooling tube from the extruder tip.
 ### Example
 
 ```json
-"cooling_tube_retraction": 80.62
+"cooling_tube_retraction": 94.18
 ```
 
 
@@ -194,7 +186,7 @@ When set to zero, the distance the filament is moved from parking position durin
 ### Example
 
 ```json
-"extra_loading_move": -1.63
+"extra_loading_move": -2.27
 ```
 
 
@@ -213,7 +205,7 @@ Distance of the nozzle tip to the lid. Used for collision avoidance in by-object
 ### Example
 
 ```json
-"extruder_clearance_height_to_lid": 136.72
+"extruder_clearance_height_to_lid": 116.58
 ```
 
 
@@ -232,7 +224,7 @@ Distance of the nozzle tip to the lower rod. Used for collision avoidance in by-
 ### Example
 
 ```json
-"extruder_clearance_height_to_rod": 40.14
+"extruder_clearance_height_to_rod": 48.47
 ```
 
 
@@ -251,13 +243,15 @@ Clearance radius around extruder. Used for collision avoidance in by-object prin
 ### Example
 
 ```json
-"extruder_clearance_radius": 45.47
+"extruder_clearance_radius": 40.85
 ```
 
 
 ## Fan kick-start time
 
-[No documentation provided]
+Emit a max fan speed command for this amount of seconds before reducing to target speed to kick-start the cooling fan.
+This is useful for fans where a low PWM/power may be insufficient to get the fan started spinning from a stop, or to get the fan up to speed faster.
+Set to 0 to deactivate.
 
 **Key:** `fan_kickstart`
 
@@ -270,7 +264,7 @@ Clearance radius around extruder. Used for collision avoidance in by-object prin
 ### Example
 
 ```json
-"fan_kickstart": 4.82
+"fan_kickstart": 0.51
 ```
 
 
@@ -291,9 +285,9 @@ Will only take into account the delay for the cooling of overhangs.
 ```
 
 
-## Fan speedup time
+## Fan speed-up time
 
-[No documentation provided]
+Start the fan this number of seconds earlier than its target start time (you can use fractional seconds). It assumes infinite acceleration for this time estimation, and will only take into account G1 and G0 moves (arc fitting is unsupported).
 
 **Key:** `fan_speedup_time`
 
@@ -304,7 +298,7 @@ Will only take into account the delay for the cooling of overhangs.
 ### Example
 
 ```json
-"fan_speedup_time": 1.69
+"fan_speedup_time": 2.45
 ```
 
 
@@ -324,7 +318,7 @@ What kind of gcode the printer is compatible with
 ### Example
 
 ```json
-"gcode_flavor": "marlin2"
+"gcode_flavor": "smoothie"
 ```
 
 
@@ -361,7 +355,7 @@ Slic3r can upload G-code files to a printer host. This field must contain the ki
 ### Example
 
 ```json
-"host_type": "flashair"
+"host_type": "prusaconnect"
 ```
 
 
@@ -382,7 +376,7 @@ This gcode part is inserted at every layer change after lift z
 ```
 
 
-## Machine end gcode
+## End G-code
 
 End G-code when finish the whole printing
 
@@ -399,7 +393,7 @@ End G-code when finish the whole printing
 ```
 
 
-## Machine load filament time
+## Filament load time
 
 Time to load new filament when switch filament. For statistics only
 
@@ -414,7 +408,7 @@ Time to load new filament when switch filament. For statistics only
 ### Example
 
 ```json
-"machine_load_filament_time": 1.02
+"machine_load_filament_time": 3.9
 ```
 
 
@@ -435,7 +429,7 @@ This G-code will be used as a code for the pause print. User can insert pause G-
 ```
 
 
-## Machine start gcode
+## Start G-code
 
 Start G-code when start the whole printing
 
@@ -452,7 +446,7 @@ Start G-code when start the whole printing
 ```
 
 
-## Machine unload filament time
+## Filament unload time
 
 Time to unload old filament when switch filament. For statistics only
 
@@ -467,13 +461,13 @@ Time to unload old filament when switch filament. For statistics only
 ### Example
 
 ```json
-"machine_unload_filament_time": 4.7
+"machine_unload_filament_time": 2.94
 ```
 
 
 ## Manual Filament Change
 
-[No documentation provided]
+Enable this option to omit the custom Change filament G-code only at the beginning of the print. The tool change command (e.g., T0) will be skipped throughout the entire print. This is useful for manual multi-material printing, where we use M600/PAUSE to trigger the manual filament change action.
 
 **Key:** `manual_filament_change`
 
@@ -484,7 +478,7 @@ Time to unload old filament when switch filament. For statistics only
 ### Example
 
 ```json
-"manual_filament_change": false
+"manual_filament_change": true
 ```
 
 
@@ -505,7 +499,7 @@ The nozzle's hardness. Zero means no checking for nozzle's hardness during slici
 ### Example
 
 ```json
-"nozzle_hrc": 0
+"nozzle_hrc": 1
 ```
 
 
@@ -525,7 +519,7 @@ The metallic material of nozzle. This determines the abrasive resistance of nozz
 ### Example
 
 ```json
-"nozzle_type": "undefine"
+"nozzle_type": "hardened_steel"
 ```
 
 
@@ -542,7 +536,7 @@ Volume of nozzle between the cutter and the end of nozzle
 ### Example
 
 ```json
-"nozzle_volume": 1.56
+"nozzle_volume": 4.23
 ```
 
 
@@ -561,7 +555,7 @@ Distance of the extruder tip from the position where the filament is parked when
 ### Example
 
 ```json
-"parking_pos_retraction": 93.28
+"parking_pos_retraction": 78.56
 ```
 
 
@@ -649,7 +643,7 @@ The physical arrangement and components of a printing device
 ### Example
 
 ```json
-"printer_structure": "hbot"
+"printer_structure": "i3"
 ```
 
 
@@ -703,7 +697,7 @@ Slic3r can upload G-code files to a printer host. This field should contain the 
 ### Example
 
 ```json
-"printhost_authorization_type": "key"
+"printhost_authorization_type": "user"
 ```
 
 
@@ -743,7 +737,7 @@ Custom CA certificate file can be specified for HTTPS OctoPrint connections, in 
 
 ## Printhost port
 
-Name of the printer
+[No documentation provided]
 
 **Key:** `printhost_port`
 
@@ -771,7 +765,7 @@ Ignore HTTPS certificate revocation checks in case of missing or offline distrib
 ### Example
 
 ```json
-"printhost_ssl_ignore_revoke": true
+"printhost_ssl_ignore_revoke": false
 ```
 
 
@@ -809,7 +803,7 @@ Purge remaining filament into prime tower
 ```
 
 
-## Retract lift enforce
+## Enforce z-hop behavior
 
 Enforce Z Hop behavior. This setting is impacted by the above settings (Only lift Z above/below).
 
@@ -819,7 +813,7 @@ Enforce Z Hop behavior. This setting is impacted by the above settings (Only lif
 
 **Nullable:** true
 
-**Default** `["RetractLiftEnforceType ::rletAllSurfaces"]`
+**Default** `["AllSurfaces"]`
 
 **Enum values:**
 
@@ -827,9 +821,7 @@ Enforce Z Hop behavior. This setting is impacted by the above settings (Only lif
 ### Example
 
 ```json
-"retract_lift_enforce": [
-    "Bottom Only"
-  ]
+"retract_lift_enforce": ["Top Only"]
 ```
 
 
@@ -880,7 +872,7 @@ Use single nozzle to print multi filament
 ### Example
 
 ```json
-"single_extruder_multi_material": false
+"single_extruder_multi_material": true
 ```
 
 
@@ -897,7 +889,7 @@ Enable this if printer support air filtration\nG-code command: M106 P3 S(0-255)
 ### Example
 
 ```json
-"support_air_filtration": true
+"support_air_filtration": false
 ```
 
 
@@ -914,7 +906,7 @@ This option is enabled if machine support controlling chamber temperature\nG-cod
 ### Example
 
 ```json
-"support_chamber_temp_control": false
+"support_chamber_temp_control": true
 ```
 
 
@@ -937,29 +929,21 @@ This G-code will be used as a custom code
 
 ## G-code thumbnails
 
-Picture sizes to be stored into a .gcode and .sl1 / .sl1s files, in the following format: \"XxY, XxY, ...\"
+Picture sizes to be stored into a .gcode and .sl1 / .sl1s files, in the following format: "XxY, XxY, ..."
 
 **Key:** `thumbnails`
 
 **Type:** `Points`
 
-**Default** `[300, 300]`
+**Default** `[[300, 300]]`
 
 ### Example
 
 ```json
 "thumbnails": [
     [
-      300,
-      301
-    ],
-    [
-      303,
-      302
-    ],
-    [
-      304,
-      302
+      302,
+      303
     ]
   ]
 ```
@@ -981,7 +965,7 @@ Format of G-code thumbnails: PNG for best quality, JPG for smallest size, QOI fo
 ### Example
 
 ```json
-"thumbnails_format": "JPG"
+"thumbnails_format": "QOI"
 ```
 
 
@@ -1000,7 +984,7 @@ The printer cost per hour
 ### Example
 
 ```json
-"time_cost": 4.7
+"time_cost": 1.78
 ```
 
 
@@ -1029,17 +1013,12 @@ The printer cost per hour
 
 **Type:** `Strings`
 
-**Default** `[""]`
+**Default** `[]`
 
 ### Example
 
 ```json
-"upward_compatible_machine": [
-    "",
-    "",
-    "",
-    ""
-  ]
+"upward_compatible_machine": [""]
 ```
 
 
@@ -1062,7 +1041,7 @@ This experimental setting uses G10 and G11 commands to have the firmware handle 
 
 ## Use relative E distances
 
-Relative extrusion is recommended when using \"label_objects\" option.Some extruders work better with this option unckecked (absolute extrusion mode). Wipe tower is only compatible with relative mode. It is always enabled on BambuLab printers. Default is checked
+Relative extrusion is recommended when using "label_objects" option.Some extruders work better with this option unckecked (absolute extrusion mode). Wipe tower is only compatible with relative mode. It is always enabled on BambuLab printers. Default is checked
 
 **Key:** `use_relative_e_distances`
 
@@ -1077,7 +1056,7 @@ Relative extrusion is recommended when using \"label_objects\" option.Some extru
 ```
 
 
-## Z hop types
+## Z hop type
 
 Z hop type
 
@@ -1095,10 +1074,7 @@ Z hop type
 ### Example
 
 ```json
-"z_hop_types": [
-    "Auto Lift",
-    "Slope Lift"
-  ]
+"z_hop_types": ["Slope Lift"]
 ```
 
 
@@ -1115,5 +1091,5 @@ This value will be added (or subtracted) from all the Z coordinates in the outpu
 ### Example
 
 ```json
-"z_offset": 0.38
+"z_offset": 2.42
 ```
