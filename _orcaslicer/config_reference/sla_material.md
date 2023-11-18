@@ -8,9 +8,9 @@ category_title: "SLA Material"
 
 Configuration options for a configuration file in the `sla_materials` directory. No examples provided, as there are not currently any built-in profiles for SLA printers.
 
-## Bottle cost
+## Material cost
 
-[No documentation provided]
+Material cost
 
 **Key:** `bottle_cost`
 
@@ -23,13 +23,13 @@ Configuration options for a configuration file in the `sla_materials` directory.
 ### Example
 
 ```json
-"bottle_cost": 1.45
+"bottle_cost": 4.45
 ```
 
 
 ## Bottle volume
 
-[No documentation provided]
+Bottle volume
 
 **Key:** `bottle_volume`
 
@@ -42,13 +42,13 @@ Configuration options for a configuration file in the `sla_materials` directory.
 ### Example
 
 ```json
-"bottle_volume": 818.28
+"bottle_volume": 887.6
 ```
 
 
 ## Bottle weight
 
-[No documentation provided]
+Bottle weight
 
 **Key:** `bottle_weight`
 
@@ -61,7 +61,7 @@ Configuration options for a configuration file in the `sla_materials` directory.
 ### Example
 
 ```json
-"bottle_weight": 1.12
+"bottle_weight": 0.85
 ```
 
 
@@ -78,7 +78,7 @@ Configuration options for a configuration file in the `sla_materials` directory.
 ### Example
 
 ```json
-"compatible_printers": [""]
+
 ```
 
 
@@ -95,7 +95,7 @@ A boolean expression using the configuration values of an active printer profile
 ### Example
 
 ```json
-"compatible_printers_condition": ""
+"compatible_printers_condition": "printer_model==\"PHOTON MONO SE"
 ```
 
 
@@ -112,7 +112,7 @@ A boolean expression using the configuration values of an active printer profile
 ### Example
 
 ```json
-"compatible_prints": [""]
+
 ```
 
 
@@ -129,13 +129,13 @@ A boolean expression using the configuration values of an active print profile. 
 ### Example
 
 ```json
-"compatible_prints_condition": ""
+"compatible_prints_condition": "layer_height == 0.1"
 ```
 
 
-## Default sla material profile
+## Default SLA material profile
 
-[No documentation provided]
+Default material profile associated with the current printer profile. On selection of the current printer profile, this material profile will be activated.
 
 **Key:** `default_sla_material_profile`
 
@@ -146,13 +146,13 @@ A boolean expression using the configuration values of an active print profile. 
 ### Example
 
 ```json
-"default_sla_material_profile": ""
+
 ```
 
 
 ## Exposure time
 
-[No documentation provided]
+Exposure time
 
 **Key:** `exposure_time`
 
@@ -165,13 +165,30 @@ A boolean expression using the configuration values of an active print profile. 
 ### Example
 
 ```json
-"exposure_time": 10.05
+"exposure_time": 1.2
+```
+
+
+## Inherits profile
+
+Name of parent profile
+
+**Key:** `inherits`
+
+**Type:** `String`
+
+**Default** ``
+
+### Example
+
+```json
+"inherits": "*common 0.035*"
 ```
 
 
 ## Initial exposure time
 
-[No documentation provided]
+Initial exposure time
 
 **Key:** `initial_exposure_time`
 
@@ -184,13 +201,13 @@ A boolean expression using the configuration values of an active print profile. 
 ### Example
 
 ```json
-"initial_exposure_time": 18.14
+"initial_exposure_time": 50
 ```
 
 
 ## Initial layer height
 
-[No documentation provided]
+Initial layer height
 
 **Key:** `initial_layer_height`
 
@@ -203,13 +220,13 @@ A boolean expression using the configuration values of an active print profile. 
 ### Example
 
 ```json
-"initial_layer_height": 0.25
+"initial_layer_height": 0.1
 ```
 
 
-## Material colour
+## Material color
 
-[No documentation provided]
+This is only used in the user interface as a visual help.
 
 **Key:** `material_colour`
 
@@ -220,13 +237,13 @@ A boolean expression using the configuration values of an active print profile. 
 ### Example
 
 ```json
-"material_colour": ""
+"material_colour": "#3AD200"
 ```
 
 
-## Material correction
+## Correction for expansion
 
-[No documentation provided]
+Correction for expansion
 
 **Key:** `material_correction`
 
@@ -239,17 +256,13 @@ A boolean expression using the configuration values of an active print profile. 
 ### Example
 
 ```json
-"material_correction": [
-    0.89,
-    0.75,
-    0.9
-  ]
+"material_correction": "1,1,1"
 ```
 
 
-## Material correction x
+## Correction for expansion in X axis
 
-[No documentation provided]
+Correction for expansion in X axis
 
 **Key:** `material_correction_x`
 
@@ -262,13 +275,13 @@ A boolean expression using the configuration values of an active print profile. 
 ### Example
 
 ```json
-"material_correction_x": 0.86
+"material_correction_x": 1.22
 ```
 
 
-## Material correction y
+## Correction for expansion in Y axis
 
-[No documentation provided]
+Correction for expansion in Y axis
 
 **Key:** `material_correction_y`
 
@@ -281,13 +294,13 @@ A boolean expression using the configuration values of an active print profile. 
 ### Example
 
 ```json
-"material_correction_y": 1.01
+"material_correction_y": 1.18
 ```
 
 
-## Material correction z
+## Correction for expansion in Z axis
 
-[No documentation provided]
+Correction for expansion in Z axis
 
 **Key:** `material_correction_z`
 
@@ -300,13 +313,13 @@ A boolean expression using the configuration values of an active print profile. 
 ### Example
 
 ```json
-"material_correction_z": 0.88
+"material_correction_z": 0.82
 ```
 
 
 ## Material density
 
-[No documentation provided]
+Material density
 
 **Key:** `material_density`
 
@@ -319,13 +332,13 @@ A boolean expression using the configuration values of an active print profile. 
 ### Example
 
 ```json
-"material_density": 1.1
+"material_density": 0.94
 ```
 
 
-## Material print speed
+## Print speed
 
-[No documentation provided]
+A slower printing profile might be necessary when using materials with higher viscosity or with some hollowed parts. It slows down the tilt movement and adds a delay before exposure.
 
 **Key:** `material_print_speed`
 
@@ -343,9 +356,9 @@ A boolean expression using the configuration values of an active print profile. 
 ```
 
 
-## Material type
+## SLA material type
 
-[No documentation provided]
+SLA material type
 
 **Key:** `material_type`
 
@@ -359,7 +372,7 @@ A boolean expression using the configuration values of an active print profile. 
 ### Example
 
 ```json
-"material_type": ""
+"material_type": "Plant-Based"
 ```
 
 
@@ -376,5 +389,22 @@ A boolean expression using the configuration values of an active print profile. 
 ### Example
 
 ```json
-"material_vendor": ""
+"material_vendor": "Peopoly"
+```
+
+
+## Name
+
+[No documentation provided]
+
+**Key:** `name`
+
+**Type:** `String`
+
+**Default** ``
+
+### Example
+
+```json
+"name": "MakerJuice Labs Standard Red @0.025"
 ```

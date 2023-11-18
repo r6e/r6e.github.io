@@ -8,9 +8,9 @@ category_title: "SLA Print"
 
 Configuration options for a configuration file in the `sla_print` directory. No examples provided, as there are not currently any built-in profiles for SLA printers.
 
-## Default sla print profile
+## Default SLA print profile
 
-[No documentation provided]
+Default print profile associated with the current printer profile. On selection of the current printer profile, this print profile will be activated.
 
 **Key:** `default_sla_print_profile`
 
@@ -21,13 +21,13 @@ Configuration options for a configuration file in the `sla_print` directory. No 
 ### Example
 
 ```json
-"default_sla_print_profile": ""
+
 ```
 
 
 ## Faded layers
 
-[No documentation provided]
+Number of the layers needed for the exposure time fade from initial exposure time to the exposure time
 
 **Key:** `faded_layers`
 
@@ -59,13 +59,13 @@ User can self-define the project file name when export
 ### Example
 
 ```json
-"filename_format": ""
+
 ```
 
 
 ## Hollowing closing distance
 
-[No documentation provided]
+Hollowing is done in two steps: first, an imaginary interior is calculated deeper (offset plus the closing distance) in the object and then it's inflated back to the specified offset. A greater closing distance makes the interior more rounded. At zero, the interior will resemble the exterior the most.
 
 **Key:** `hollowing_closing_distance`
 
@@ -80,13 +80,13 @@ User can self-define the project file name when export
 ### Example
 
 ```json
-"hollowing_closing_distance": 1.61
+"hollowing_closing_distance": 1.92
 ```
 
 
-## Hollowing enable
+## Enable hollowing
 
-[No documentation provided]
+Hollow out a model to have an empty interior
 
 **Key:** `hollowing_enable`
 
@@ -101,9 +101,9 @@ User can self-define the project file name when export
 ```
 
 
-## Hollowing min thickness
+## Hollowed model wall thickness
 
-[No documentation provided]
+Minimum wall thickness of a hollowed model.
 
 **Key:** `hollowing_min_thickness`
 
@@ -118,13 +118,13 @@ User can self-define the project file name when export
 ### Example
 
 ```json
-"hollowing_min_thickness": 3.65
+"hollowing_min_thickness": 3.34
 ```
 
 
-## Hollowing quality
+## Hollowing accuracy
 
-[No documentation provided]
+Performance vs accuracy of calculation. Lower values may produce unwanted artifacts.
 
 **Key:** `hollowing_quality`
 
@@ -139,7 +139,7 @@ User can self-define the project file name when export
 ### Example
 
 ```json
-"hollowing_quality": 0.46
+"hollowing_quality": 0.56
 ```
 
 
@@ -158,13 +158,13 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"layer_height": 0.22
+"layer_height": 0.1
 ```
 
 
 ## Pad around object
 
-[No documentation provided]
+Create pad around object and ignore the support elevation
 
 **Key:** `pad_around_object`
 
@@ -175,13 +175,13 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_around_object": false
+"pad_around_object": true
 ```
 
 
 ## Pad around object everywhere
 
-[No documentation provided]
+Force pad around object everywhere
 
 **Key:** `pad_around_object_everywhere`
 
@@ -198,7 +198,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 
 ## Pad brim size
 
-[No documentation provided]
+How far should the pad extend around the contained geometry
 
 **Key:** `pad_brim_size`
 
@@ -213,13 +213,13 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_brim_size": 1.45
+"pad_brim_size": 1.55
 ```
 
 
-## Pad enable
+## Use pad
 
-[No documentation provided]
+Add a pad underneath the supported model
 
 **Key:** `pad_enable`
 
@@ -234,9 +234,9 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ```
 
 
-## Pad max merge distance
+## Max merge distance
 
-[No documentation provided]
+Some objects can get along with a few smaller pads instead of a single big one. This parameter defines how far the center of two smaller pads should be. If they are closer, they will get merged into one pad.
 
 **Key:** `pad_max_merge_distance`
 
@@ -249,13 +249,13 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_max_merge_distance": 39.06
+"pad_max_merge_distance": 50
 ```
 
 
 ## Pad object connector penetration
 
-[No documentation provided]
+How much should the tiny connectors penetrate into the model body.
 
 **Key:** `pad_object_connector_penetration`
 
@@ -268,13 +268,13 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_object_connector_penetration": 0.24
+"pad_object_connector_penetration": 0.26
 ```
 
 
 ## Pad object connector stride
 
-[No documentation provided]
+Distance between two connector sticks which connect the object and the generated pad.
 
 **Key:** `pad_object_connector_stride`
 
@@ -287,13 +287,13 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_object_connector_stride": 12.1
+"pad_object_connector_stride": 11.02
 ```
 
 
 ## Pad object connector width
 
-[No documentation provided]
+Width of the connector sticks which connect the object and the generated pad.
 
 **Key:** `pad_object_connector_width`
 
@@ -306,13 +306,13 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_object_connector_width": 0.49
+"pad_object_connector_width": 0.39
 ```
 
 
 ## Pad object gap
 
-[No documentation provided]
+The gap between the object bottom and the generated pad in zero elevation mode.
 
 **Key:** `pad_object_gap`
 
@@ -327,13 +327,13 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_object_gap": 1.14
+"pad_object_gap": 0.76
 ```
 
 
 ## Pad wall height
 
-[No documentation provided]
+Defines the pad cavity depth. Set to zero to disable the cavity. Be careful when enabling this feature, as some resins may produce an extreme suction effect inside the cavity, which makes peeling the print off the vat foil difficult.
 
 **Key:** `pad_wall_height`
 
@@ -348,13 +348,13 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_wall_height": 3.77
+"pad_wall_height": 0
 ```
 
 
 ## Pad wall slope
 
-[No documentation provided]
+The slope of the pad wall relative to the bed plane. 90 degrees means straight walls.
 
 **Key:** `pad_wall_slope`
 
@@ -369,13 +369,13 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_wall_slope": 70.16
+"pad_wall_slope": 45
 ```
 
 
 ## Pad wall thickness
 
-[No documentation provided]
+The thickness of the pad and its optional cavity walls.
 
 **Key:** `pad_wall_thickness`
 
@@ -390,7 +390,7 @@ Slicing height for each layer. Smaller layer height means more accurate and more
 ### Example
 
 ```json
-"pad_wall_thickness": 1.6
+"pad_wall_thickness": 1
 ```
 
 
@@ -409,13 +409,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"slice_closing_radius": 0.06
+"slice_closing_radius": 0.005
 ```
 
 
 ## Support base diameter
 
-[No documentation provided]
+Diameter in mm of the pillar base
 
 **Key:** `support_base_diameter`
 
@@ -430,13 +430,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_base_diameter": 4.88
+"support_base_diameter": 3
 ```
 
 
 ## Support base height
 
-[No documentation provided]
+The height of the pillar base cone
 
 **Key:** `support_base_height`
 
@@ -449,13 +449,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_base_height": 1.21
+"support_base_height": 1
 ```
 
 
 ## Support base safety distance
 
-[No documentation provided]
+The minimum distance of the pillar base from the model in mm. Makes sense in zero elevation mode where a gap according to this parameter is inserted between the model and the pad.
 
 **Key:** `support_base_safety_distance`
 
@@ -470,13 +470,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_base_safety_distance": 0.82
+"support_base_safety_distance": 1.2
 ```
 
 
-## Support buildplate only
+## Support on build plate only
 
-[No documentation provided]
+Only create support if it lies on a build plate. Don't create support on a print.
 
 **Key:** `support_buildplate_only`
 
@@ -487,13 +487,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_buildplate_only": true
+"support_buildplate_only": false
 ```
 
 
-## Support critical angle
+## Critical angle
 
-[No documentation provided]
+The default angle for connecting support sticks and junctions.
 
 **Key:** `support_critical_angle`
 
@@ -508,13 +508,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_critical_angle": 40.51
+"support_critical_angle": 45
 ```
 
 
-## Support head front diameter
+## Pinhead front diameter
 
-[No documentation provided]
+Diameter of the pointing side of the head
 
 **Key:** `support_head_front_diameter`
 
@@ -527,13 +527,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_head_front_diameter": 0.38
+"support_head_front_diameter": 0.6
 ```
 
 
-## Support head penetration
+## Head penetration
 
-[No documentation provided]
+How much the pinhead has to penetrate the model surface
 
 **Key:** `support_head_penetration`
 
@@ -546,13 +546,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_head_penetration": 0.2
+"support_head_penetration": 0.4
 ```
 
 
-## Support head width
+## Pinhead width
 
-[No documentation provided]
+Width from the back sphere center to the front sphere center
 
 **Key:** `support_head_width`
 
@@ -567,13 +567,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_head_width": 1.22
+"support_head_width": 2
 ```
 
 
-## Support max bridge length
+## Max bridge length
 
-[No documentation provided]
+The max length of a bridge
 
 **Key:** `support_max_bridge_length`
 
@@ -586,13 +586,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_max_bridge_length": 11.56
+"support_max_bridge_length": 10
 ```
 
 
-## Support max bridges on pillar
+## Max bridges on a pillar
 
-[No documentation provided]
+Maximum number of bridges that can be placed on a pillar. Bridges hold support point pinheads and connect to pillars as small branches.
 
 **Key:** `support_max_bridges_on_pillar`
 
@@ -607,13 +607,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_max_bridges_on_pillar": 3
+"support_max_bridges_on_pillar": 2
 ```
 
 
-## Support max pillar link distance
+## Max pillar linking distance
 
-[No documentation provided]
+The max distance of two pillars to get linked with each other. A zero value will prohibit pillar cascading.
 
 **Key:** `support_max_pillar_link_distance`
 
@@ -626,13 +626,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_max_pillar_link_distance": 9.66
+"support_max_pillar_link_distance": 11.09
 ```
 
 
-## Support object elevation
+## Object elevation
 
-[No documentation provided]
+How much the supports should lift up the supported object. If "Pad around object" is enabled, this value is ignored.
 
 **Key:** `support_object_elevation`
 
@@ -647,11 +647,11 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_object_elevation": 5.93
+"support_object_elevation": 5
 ```
 
 
-## Support pillar connection mode
+## Controls the bridge type between two neighboring pillars. Can be zig-zag, cross (double zig-zag) or dynamic which will automatically switch between the first two depending on the distance of the two pillars.
 
 [No documentation provided]
 
@@ -659,7 +659,7 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 
 **Type:** `Enum`
 
-**Default** `slapcmDynamic`
+**Default** `dynamic`
 
 **Enum values:**
 
@@ -667,13 +667,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_pillar_connection_mode": "cross"
+"support_pillar_connection_mode": "zigzag"
 ```
 
 
-## Support pillar diameter
+## Pillar diameter
 
-[No documentation provided]
+Diameter in mm of the support pillars
 
 **Key:** `support_pillar_diameter`
 
@@ -688,13 +688,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_pillar_diameter": 1.1
+"support_pillar_diameter": 1
 ```
 
 
-## Support pillar widening factor
+## Pillar widening factor
 
-[No documentation provided]
+Merging bridges or pillars into another pillars can increase the radius. Zero means no increase, one means full increase. The exact amount of increase is unspecified and canchange in the future.
 
 **Key:** `support_pillar_widening_factor`
 
@@ -709,13 +709,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_pillar_widening_factor": 1
+"support_pillar_widening_factor": 0
 ```
 
 
-## Support points density relative
+## Support points density
 
-[No documentation provided]
+This is a relative measure of support points density.
 
 **Key:** `support_points_density_relative`
 
@@ -728,13 +728,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_points_density_relative": 93
+"support_points_density_relative": 83
 ```
 
 
-## Support points minimal distance
+## Minimal distance of the support points
 
-[No documentation provided]
+No support points will be placed closer than this threshold.
 
 **Key:** `support_points_minimal_distance`
 
@@ -747,13 +747,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_points_minimal_distance": 1.09
+"support_points_minimal_distance": 1.08
 ```
 
 
-## Support small pillar diameter percent
+## Small pillar diameter percent
 
-[No documentation provided]
+The percentage of smaller pillars compared to the normal pillar diameter which are used in problematic areas where a normal pilla cannot fit.
 
 **Key:** `support_small_pillar_diameter_percent`
 
@@ -768,13 +768,13 @@ Cracks smaller than 2x gap closing radius are being filled during the triangle m
 ### Example
 
 ```json
-"support_small_pillar_diameter_percent": "55%"
+"support_small_pillar_diameter_percent": "60%"
 ```
 
 
-## Supports enable
+## Generate supports
 
-[No documentation provided]
+Generate supports for the models
 
 **Key:** `supports_enable`
 

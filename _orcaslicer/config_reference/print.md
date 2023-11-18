@@ -27,7 +27,7 @@ Klipper's max_accel_to_decel will be adjusted automatically
 
 ## accel_to_decel
 
-Klipper's max_accel_to_decel will be adjusted to this %% of acceleration
+Klipper's max_accel_to_decel will be adjusted to this % of acceleration
 
 **Key:** `accel_to_decel_factor`
 
@@ -42,7 +42,7 @@ Klipper's max_accel_to_decel will be adjusted to this %% of acceleration
 ### Example
 
 ```json
-"accel_to_decel_factor": "44%"
+"accel_to_decel_factor": "50%"
 ```
 
 
@@ -79,7 +79,7 @@ This is the number of solid layers of bottom shell, including the bottom surface
 ### Example
 
 ```json
-"bottom_shell_layers": 3
+"bottom_shell_layers": 6
 ```
 
 
@@ -98,7 +98,7 @@ The number of bottom solid layers is increased when slicing if the thickness cal
 ### Example
 
 ```json
-"bottom_shell_thickness": 3.78
+"bottom_shell_thickness": 0.5
 ```
 
 
@@ -119,7 +119,7 @@ This factor affects the amount of material for bottom solid infill
 ### Example
 
 ```json
-"bottom_solid_infill_flow_ratio": 1.23
+"bottom_solid_infill_flow_ratio": 1
 ```
 
 
@@ -139,7 +139,7 @@ Line pattern of bottom surface infill, not bridge infill
 ### Example
 
 ```json
-"bottom_surface_pattern": "monotonic"
+"bottom_surface_pattern": "zig-zag"
 ```
 
 
@@ -158,7 +158,7 @@ Acceleration of bridges. If the value is expressed as a percentage (e.g. 50%), i
 ### Example
 
 ```json
-"bridge_acceleration": "52%"
+"bridge_acceleration": 3000
 ```
 
 
@@ -177,7 +177,7 @@ Bridging angle override. If left to zero, the bridging angle will be calculated 
 ### Example
 
 ```json
-"bridge_angle": 4.51
+"bridge_angle": 0
 ```
 
 
@@ -198,7 +198,7 @@ Density of external bridges. 100% means solid bridge. Default is 100%.
 ### Example
 
 ```json
-"bridge_density": "93%"
+"bridge_density": "100%"
 ```
 
 
@@ -219,7 +219,7 @@ Decrease this value slightly(for example 0.9) to reduce the amount of material f
 ### Example
 
 ```json
-"bridge_flow": 1.03
+"bridge_flow": 1
 ```
 
 
@@ -236,7 +236,7 @@ Don't support the whole bridge area which make support very large. Bridge usuall
 ### Example
 
 ```json
-"bridge_no_support": false
+"bridge_no_support": true
 ```
 
 
@@ -255,7 +255,7 @@ Speed of bridge and completely overhang wall
 ### Example
 
 ```json
-"bridge_speed": 19.89
+"bridge_speed": 55
 ```
 
 
@@ -274,7 +274,7 @@ The geometry will be decimated before dectecting sharp angles. This parameter in
 ### Example
 
 ```json
-"brim_ears_detection_length": 1.09
+"brim_ears_detection_length": 1
 ```
 
 
@@ -295,7 +295,7 @@ Maximum angle to let a brim ear appear. \nIf set to 0, no brim will be created. 
 ### Example
 
 ```json
-"brim_ears_max_angle": 119.11
+"brim_ears_max_angle": 125
 ```
 
 
@@ -316,7 +316,7 @@ A gap between innermost brim line and object can make brim be removed more easil
 ### Example
 
 ```json
-"brim_object_gap": 0
+"brim_object_gap": 0.2
 ```
 
 
@@ -336,7 +336,7 @@ This controls the generation of the brim at outer and/or inner side of models. A
 ### Example
 
 ```json
-"brim_type": "outer_and_inner"
+"brim_type": "no_brim"
 ```
 
 
@@ -357,7 +357,27 @@ Distance from model to the outermost brim line
 ### Example
 
 ```json
-"brim_width": 4.68
+"brim_width": 3
+```
+
+
+## Bed type
+
+Bed types supported by the printer
+
+**Key:** `curr_bed_type`
+
+**Type:** `Enum`
+
+**Default** `PC`
+
+**Enum values:**
+
+
+### Example
+
+```json
+"curr_bed_type": "Engineering Plate"
 ```
 
 
@@ -376,7 +396,7 @@ The default acceleration of both normal printing and travel except initial layer
 ### Example
 
 ```json
-"default_acceleration": 462.64
+"default_acceleration": 200
 ```
 
 
@@ -395,13 +415,13 @@ Default jerk
 ### Example
 
 ```json
-"default_jerk": 0.36
+"default_jerk": 0
 ```
 
 
 ## Detect overhang wall
 
-Detect the overhang percentage relative to line width and use different speed to print. For 100%% overhang, bridge speed is used.
+Detect the overhang percentage relative to line width and use different speed to print. For 100% overhang, bridge speed is used.
 
 **Key:** `detect_overhang_wall`
 
@@ -412,7 +432,7 @@ Detect the overhang percentage relative to line width and use different speed to
 ### Example
 
 ```json
-"detect_overhang_wall": true
+"detect_overhang_wall": false
 ```
 
 
@@ -429,7 +449,7 @@ Detect thin wall which can't contain two line width. And use single line to prin
 ### Example
 
 ```json
-"detect_thin_wall": false
+"detect_thin_wall": true
 ```
 
 
@@ -452,7 +472,7 @@ This is useful to protect an ABS or ASA print from warping and detaching from pr
 ### Example
 
 ```json
-"draft_shield": "enabled"
+"draft_shield": 0
 ```
 
 
@@ -488,7 +508,7 @@ Enable this to get a G-code file which has G2 and G3 moves. And the fitting tole
 ### Example
 
 ```json
-"enable_arc_fitting": true
+"enable_arc_fitting": false
 ```
 
 
@@ -522,7 +542,7 @@ The wiping tower can be used to clean up the residue on the nozzle and stabilize
 ### Example
 
 ```json
-"enable_prime_tower": false
+"enable_prime_tower": true
 ```
 
 
@@ -539,7 +559,7 @@ Enable support generation.
 ### Example
 
 ```json
-"enable_support": true
+"enable_support": false
 ```
 
 
@@ -560,7 +580,7 @@ Generate support material for the specified number of layers counting from botto
 ### Example
 
 ```json
-"enforce_support_layers": 3
+"enforce_support_layers": 0
 ```
 
 
@@ -577,7 +597,7 @@ Enable this option to add EXCLUDE OBJECT command in g-code
 ### Example
 
 ```json
-"exclude_object": true
+"exclude_object": false
 ```
 
 
@@ -594,7 +614,43 @@ Create additional perimeter paths over steep overhangs and areas where bridges c
 ### Example
 
 ```json
-"extra_perimeters_on_overhangs": true
+"extra_perimeters_on_overhangs": false
+```
+
+
+## Radius
+
+Clearance radius around extruder. Used for collision avoidance in by-object printing.
+
+**Key:** `extruder_clearance_radius`
+
+**Type:** `Float`
+
+**Min:** `0`
+
+**Default** `40`
+
+### Example
+
+```json
+"extruder_clearance_radius": 75
+```
+
+
+## Filament color
+
+Only used as a visual help on UI
+
+**Key:** `filament_colour`
+
+**Type:** `Strings`
+
+**Default** `["#F2754E"]`
+
+### Example
+
+```json
+
 ```
 
 
@@ -611,7 +667,7 @@ Filter out gaps smaller than the threshold specified
 ### Example
 
 ```json
-"filter_out_gap_fill": 2.69
+"filter_out_gap_fill": 0
 ```
 
 
@@ -645,7 +701,7 @@ This object will be used to purge the nozzle after a filament change to save fil
 ### Example
 
 ```json
-"flush_into_objects": true
+"flush_into_objects": false
 ```
 
 
@@ -666,6 +722,83 @@ Purging after filament change will be done inside objects' support. This may low
 ```
 
 
+## Flush multiplier
+
+The actual flushing volumes is equal to the flush multiplier multiplied by the flushing volumes in the table.
+
+**Key:** `flush_multiplier`
+
+**Type:** `Float`
+
+**Default** `0.3`
+
+### Example
+
+```json
+"flush_multiplier": 0.24
+```
+
+
+## Purging volumes
+
+This matrix describes volumes (in cubic milimetres) required to purge the new filament on the wipe tower for any given pair of tools.
+
+**Key:** `flush_volumes_matrix`
+
+**Type:** `Floats`
+
+**Default** `[0.0, 280.0, 280.0, 280.0, 280.0, 0.0, 280.0, 280.0, 280.0, 280.0, 0.0, 280.0, 280.0, 280.0, 280.0, 0.0]`
+
+### Example
+
+```json
+"flush_volumes_matrix": [
+    259.4,
+    245.98,
+    237.61,
+    259.01,
+    211.64,
+    185.97,
+    244.21,
+    182.3,
+    235.71,
+    178.95,
+    199.13,
+    233.75,
+    195.06,
+    258.1,
+    196.97,
+    201.57
+  ]
+```
+
+
+## Purging volumes - load/unload volumes
+
+This vector saves required volumes to change from/to each tool used on the wipe tower. These values are used to simplify creation of the full purging volumes below.
+
+**Key:** `flush_volumes_vector`
+
+**Type:** `Floats`
+
+**Default** `[140.0, 140.0, 140.0, 140.0, 140.0, 140.0, 140.0, 140.0]`
+
+### Example
+
+```json
+"flush_volumes_vector": [
+    140.77,
+    142.55,
+    142.39,
+    140.93,
+    143.81,
+    140.74,
+    141.69,
+    140.04
+  ]
+```
+
+
 ## Fuzzy Skin
 
 Randomly jitter while printing the wall, so that the surface has a rough look. This setting controls the fuzzy position
@@ -682,7 +815,7 @@ Randomly jitter while printing the wall, so that the surface has a rough look. T
 ### Example
 
 ```json
-"fuzzy_skin": "all"
+"fuzzy_skin": "none"
 ```
 
 
@@ -703,7 +836,7 @@ The average diatance between the random points introducded on each line segment
 ### Example
 
 ```json
-"fuzzy_skin_point_distance": 0.96
+"fuzzy_skin_point_distance": 0.8
 ```
 
 
@@ -724,7 +857,7 @@ The width within which to jitter. It's adversed to be below outer wall line widt
 ### Example
 
 ```json
-"fuzzy_skin_thickness": 0.26
+"fuzzy_skin_thickness": 0.3
 ```
 
 
@@ -743,7 +876,7 @@ Speed of gap infill. Gap usually has irregular line width and should be printed 
 ### Example
 
 ```json
-"gap_infill_speed": 29.69
+"gap_infill_speed": 230
 ```
 
 
@@ -845,7 +978,7 @@ Rotate the polyhole every layer.
 ### Example
 
 ```json
-"hole_to_polyhole_twisted": true
+"hole_to_polyhole_twisted": false
 ```
 
 
@@ -882,7 +1015,7 @@ Connect an infill line to an internal perimeter with a short segment of an addit
 ### Example
 
 ```json
-"infill_anchor": "332%"
+"infill_anchor": 2
 ```
 
 
@@ -903,7 +1036,7 @@ If set to 0, the old algorithm for infill connection will be used, it should cre
 ### Example
 
 ```json
-"infill_anchor_max": "23%"
+"infill_anchor_max": 15
 ```
 
 
@@ -941,7 +1074,7 @@ Angle for sparse infill pattern, which controls the start or main direction of l
 ### Example
 
 ```json
-"infill_direction": 52.29
+"infill_direction": 45
 ```
 
 
@@ -960,7 +1093,7 @@ Jerk for infill
 ### Example
 
 ```json
-"infill_jerk": 9.59
+"infill_jerk": 12
 ```
 
 
@@ -977,7 +1110,7 @@ Infill area is enlarged slightly to overlap with wall for better bonding. The pe
 ### Example
 
 ```json
-"infill_wall_overlap": "18%"
+"infill_wall_overlap": "10%"
 ```
 
 
@@ -996,7 +1129,7 @@ Acceleration of initial layer. Using a lower value can improve build plate adhes
 ### Example
 
 ```json
-"initial_layer_acceleration": 368.86
+"initial_layer_acceleration": 2000
 ```
 
 
@@ -1015,7 +1148,7 @@ Speed of solid infill part of initial layer
 ### Example
 
 ```json
-"initial_layer_infill_speed": 63.44
+"initial_layer_infill_speed": "35%"
 ```
 
 
@@ -1034,7 +1167,7 @@ Jerk for initial layer
 ### Example
 
 ```json
-"initial_layer_jerk": 8.63
+"initial_layer_jerk": 1
 ```
 
 
@@ -1055,7 +1188,7 @@ Line width of initial layer. If expressed as a %, it will be computed over the n
 ### Example
 
 ```json
-"initial_layer_line_width": "2%"
+"initial_layer_line_width": 0.25
 ```
 
 
@@ -1074,7 +1207,7 @@ The minimum wall width that should be used for the first layer is recommended to
 ### Example
 
 ```json
-"initial_layer_min_bead_width": "77%"
+"initial_layer_min_bead_width": "85%"
 ```
 
 
@@ -1093,7 +1226,7 @@ Height of initial layer. Making initial layer height to be thick slightly can im
 ### Example
 
 ```json
-"initial_layer_print_height": 0.23
+"initial_layer_print_height": 0.16
 ```
 
 
@@ -1112,7 +1245,7 @@ Speed of initial layer except the solid infill part
 ### Example
 
 ```json
-"initial_layer_speed": 26.21
+"initial_layer_speed": 50
 ```
 
 
@@ -1131,7 +1264,7 @@ Travel speed of initial layer
 ### Example
 
 ```json
-"initial_layer_travel_speed": "105%"
+"initial_layer_travel_speed": "100%"
 ```
 
 
@@ -1150,7 +1283,7 @@ Acceleration of inner walls
 ### Example
 
 ```json
-"inner_wall_acceleration": 11924.71
+"inner_wall_acceleration": 4000
 ```
 
 
@@ -1169,7 +1302,7 @@ Jerk of inner walls
 ### Example
 
 ```json
-"inner_wall_jerk": 9.66
+"inner_wall_jerk": 7
 ```
 
 
@@ -1190,7 +1323,7 @@ Line width of inner wall. If expressed as a %, it will be computed over the nozz
 ### Example
 
 ```json
-"inner_wall_line_width": 0.35
+"inner_wall_line_width": 0.5
 ```
 
 
@@ -1209,7 +1342,7 @@ Speed of inner wall
 ### Example
 
 ```json
-"inner_wall_speed": 61.46
+"inner_wall_speed": 75
 ```
 
 
@@ -1226,7 +1359,7 @@ Force the generation of solid shells between adjacent materials/volumes. Useful 
 ### Example
 
 ```json
-"interface_shells": true
+"interface_shells": false
 ```
 
 
@@ -1245,7 +1378,7 @@ Speed of internal bridge. If the value is expressed as a percentage, it will be 
 ### Example
 
 ```json
-"internal_bridge_speed": "174%"
+"internal_bridge_speed": "150%"
 ```
 
 
@@ -1264,7 +1397,7 @@ Acceleration of internal solid infill. If the value is expressed as a percentage
 ### Example
 
 ```json
-"internal_solid_infill_acceleration": "105%"
+"internal_solid_infill_acceleration": 7000
 ```
 
 
@@ -1285,7 +1418,7 @@ Line width of internal solid infill. If expressed as a %, it will be computed ov
 ### Example
 
 ```json
-"internal_solid_infill_line_width": "2%"
+"internal_solid_infill_line_width": 0.27
 ```
 
 
@@ -1305,7 +1438,7 @@ Line pattern of internal solid infill. if the detect nattow internal solid infil
 ### Example
 
 ```json
-"internal_solid_infill_pattern": "octagramspiral"
+"internal_solid_infill_pattern": "zig-zag"
 ```
 
 
@@ -1324,7 +1457,7 @@ Speed of internal solid infill, not the top and bottom surface
 ### Example
 
 ```json
-"internal_solid_infill_speed": 103.67
+"internal_solid_infill_speed": 160
 ```
 
 
@@ -1345,7 +1478,7 @@ The angle ironing is done at. A negative number disables this function and uses 
 ### Example
 
 ```json
-"ironing_angle": -0.87
+"ironing_angle": -0.81
 ```
 
 
@@ -1366,7 +1499,7 @@ The amount of material to extrude during ironing. Relative to flow of normal lay
 ### Example
 
 ```json
-"ironing_flow": "10%"
+"ironing_flow": "8%"
 ```
 
 
@@ -1386,7 +1519,7 @@ The pattern that will be used when ironing
 ### Example
 
 ```json
-"ironing_pattern": "concentric"
+"ironing_pattern": "zig-zag"
 ```
 
 
@@ -1407,7 +1540,7 @@ The distance between the lines of ironing
 ### Example
 
 ```json
-"ironing_spacing": 0.09
+"ironing_spacing": 0.08
 ```
 
 
@@ -1426,7 +1559,7 @@ Print speed of ironing lines
 ### Example
 
 ```json
-"ironing_speed": 23.98
+"ironing_speed": 45
 ```
 
 
@@ -1467,7 +1600,7 @@ Default line width if other line widths are set to 0. If expressed as a %, it wi
 ### Example
 
 ```json
-"line_width": "2%"
+"line_width": 0.4
 ```
 
 
@@ -1505,7 +1638,7 @@ Maximum angle of overhangs to allow after making more steep overhangs printable.
 ### Example
 
 ```json
-"make_overhang_printable_angle": 60.02
+"make_overhang_printable_angle": 55
 ```
 
 
@@ -1524,7 +1657,7 @@ Maximum area of a hole in the base of the model before it's filled by conical ma
 ### Example
 
 ```json
-"make_overhang_printable_hole_size": 2.41
+"make_overhang_printable_hole_size": 0
 ```
 
 
@@ -1543,7 +1676,7 @@ Max length of bridges that don't need support. Set it to 0 if you want all bridg
 ### Example
 
 ```json
-"max_bridge_length": 10.71
+"max_bridge_length": 10
 ```
 
 
@@ -1562,7 +1695,7 @@ Maximum detour distance for avoiding crossing wall. Don't detour if the detour d
 ### Example
 
 ```json
-"max_travel_detour_distance": "3%"
+"max_travel_detour_distance": 3
 ```
 
 
@@ -1593,7 +1726,7 @@ Note: this parameter disables arc fitting.
 ### Example
 
 ```json
-"max_volumetric_extrusion_rate_slope": 1.81
+"max_volumetric_extrusion_rate_slope": 2.29
 ```
 
 
@@ -1637,7 +1770,7 @@ Width of the wall that will replace thin features (according to the Minimum feat
 ### Example
 
 ```json
-"min_bead_width": "77%"
+"min_bead_width": "85%"
 ```
 
 
@@ -1656,7 +1789,7 @@ Minimum thickness of thin features. Model features that are thinner than this va
 ### Example
 
 ```json
-"min_feature_size": "19%"
+"min_feature_size": "25%"
 ```
 
 
@@ -1676,7 +1809,7 @@ Warning: If enabled, artifacts can be created is you have some thin features on 
 ### Example
 
 ```json
-"min_width_top_surface": "350%"
+"min_width_top_surface": "300%"
 ```
 
 
@@ -1695,7 +1828,7 @@ Sparse infill area which is smaller than threshold value is replaced by internal
 ### Example
 
 ```json
-"minimum_sparse_infill_area": 16.09
+"minimum_sparse_infill_area": 25
 ```
 
 
@@ -1712,7 +1845,7 @@ You can put here your personal notes. This text will be added to the G-code head
 ### Example
 
 ```json
-"notes": ""
+"notes": "Set your soluble extruder in Multiple Extruders > Support material/raft/skirt extruder &  Support material/raft interface extruder"
 ```
 
 
@@ -1729,7 +1862,7 @@ Use only one wall on first layer, to give more space to the bottom infill patter
 ### Example
 
 ```json
-"only_one_wall_first_layer": true
+"only_one_wall_first_layer": false
 ```
 
 
@@ -1746,7 +1879,7 @@ Use only one wall on flat top surface, to give more space to the top infill patt
 ### Example
 
 ```json
-"only_one_wall_top": true
+"only_one_wall_top": false
 ```
 
 
@@ -1782,7 +1915,7 @@ Acceleration of outer wall. Using a lower value can improve quality
 ### Example
 
 ```json
-"outer_wall_acceleration": 378.08
+"outer_wall_acceleration": 0
 ```
 
 
@@ -1801,7 +1934,7 @@ Jerk of outer walls
 ### Example
 
 ```json
-"outer_wall_jerk": 10.29
+"outer_wall_jerk": 2
 ```
 
 
@@ -1822,7 +1955,7 @@ Line width of outer wall. If expressed as a %, it will be computed over the nozz
 ### Example
 
 ```json
-"outer_wall_line_width": "1%"
+"outer_wall_line_width": 0.8
 ```
 
 
@@ -1841,7 +1974,7 @@ Speed of outer wall which is outermost and visible. It's used to be slower than 
 ### Example
 
 ```json
-"outer_wall_speed": 49.59
+"outer_wall_speed": 125
 ```
 
 
@@ -1860,7 +1993,7 @@ Speed for line of wall which has degree of overhang between 10% and 25% line wid
 ### Example
 
 ```json
-"overhang_1_4_speed": 0.64
+"overhang_1_4_speed": 60
 ```
 
 
@@ -1879,7 +2012,7 @@ Speed for line of wall which has degree of overhang between 25% and 50% line wid
 ### Example
 
 ```json
-"overhang_2_4_speed": 0.56
+"overhang_2_4_speed": 20
 ```
 
 
@@ -1898,7 +2031,7 @@ Speed for line of wall which has degree of overhang between 50% and 75% line wid
 ### Example
 
 ```json
-"overhang_3_4_speed": "3%"
+"overhang_3_4_speed": 30
 ```
 
 
@@ -1917,7 +2050,7 @@ Speed for line of wall which has degree of overhang between 75% and 100% line wi
 ### Example
 
 ```json
-"overhang_4_4_speed": "4%"
+"overhang_4_4_speed": 10
 ```
 
 
@@ -1953,7 +2086,7 @@ Number of mm the overhang need to be for the reversal to be considered useful. C
 ### Example
 
 ```json
-"overhang_reverse_threshold": "45%"
+"overhang_reverse_threshold": "56%"
 ```
 
 
@@ -1987,7 +2120,7 @@ If you want to process the output G-code through custom scripts, just list their
 ### Example
 
 ```json
-"post_process": [""]
+
 ```
 
 
@@ -2004,7 +2137,7 @@ Improve shell precision by adjusting outer wall spacing. This also improves laye
 ### Example
 
 ```json
-"precise_outer_wall": true
+"precise_outer_wall": false
 ```
 
 
@@ -2023,7 +2156,7 @@ Brim width of the prime tower
 ### Example
 
 ```json
-"prime_tower_brim_width": 2.7
+"prime_tower_brim_width": 2
 ```
 
 
@@ -2042,7 +2175,7 @@ Width of prime tower
 ### Example
 
 ```json
-"prime_tower_width": 47.84
+"prime_tower_width": 40
 ```
 
 
@@ -2061,7 +2194,7 @@ The volume of material to prime extruder on tower.
 ### Example
 
 ```json
-"prime_volume": 55.47
+"prime_volume": 2
 ```
 
 
@@ -2082,7 +2215,7 @@ The material may have volumetric change after switching between molten state and
 ### Example
 
 ```json
-"print_flow_ratio": 1.05
+"print_flow_ratio": 0.95
 ```
 
 
@@ -2102,7 +2235,24 @@ Print sequence, layer by layer or object by object
 ### Example
 
 ```json
-"print_sequence": "by object"
+"print_sequence": "by layer"
+```
+
+
+## Print settings id
+
+[No documentation provided]
+
+**Key:** `print_settings_id`
+
+**Type:** `String`
+
+**Default** ``
+
+### Example
+
+```json
+"print_settings_id": "0.20mm Quality @MK3S"
 ```
 
 
@@ -2121,7 +2271,7 @@ Z gap between object and raft. Ignored for soluble interface
 ### Example
 
 ```json
-"raft_contact_distance": 0.08
+"raft_contact_distance": 0
 ```
 
 
@@ -2140,7 +2290,7 @@ Expand all raft layers in XY plane
 ### Example
 
 ```json
-"raft_expansion": 1.52
+"raft_expansion": 1.5
 ```
 
 
@@ -2161,7 +2311,7 @@ Density of the first raft or support layer
 ### Example
 
 ```json
-"raft_first_layer_density": "99%"
+"raft_first_layer_density": "90%"
 ```
 
 
@@ -2180,7 +2330,7 @@ Expand the first raft or support layer to improve bed plate adhesion
 ### Example
 
 ```json
-"raft_first_layer_expansion": 1.73
+"raft_first_layer_expansion": 0
 ```
 
 
@@ -2201,7 +2351,7 @@ Object will be raised by this number of support layers. Use this function to avo
 ### Example
 
 ```json
-"raft_layers": 2
+"raft_layers": 0
 ```
 
 
@@ -2218,7 +2368,7 @@ Detour and avoid to travel across wall which may cause blob on surface
 ### Example
 
 ```json
-"reduce_crossing_wall": false
+"reduce_crossing_wall": true
 ```
 
 
@@ -2235,7 +2385,7 @@ Don't retract when the travel is in infill area absolutely. That means the oozin
 ### Example
 
 ```json
-"reduce_infill_retraction": false
+"reduce_infill_retraction": true
 ```
 
 
@@ -2254,7 +2404,7 @@ G-code path is genereated after simplifing the contour of model to avoid too muc
 ### Example
 
 ```json
-"resolution": 0.01
+"resolution": 0.012
 ```
 
 
@@ -2290,7 +2440,7 @@ In order to reduce the visibility of the seam in a closed loop extrusion, the lo
 ### Example
 
 ```json
-"seam_gap": "11%"
+"seam_gap": "15%"
 ```
 
 
@@ -2310,7 +2460,7 @@ The start position to print each part of outer wall
 ### Example
 
 ```json
-"seam_position": "nearest"
+"seam_position": "rear"
 ```
 
 
@@ -2327,7 +2477,7 @@ If enabled, all printing extruders will be primed at the front edge of the print
 ### Example
 
 ```json
-"single_extruder_multi_material_priming": false
+"single_extruder_multi_material_priming": true
 ```
 
 
@@ -2348,7 +2498,7 @@ Distance from skirt to brim or object
 ### Example
 
 ```json
-"skirt_distance": 1.65
+"skirt_distance": 10
 ```
 
 
@@ -2367,7 +2517,7 @@ How many layers of skirt. Usually only one layer
 ### Example
 
 ```json
-"skirt_height": 0
+"skirt_height": 1
 ```
 
 
@@ -2388,7 +2538,7 @@ Number of loops for the skirt. Zero means disabling skirt
 ### Example
 
 ```json
-"skirt_loops": 0
+"skirt_loops": 1
 ```
 
 
@@ -2407,7 +2557,7 @@ Speed of skirt, in mm/s. Zero means use default layer extrusion speed.
 ### Example
 
 ```json
-"skirt_speed": 56.94
+"skirt_speed": 0
 ```
 
 
@@ -2446,7 +2596,7 @@ The first few layers are printed slower than normal. The speed is gradually incr
 ### Example
 
 ```json
-"slow_down_layers": 3
+"slow_down_layers": 0
 ```
 
 
@@ -2463,7 +2613,7 @@ Enable this option to slow printing down in areas where potential curled perimet
 ### Example
 
 ```json
-"slowdown_for_curled_perimeters": false
+"slowdown_for_curled_perimeters": true
 ```
 
 
@@ -2482,7 +2632,7 @@ This separate setting will affect the speed of perimeters having radius <= small
 ### Example
 
 ```json
-"small_perimeter_speed": "43%"
+"small_perimeter_speed": 22
 ```
 
 
@@ -2501,7 +2651,7 @@ This sets the threshold for small perimeter length. Default threshold is 0mm
 ### Example
 
 ```json
-"small_perimeter_threshold": 3.92
+"small_perimeter_threshold": 6
 ```
 
 
@@ -2539,7 +2689,7 @@ Acceleration of sparse infill. If the value is expressed as a percentage (e.g. 1
 ### Example
 
 ```json
-"sparse_infill_acceleration": "112%"
+"sparse_infill_acceleration": 800
 ```
 
 
@@ -2560,7 +2710,7 @@ Density of internal sparse infill, 100% means solid throughout
 ### Example
 
 ```json
-"sparse_infill_density": "21%"
+"sparse_infill_density": "25%"
 ```
 
 
@@ -2600,7 +2750,7 @@ Line width of internal sparse infill. If expressed as a %, it will be computed o
 ### Example
 
 ```json
-"sparse_infill_line_width": "4%"
+"sparse_infill_line_width": 0.45
 ```
 
 
@@ -2620,7 +2770,7 @@ Line pattern for internal sparse infill
 ### Example
 
 ```json
-"sparse_infill_pattern": "archimedeanchords"
+"sparse_infill_pattern": "gyroid"
 ```
 
 
@@ -2639,7 +2789,7 @@ Speed of internal sparse infill
 ### Example
 
 ```json
-"sparse_infill_speed": 124.82
+"sparse_infill_speed": 430
 ```
 
 
@@ -2656,7 +2806,7 @@ Spiralize smooths out the z moves of the outer contour. And turns a solid model 
 ### Example
 
 ```json
-"spiral_mode": true
+"spiral_mode": false
 ```
 
 
@@ -2673,7 +2823,7 @@ This option causes the inner seams to be shifted backwards based on their depth,
 ### Example
 
 ```json
-"staggered_inner_seams": true
+"staggered_inner_seams": false
 ```
 
 
@@ -2694,7 +2844,7 @@ Temperature difference to be applied when an extruder is not active. Enables a f
 ### Example
 
 ```json
-"standby_temperature_delta": 0
+"standby_temperature_delta": -110
 ```
 
 
@@ -2715,7 +2865,7 @@ Use this setting to rotate the support pattern on the horizontal plane.
 ### Example
 
 ```json
-"support_angle": 4.72
+"support_angle": 0
 ```
 
 
@@ -2735,7 +2885,7 @@ Line pattern of support
 ### Example
 
 ```json
-"support_base_pattern": "lightning"
+"support_base_pattern": "default"
 ```
 
 
@@ -2754,7 +2904,7 @@ Spacing between support lines
 ### Example
 
 ```json
-"support_base_pattern_spacing": 2.42
+"support_base_pattern_spacing": 0.25
 ```
 
 
@@ -2773,7 +2923,7 @@ Spacing of bottom interface lines. Zero means solid interface
 ### Example
 
 ```json
-"support_bottom_interface_spacing": 0.55
+"support_bottom_interface_spacing": 0.5
 ```
 
 
@@ -2790,7 +2940,7 @@ The z gap between the bottom support interface and object
 ### Example
 
 ```json
-"support_bottom_z_distance": 0.18
+"support_bottom_z_distance": 0.3
 ```
 
 
@@ -2807,7 +2957,7 @@ Only create support for critical regions including sharp tail, cantilever, etc.
 ### Example
 
 ```json
-"support_critical_regions_only": true
+"support_critical_regions_only": false
 ```
 
 
@@ -2824,7 +2974,7 @@ Expand (+) or shrink (-) the horizontal span of normal support
 ### Example
 
 ```json
-"support_expansion": 1.23
+"support_expansion": 0
 ```
 
 
@@ -2865,7 +3015,7 @@ Number of bottom interface layers. -1 means same with use top interface layers
 ### Example
 
 ```json
-"support_interface_bottom_layers": -1
+"support_interface_bottom_layers": 2
 ```
 
 
@@ -2884,7 +3034,7 @@ Filament to print support interface. "Default" means no specific filament for su
 ### Example
 
 ```json
-"support_interface_filament": 1
+"support_interface_filament": 0
 ```
 
 
@@ -2940,7 +3090,7 @@ Spacing of interface lines. Zero means solid interface
 ### Example
 
 ```json
-"support_interface_spacing": 0.51
+"support_interface_spacing": 0.1
 ```
 
 
@@ -2959,7 +3109,7 @@ Speed of support interface
 ### Example
 
 ```json
-"support_interface_speed": 74.7
+"support_interface_speed": 36
 ```
 
 
@@ -3002,7 +3152,7 @@ Line width of support. If expressed as a %, it will be computed over the nozzle 
 ### Example
 
 ```json
-"support_line_width": "1%"
+"support_line_width": 0.45
 ```
 
 
@@ -3023,7 +3173,7 @@ XY separation between an object and its support
 ### Example
 
 ```json
-"support_object_xy_distance": 0.39
+"support_object_xy_distance": 0.35
 ```
 
 
@@ -3040,7 +3190,7 @@ Don't create support on model surface, only on build plate
 ### Example
 
 ```json
-"support_on_build_plate_only": true
+"support_on_build_plate_only": false
 ```
 
 
@@ -3057,7 +3207,7 @@ Remove small overhangs that possibly need no supports.
 ### Example
 
 ```json
-"support_remove_small_overhang": false
+"support_remove_small_overhang": true
 ```
 
 
@@ -3076,7 +3226,7 @@ Speed of support
 ### Example
 
 ```json
-"support_speed": 76.75
+"support_speed": 45
 ```
 
 
@@ -3096,7 +3246,7 @@ Style and shape of the support. For normal support, projecting the supports into
 ### Example
 
 ```json
-"support_style": "tree_hybrid"
+"support_style": "grid"
 ```
 
 
@@ -3117,7 +3267,7 @@ Support will be generated for overhangs whose slope angle is below the threshold
 ### Example
 
 ```json
-"support_threshold_angle": 32
+"support_threshold_angle": 30
 ```
 
 
@@ -3134,7 +3284,7 @@ The z gap between the top support interface and object
 ### Example
 
 ```json
-"support_top_z_distance": 0.15
+"support_top_z_distance": 0.1
 ```
 
 
@@ -3171,7 +3321,7 @@ If enabled, bridges are more reliable, can bridge longer distances, but may look
 ### Example
 
 ```json
-"thick_bridges": true
+"thick_bridges": false
 ```
 
 
@@ -3191,7 +3341,7 @@ If smooth or traditional mode is selected, a timelapse video will be generated f
 ### Example
 
 ```json
-"timelapse_type": "0"
+"timelapse_type": 0
 ```
 
 
@@ -3229,7 +3379,7 @@ The number of top solid layers is increased when slicing if the thickness calcul
 ### Example
 
 ```json
-"top_shell_thickness": 0.58
+"top_shell_thickness": 0.8
 ```
 
 
@@ -3250,7 +3400,7 @@ This factor affects the amount of material for top solid infill. You can decreas
 ### Example
 
 ```json
-"top_solid_infill_flow_ratio": 0.78
+"top_solid_infill_flow_ratio": 1
 ```
 
 
@@ -3269,7 +3419,7 @@ Acceleration of top surface infill. Using a lower value may improve top surface 
 ### Example
 
 ```json
-"top_surface_acceleration": 532.55
+"top_surface_acceleration": 1000
 ```
 
 
@@ -3288,7 +3438,7 @@ Jerk for top surface
 ### Example
 
 ```json
-"top_surface_jerk": 7.89
+"top_surface_jerk": 8
 ```
 
 
@@ -3309,7 +3459,7 @@ Line width for top surfaces. If expressed as a %, it will be computed over the n
 ### Example
 
 ```json
-"top_surface_line_width": "2%"
+"top_surface_line_width": 0.56
 ```
 
 
@@ -3329,7 +3479,7 @@ Line pattern of top surface infill
 ### Example
 
 ```json
-"top_surface_pattern": "monotonicline"
+"top_surface_pattern": "zig-zag"
 ```
 
 
@@ -3348,7 +3498,7 @@ Speed of top surface infill which is solid
 ### Example
 
 ```json
-"top_surface_speed": 106.0
+"top_surface_speed": 40
 ```
 
 
@@ -3367,7 +3517,7 @@ Acceleration of travel moves
 ### Example
 
 ```json
-"travel_acceleration": 8967.09
+"travel_acceleration": 5000
 ```
 
 
@@ -3386,7 +3536,7 @@ Jerk for travel
 ### Example
 
 ```json
-"travel_jerk": 12.78
+"travel_jerk": 8
 ```
 
 
@@ -3405,7 +3555,7 @@ Speed of travel which is faster and without extrusion
 ### Example
 
 ```json
-"travel_speed": 101.56
+"travel_speed": 500
 ```
 
 
@@ -3424,7 +3574,7 @@ Speed of vertical travel along z axis. This is typically lower because build pla
 ### Example
 
 ```json
-"travel_speed_z": 3.65
+"travel_speed_z": 10
 ```
 
 
@@ -3441,7 +3591,7 @@ Enabling this option means the height of  tree support layer except the first wi
 ### Example
 
 ```json
-"tree_support_adaptive_layer_height": false
+"tree_support_adaptive_layer_height": true
 ```
 
 
@@ -3462,7 +3612,7 @@ The preferred angle of the branches, when they do not have to avoid the model. U
 ### Example
 
 ```json
-"tree_support_angle_slow": 28.28
+"tree_support_angle_slow": 30
 ```
 
 
@@ -3500,7 +3650,7 @@ This setting determines the maximum overhang angle that t he branches of tree su
 ### Example
 
 ```json
-"tree_support_branch_angle": 45.49
+"tree_support_branch_angle": 40
 ```
 
 
@@ -3521,7 +3671,7 @@ This setting determines the maximum overhang angle that t he branches of tree su
 ### Example
 
 ```json
-"tree_support_branch_angle_organic": 41.85
+"tree_support_branch_angle_organic": 40
 ```
 
 
@@ -3542,7 +3692,7 @@ This setting determines the initial diameter of support nodes.
 ### Example
 
 ```json
-"tree_support_branch_diameter": 4.24
+"tree_support_branch_diameter": 2
 ```
 
 
@@ -3563,7 +3713,7 @@ The angle of the branches' diameter as they gradually become thicker towards the
 ### Example
 
 ```json
-"tree_support_branch_diameter_angle": 4.68
+"tree_support_branch_diameter_angle": 3
 ```
 
 
@@ -3584,7 +3734,7 @@ Branches with area larger than the area of a circle of this diameter will be pri
 ### Example
 
 ```json
-"tree_support_branch_diameter_double_wall": 3.22
+"tree_support_branch_diameter_double_wall": 3
 ```
 
 
@@ -3605,7 +3755,7 @@ This setting determines the initial diameter of support nodes.
 ### Example
 
 ```json
-"tree_support_branch_diameter_organic": 2.17
+"tree_support_branch_diameter_organic": 2
 ```
 
 
@@ -3626,7 +3776,7 @@ This setting determines the distance between neighboring tree support nodes.
 ### Example
 
 ```json
-"tree_support_branch_distance": 4.79
+"tree_support_branch_distance": 5
 ```
 
 
@@ -3647,7 +3797,7 @@ This setting determines the distance between neighboring tree support nodes.
 ### Example
 
 ```json
-"tree_support_branch_distance_organic": 1.17
+"tree_support_branch_distance_organic": 1
 ```
 
 
@@ -3666,7 +3816,7 @@ Distance from tree branch to the outermost brim line
 ### Example
 
 ```json
-"tree_support_brim_width": 2.68
+"tree_support_brim_width": 0
 ```
 
 
@@ -3687,7 +3837,7 @@ Branch tip diameter for organic supports.
 ### Example
 
 ```json
-"tree_support_tip_diameter": 0.74
+"tree_support_tip_diameter": 0.8
 ```
 
 
@@ -3706,7 +3856,7 @@ Adjusts the density of the support structure used to generate the tips of the br
 ### Example
 
 ```json
-"tree_support_top_rate": "31%"
+"tree_support_top_rate": "30%"
 ```
 
 
@@ -3725,7 +3875,24 @@ This setting specify the count of walls around tree support
 ### Example
 
 ```json
-"tree_support_wall_count": 0
+"tree_support_wall_count": 2
+```
+
+
+## Tree support with infill
+
+This setting specifies whether to add infill inside large hollows of tree support
+
+**Key:** `tree_support_with_infill`
+
+**Type:** `Bool`
+
+**Default** `false`
+
+### Example
+
+```json
+"tree_support_with_infill": false
 ```
 
 
@@ -3783,7 +3950,7 @@ Classic wall generator produces walls with constant extrusion width and for very
 ### Example
 
 ```json
-"wall_generator": "arachne"
+"wall_generator": "classic"
 ```
 
 
@@ -3803,7 +3970,7 @@ Print sequence of inner wall, outer wall and infill.
 ### Example
 
 ```json
-"wall_infill_order": "infill/outer wall/inner wall"
+"wall_infill_order": "outer wall/inner wall/infill"
 ```
 
 
@@ -3824,7 +3991,7 @@ Number of walls of every layer
 ### Example
 
 ```json
-"wall_loops": 1
+"wall_loops": 4
 ```
 
 
@@ -3845,7 +4012,7 @@ When to create transitions between even and odd numbers of walls. A wedge shape 
 ### Example
 
 ```json
-"wall_transition_angle": 10.24
+"wall_transition_angle": 10
 ```
 
 
@@ -3864,7 +4031,7 @@ Prevent transitioning back and forth between one extra wall and one less. This m
 ### Example
 
 ```json
-"wall_transition_filter_deviation": "21%"
+"wall_transition_filter_deviation": "25%"
 ```
 
 
@@ -3883,7 +4050,7 @@ When transitioning between different numbers of walls as the part becomes thinne
 ### Example
 
 ```json
-"wall_transition_length": "94%"
+"wall_transition_length": 0.6
 ```
 
 
@@ -3900,7 +4067,7 @@ To minimize the visibility of the seam in a closed loop extrusion, a small inwar
 ### Example
 
 ```json
-"wipe_on_loops": false
+"wipe_on_loops": true
 ```
 
 
@@ -3919,7 +4086,7 @@ The wipe speed is determined by the speed setting specified in this configuratio
 ### Example
 
 ```json
-"wipe_speed": "60%"
+"wipe_speed": "80%"
 ```
 
 
@@ -3936,7 +4103,7 @@ Maximal distance between supports on sparse infill sections.
 ### Example
 
 ```json
-"wipe_tower_bridging": 9.56
+"wipe_tower_bridging": 20
 ```
 
 
@@ -3957,7 +4124,7 @@ Angle at the apex of the cone that is used to stabilize the wipe tower. Larger a
 ### Example
 
 ```json
-"wipe_tower_cone_angle": 3.2
+"wipe_tower_cone_angle": 0
 ```
 
 
@@ -3978,7 +4145,7 @@ Spacing of purge lines on the wipe tower.
 ### Example
 
 ```json
-"wipe_tower_extra_spacing": "76%"
+"wipe_tower_extra_spacing": 150
 ```
 
 
@@ -3997,7 +4164,7 @@ The extruder to use when printing perimeter of the wipe tower. Set to 0 to use t
 ### Example
 
 ```json
-"wipe_tower_extruder": 1
+"wipe_tower_extruder": 0
 ```
 
 
@@ -4014,7 +4181,7 @@ If enabled, the wipe tower will not be printed on layers with no toolchanges. On
 ### Example
 
 ```json
-"wipe_tower_no_sparse_layers": true
+"wipe_tower_no_sparse_layers": false
 ```
 
 
@@ -4031,7 +4198,41 @@ Wipe tower rotation angle with respect to x-axis.
 ### Example
 
 ```json
-"wipe_tower_rotation_angle": 3.45
+"wipe_tower_rotation_angle": 90
+```
+
+
+## Position X
+
+X coordinate of the left front corner of a wipe tower
+
+**Key:** `wipe_tower_x`
+
+**Type:** `Floats`
+
+**Default** `[155.0]`
+
+### Example
+
+```json
+"wipe_tower_x": 131.2295
+```
+
+
+## Position Y
+
+Y coordinate of the left front corner of a wipe tower
+
+**Key:** `wipe_tower_y`
+
+**Type:** `Floats`
+
+**Default** `[220]`
+
+### Example
+
+```json
+"wipe_tower_y": 40
 ```
 
 
@@ -4049,16 +4250,16 @@ This vector saves required volumes to change from/to each tool used on the wipe 
 
 ```json
 "wiping_volumes_extruders": [
-    74.68,
-    74.65,
-    74.75,
-    71.39,
-    72.61,
-    71.67,
-    71.64,
-    73.38,
-    73.0,
-    74.98
+    70,
+    70,
+    70,
+    70,
+    70,
+    70,
+    70,
+    70,
+    70,
+    70
   ]
 ```
 
@@ -4076,7 +4277,7 @@ Contour of object will be grown or shrunk in XY plane by the configured value. P
 ### Example
 
 ```json
-"xy_contour_compensation": 1.34
+"xy_contour_compensation": 0
 ```
 
 
@@ -4093,5 +4294,5 @@ Holes of object will be grown or shrunk in XY plane by the configured value. Pos
 ### Example
 
 ```json
-"xy_hole_compensation": 2.89
+"xy_hole_compensation": 0
 ```

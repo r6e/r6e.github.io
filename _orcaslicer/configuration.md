@@ -10,7 +10,7 @@ category_title: "Configuration"
 
 The OrcaSlicer configuration file format differs significantly from PrusaSlicer/SuperSlicer configuration formats, and does not appear to be thoroughly-documented.
 
-This is an attempt to document the configuration files, in at least some minor way, but is still a work-in-progress. This documentation was generated based on the OrcaSlicer source code. Most of the wording, field details, and examples are pulled from there. Because of that, and potential bugs in the scripts I wrote to generate these documents, it is highly-likely that they will contain errors. If you find any, please feel free to submit a PR or an issue at [this site's GiHub repository](https://github.com/r6e/r6e.github.io).
+This is an attempt to document the configuration files, in at least some minor way, but is still a work-in-progress. This documentation was generated based on the OrcaSlicer source code. Most of the wording, field details, and examples are pulled from there. Because of that, and potential bugs in the scripts I wrote to generate these documents, it is highly-likely that they will contain errors. If you find any, please feel free to submit a PR or an issue at [this site's GitHub repository](https://github.com/r6e/r6e.github.io).
 
 ### Docs
 
