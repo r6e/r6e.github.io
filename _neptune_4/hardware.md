@@ -340,7 +340,7 @@ These specifications were taken from the Goodix website.
 
 This is wired directly into a serial adapter, and can not be used as an actual USB port for the host. It will be accessible to the host on `/dev/ttyS2`.
 
-This serial connection can be *extremely* helpful when SSH is not available, such as when needing to access the bootloader or an alternative OS. Connect at `5000000` baud.
+This serial connection can be *extremely* helpful when SSH is not available, such as when needing to access the bootloader or an alternative OS. Connect at `1500000` baud.
 
 ## USB 2.0 Header
 
